@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa ➔ Università | Orari</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            background-color: #eff6ff;
+            color: var(--accent-color);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .direct-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .direct-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .lines-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .line-btn {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .line-btn.active, .line-btn:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+        }
+
+        /* Contenitori iframe standard */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: #f1f5f9;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Maschera di ritaglio speciale per ATAC */
+        .crop-view {
+            width: 100%;
+            max-width: 400px;
+            height: 520px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background-color: #ffffff;
+            box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+        }
+
+        .crop-view iframe {
+            width: 1000px;
+            height: 850px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -48%);
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .iframe-container {
+                height: 440px;
+            }
+            .crop-view {
+                height: 460px;
+            }
+            .crop-view iframe {
+                transform: translate(-50%, -48%) scale(0.95);
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← Torna alle Tratte</a>
+        <h1 class="page-title">Casa ➔ Università</h1>
+    </header>
+
+    <main>
+
+        <!-- TAPPA 1: COTRAL -->
+        <section class="section-card">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">
+                        <span>1. Cotral</span>
+                        <span class="badge">Bus</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                        Viale Roma (Aeroporto) ➔ Colle Fiorito / Stazione FS
+                    </p>
+                </div>
+                <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener" class="direct-btn">
+                    Apri Orari Cotral ↗
+                </a>
+            </div>
+            <div class="iframe-container">
+                <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Orari Cotral"></iframe>
+            </div>
+        </section>
+
+        <!-- TAPPA 2: TRENITALIA / VIAGGIATRENO -->
+        <section class="section-card">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">
+                        <span>2. Trenitalia (Viaggiatreno)</span>
+                        <span class="badge">Treno</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                        Tabellone Partenze in Tempo Reale da Guidonia Montecelio a Roma Tiburtina
+                    </p>
+                </div>
+                <a href="http://www.viaggiatreno.it/infomobilitamobile/quadroorario.action?idstazione=S08409" target="_blank" rel="noopener" class="direct-btn">
+                    Tabellone Live ↗
+                </a>
+            </div>
+            <div class="iframe-container">
+                <iframe src="http://www.viaggiatreno.it/infomobilitamobile/quadroorario.action?idstazione=S08409" title="Tabellone Stazione Guidonia Montecelio"></iframe>
+            </div>
+        </section>
+
+        <!-- TAPPA 3: ATAC -->
+        <section class="section-card">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">
+                        <span>3. ATAC Roma</span>
+                        <span class="badge">Bus / Tram</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                        Piazzale Tiburtina ➔ Verano
+                    </p>
+                </div>
+                <a id="atac-direct-link" href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=492&pathCode=492R" target="_blank" rel="noopener" class="direct-btn">
+                    Apri su ViaggiaCon ATAC ↗
+                </a>
+            </div>
+
+            <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Seleziona linea:</p>
+            <div class="lines-list">
+                <button type="button" class="line-btn active" onclick="switchAtacLine('492', '492R', this)">492</button>
+                <button type="button" class="line-btn" onclick="switchAtacLine('163', '163R', this)">163</button>
+                <button type="button" class="line-btn" onclick="switchAtacLine('545', '545R', this)">545</button>
+                <button type="button" class="line-btn" onclick="switchAtacLine('71', '71R', this)">71</button>
+            </div>
+
+            <!-- Maschera di ritaglio che inquadra solo il popup centrale -->
+            <div class="crop-view">
+                <iframe id="atac-iframe" src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=492&pathCode=492R" title="Viaggia con ATAC"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function switchAtacLine(lineCode, pathCode, btnElement) {
+            const url = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${lineCode}&pathCode=${pathCode}`;
+            
+            // Aggiorna src dell'iframe e del pulsante link diretto
+            document.getElementById('atac-iframe').src = url;
+            document.getElementById('atac-direct-link').href = url;
+            
+            // Aggiorna lo stato visivo dei pulsanti
+            const buttons = document.querySelectorAll('.line-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
