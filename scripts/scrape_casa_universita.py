@@ -5,7 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept-Language": "it-IT,it;q=0.9",
 }
 
 COTRAL_URL = "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true"
@@ -61,41 +62,49 @@ def scrape_trenitalia(session):
     return treni
 
 
-def scrape_atac_full_day(session):
+def scrape_atac_real(session):
     linee_orari = {}
 
     for linea in TARGET_LINES:
         orari_partenza = []
         try:
-            # Query endpoint orario giornaliero capolinea Stazione Tiburtina
-            url = f"https://viaggiacon.atac.roma.it/ai/getOrarioPercorso.php?linea={linea}&dir=A"
+            # Query endpoint orari di linea ufficiali Roma Mobilitá / ATAC
+            url = f"https://romamobilita.it/it/servizi/orari-linee-bus?linea={linea}"
             res = session.get(url, timeout=10)
+
             if res.status_code == 200:
-                data = res.json()
-                partenze = data.get("risposta", {}).get("partenze", [])
-                for p in partenze:
-                    if isinstance(p, str) and re.match(r"^\d{2}:\d{2}$", p):
-                        orari_partenza.append(p)
-                    elif isinstance(p, dict) and "ora" in p:
-                        orari_partenza.append(p["ora"])
+                soup = BeautifulSoup(res.text, "html.parser")
+                # Estrazione orari visibili nella pagina della linea
+                time_tags = soup.find_all(
+                    ["span", "td", "div"], text=re.compile(r"^\d{2}:\d{2}$")
+                )
+                for tag in time_tags:
+                    t_str = tag.get_text(strip=True)
+                    if t_str not in orari_partenza:
+                        orari_partenza.append(t_str)
+
+            # API secondaria di fallback diretta ViaggiaCon ATAC
+            if not orari_partenza:
+                api_url = f"https://viaggiacon.atac.roma.it/ai/getOrarioPercorso.php?linea={linea}&dir=A"
+                res_api = session.get(api_url, timeout=10)
+                if res_api.status_code == 200:
+                    data = res_api.json()
+                    partenze = data.get("risposta", {}).get("partenze", [])
+                    for p in partenze:
+                        if isinstance(p, str) and re.match(
+                            r"^\d{2}:\d{2}$", p
+                        ):
+                            orari_partenza.append(p)
+                        elif isinstance(p, dict) and "ora" in p:
+                            orari_partenza.append(p["ora"])
         except Exception as e:
-            print(f"Errore orari ATAC linea {linea}: {e}")
+            print(f"Errore caricamento ATAC per linea {linea}: {e}")
 
-        # Se l'API dinamica non restituisce dati, genera la griglia oraria programmata di linea
-        if not orari_partenza:
-            # Fascia standard indicativa 05:30 -> 23:30 a frequenza ~12-15 min
-            base_times = []
-            for hour in range(5, 24):
-                for minute in (0, 15, 30, 45):
-                    if hour == 5 and minute < 30:
-                        continue
-                    base_times.append(f"{hour:02d}:{minute:02d}")
-            orari_partenza = base_times
-
+        # Salva solo i dati reali trovati (senza generare mai orari finti)
         linee_orari[linea] = {
             "capolinea": "Stazione Tiburtina",
-            "frequenza_media": "10-15 minuti",
             "orari": sorted(list(set(orari_partenza))),
+            "totale": len(orari_partenza),
         }
 
     return linee_orari
@@ -109,7 +118,7 @@ def main():
         "updated_at": datetime.now().strftime("%d/%m/%Y %H:%M"),
         "cotral": scrape_cotral(session),
         "treni": scrape_trenitalia(session),
-        "atac": scrape_atac_full_day(session),
+        "atac": scrape_atac_real(session),
     }
 
     with open("casa_universita_data.json", "w", encoding="utf-8") as f:
