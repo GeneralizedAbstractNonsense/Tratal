@@ -1,11 +1,12 @@
 name: Aggiornamento Orari e Avvisi Cotral
 
 on:
+  push:
+    branches:
+      - main  # o master, in base al nome del tuo ramo
   schedule:
-    # Esegue lo script ogni giorno alle 04:00 UTC (6:00 italiane)
-    - cron: '0 4 * * *'
-  workflow_dispatch: # Permette l'avvio manuale dalla scheda Actions di GitHub
-
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 jobs:
   scrape:
     runs-on: ubuntu-latest
