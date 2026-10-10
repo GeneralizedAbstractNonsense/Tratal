@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<opml version="1.0">
+  <head>
+    <title>Subscriptions from FeedFlow</title>
+  </head>
+  <body>
+    <outline text="University" title="University">
+      <outline type="rss" text="bibliotecadimatematica - Instagram" title="bibliotecadimatematica - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=bibliotecadimatematica&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="Dipartimento di Matematica Guido Castelnuovo" title="Dipartimento di Matematica Guido Castelnuovo" xmlUrl="https://www.mat.uniroma1.it/rss.xml" />
+      <outline type="rss" text="docs.google.com" title="docs.google.com" xmlUrl="https://docs.google.com/document/d/1DZHWCT6CX02Kqi-uPMQ6dAwtfsBFTsJL/edit?usp=drive_link&amp;ouid=100957507089188431059&amp;rtpof=true&amp;sd=true" />
+      <outline type="rss" text='I.I.S. VIA ROMA 298 - "Ex E. Majorana/Ex L. Pisano"' title='I.I.S. VIA ROMA 298 - "Ex E. Majorana/Ex L. Pisano"' xmlUrl="https://fetchrss.com/feed/1x3urx0rb6pI1x3v4Y3642Ta.rss" />
+      <outline type="rss" text="ianigroart - news" title="ianigroart - news" xmlUrl="https://fetchrss.com/feed/1x3urx0rb6pI1x3vAACut4Hq.rss" />
+      <outline type="rss" text="natalealcastelnuovo - Instagram" title="natalealcastelnuovo - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=natalealcastelnuovo&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="news.uniroma1.it" title="news.uniroma1.it" xmlUrl="https://news.uniroma1.it/appuntamenti" />
+      <outline type="rss" text="portineriamatematica.sapienza - Instagram" title="portineriamatematica.sapienza - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=portineriamatematica.sapienza&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="rappresentanti.castelnuovo - Instagram" title="rappresentanti.castelnuovo - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=rappresentanti.castelnuovo&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="Sapienza Università di Roma" title="Sapienza Università di Roma" xmlUrl="https://uniroma1.web.uniroma1.it/it/rss.xml" />
+      <outline type="rss" text="Scuola Superiore di Studi Avanzati" title="Scuola Superiore di Studi Avanzati" xmlUrl="https://ssas.web.uniroma1.it/rss.xml" />
+      <outline type="rss" text="scuolanormale - Instagram" title="scuolanormale - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=scuolanormale&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="sites.google.com" title="sites.google.com" xmlUrl="https://sites.google.com/uniroma1.it/math/talks-futuri?authuser=0" />
+      <outline type="rss" text="sites.google.com" title="sites.google.com" xmlUrl="https://sites.google.com/uniroma1.it/sag/" />
+      <outline type="rss" text="smfn_sapienza - Instagram" title="smfn_sapienza - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=smfn_sapienza&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="ssas_sapienza - Instagram" title="ssas_sapienza - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=ssas_sapienza&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="uniroma1.web.uniroma1.it" title="uniroma1.web.uniroma1.it" xmlUrl="https://uniroma1.web.uniroma1.it/tutte-le-notizie" />
+      <outline type="rss" text="www.altamatematica.it" title="www.altamatematica.it" xmlUrl="https://www.altamatematica.it/" />
+      <outline type="rss" text="www.liceoguidonia.edu.it" title="www.liceoguidonia.edu.it" xmlUrl="https://www.liceoguidonia.edu.it/" />
+      <outline type="rss" text="www.mat.uniroma1.it" title="www.mat.uniroma1.it" xmlUrl="https://www.mat.uniroma1.it/it/avvisi-didattica" />
+      <outline type="rss" text="www.mat.uniroma1.it" title="www.mat.uniroma1.it" xmlUrl="https://www.mat.uniroma1.it/index.php/it/news" />
+      <outline type="rss" text="www.mat.uniroma1.it" title="www.mat.uniroma1.it" xmlUrl="https://www.mat.uniroma1.it/it/seminari/seminari-dipartimento" />
+      <outline type="rss" text="www.mat.uniroma1.it" title="www.mat.uniroma1.it" xmlUrl="https://www.mat.uniroma1.it/it/seminari/seminari-didattica-storia-matematica" />
+      <outline type="rss" text="www.mat.uniroma1.it" title="www.mat.uniroma1.it" xmlUrl="https://www.mat.uniroma1.it/it/seminari/seminari-matematica-scienza-societa" />
+      <outline type="rss" text="yam_sapienza - Instagram" title="yam_sapienza - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=yam_sapienza&amp;media_type=all&amp;format=Atom" />
+    </outline>
+    <outline text="YouTube" title="YouTube">
+      <outline type="rss" text="151eg" title="151eg" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwH61O10Jc1TyVLeaA5np3Q" />
+      <outline type="rss" text="3Blue1Brown" title="3Blue1Brown" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw" />
+      <outline type="rss" text="Aaron Alon" title="Aaron Alon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs_sF-h0wNYqsRJqGX6vbGw" />
+      <outline type="rss" text="Abide By Reason" title="Abide By Reason" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR5oNJW45ALErR_OL5bpi_w" />
+      <outline type="rss" text="Accademia La Colombaria" title="Accademia La Colombaria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEQL_wYt_xkIfZz1q1OMnqA" />
+      <outline type="rss" text="aclas" title="aclas" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoZx0L3xyfhmSr0Vabu4G_g" />
+      <outline type="rss" text="African Institute for Mathematical Sciences (South Africa)" title="African Institute for Mathematical Sciences (South Africa)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCetimk8fNERHoir_zKQbwiQ" />
+      <outline type="rss" text="AI with Math" title="AI with Math" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCytP08ynIym_J3Jr8zlmk3A" />
+      <outline type="rss" text="Alberto Occhipinti" title="Alberto Occhipinti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1FufNgvDoI5ECOM16i1l0w" />
+      <outline type="rss" text="Alberto Saracco" title="Alberto Saracco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKzzB8rjlOZTIKeXqPHsc0w" />
+      <outline type="rss" text="Aleph 0" title="Aleph 0" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzBjutX2PmitNF4avysL-vg" />
+      <outline type="rss" text="alessandra esposito" title="alessandra esposito" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnB5Itv9lxZiXTp9vtJOzJw" />
+      <outline type="rss" text="Alessandro Barbero - La Storia siamo Noi" title="Alessandro Barbero - La Storia siamo Noi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOhGl4NRM_l9FWiANhWvdzQ" />
+      <outline type="rss" text="Alessandro Barbero Fan Channel" title="Alessandro Barbero Fan Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuEll-bc5N6ziqDJdan7MwQ" />
+      <outline type="rss" text="Alessandro de Concini - ADC" title="Alessandro de Concini - ADC" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCofDksh92NfejyCMUrBRC7Q" />
+      <outline type="rss" text="All Angles" title="All Angles" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgBRykS2v-WV2YYUpR2V9jw" />
+      <outline type="rss" text="Alvaro Lozano-Robledo" title="Alvaro Lozano-Robledo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsl3cpHnDaFTYnV66g8MB0A" />
+      <outline type="rss" text="AmaRoseLessons" title="AmaRoseLessons" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxf2G8FngClWckRUhmNwUHw" />
+      <outline type="rss" text="Amedeo Balbi" title="Amedeo Balbi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvG_mqHj_wmFZiM1SkoZccw" />
+      <outline type="rss" text="Andrea Aschedamini" title="Andrea Aschedamini" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkFDBHn7uJkLWPEOnxbNL7A" />
+      <outline type="rss" text="andrea laszlo de simone" title="andrea laszlo de simone" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkMlZa-h37Rxf-skuWX7-fw" />
+      <outline type="rss" text="Animus Engineering" title="Animus Engineering" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXoTDynAJB_d7FUalgx-FZg" />
+      <outline type="rss" text="Ank Yog" title="Ank Yog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzlpAcUXRcDihGrVGIREWDw" />
+      <outline type="rss" text="Another Roof" title="Another Roof" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHEnZhUKjZSLYs3jJ0raKZA" />
+      <outline type="rss" text="Antonio Distaso" title="Antonio Distaso" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjaD6JRtyQWGFDA0HiBDlAg" />
+      <outline type="rss" text="Anyone - Just another political guy" title="Anyone - Just another political guy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNWiF5879zUkL5PRT-RAzGw" />
+      <outline type="rss" text="Ardens" title="Ardens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgCezP1ThHMANeuHtnf1Euw" />
+      <outline type="rss" text="Armando Arredondo" title="Armando Arredondo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZuzNII45cRoJxiH8vVZoJA" />
+      <outline type="rss" text="Arsenij Kryazhev" title="Arsenij Kryazhev" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCw68MxjVG56n6E6FM_Avc3Q" />
+      <outline type="rss" text="Art of Olympiad Mathematics" title="Art of Olympiad Mathematics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY5PrJMcb_KO6SdJ-5_0R_Q" />
+      <outline type="rss" text="astudyofeverything" title="astudyofeverything" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDok3oTo2SSWZt6I8sHuzVg" />
+      <outline type="rss" text="Avalon" title="Avalon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl1Q13v_xhWdCqSLyD2sLxQ" />
+      <outline type="rss" text="Barbascura eXtra" title="Barbascura eXtra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHi6Q3Z-5oJUC691WLlSntA" />
+      <outline type="rss" text="BasylDoesPhysics" title="BasylDoesPhysics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu5nxo3NxWUsl9N7FnwE_ag" />
+      <outline type="rss" text="BearZA_91" title="BearZA_91" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD7KKEm3FMg3hfO6kLP0G2w" />
+      <outline type="rss" text="Ben Eater" title="Ben Eater" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS0N5baNlQWJCUrhCEo8WlA" />
+      <outline type="rss" text="Ben Syversen" title="Ben Syversen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWQ7rdjjB-ujwQl0ErJ01eg" />
+      <outline type="rss" text="Bernadette Banner" title="Bernadette Banner" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSHtaUm-FjUps090S7crO4Q" />
+      <outline type="rss" text="Bitwise Brew" title="Bitwise Brew" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpOC1sU-TjIPiTMQlfKvetw" />
+      <outline type="rss" text="blackboardguy" title="blackboardguy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX7ISRsJ-1X0Abm5GDXFUfw" />
+      <outline type="rss" text="blackpenredpen" title="blackpenredpen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_SvYP0k05UKiJ_2ndB02IA" />
+      <outline type="rss" text="Bonagang" title="Bonagang" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDJSqZZGdYWkJtd9rAwV_rQ" />
+      <outline type="rss" text="Bottega di narrazione" title="Bottega di narrazione" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCULMA9HRy8aAiJFczEX30hg" />
+      <outline type="rss" text="Brabanzio - Un canale inutile" title="Brabanzio - Un canale inutile" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXrB3p5ujzLwOrxUCIIjJEA" />
+      <outline type="rss" text="Brain Station Advanced" title="Brain Station Advanced" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGPUOBWuUVm6l28mOlUMfxg" />
+      <outline type="rss" text="Braver New Math" title="Braver New Math" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCOmfQ_DdXKhXeQjEBV61kJw" />
+      <outline type="rss" text="BRECCIA" title="BRECCIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8yOoFdxxhUXmgYtyXpbr3Q" />
+      <outline type="rss" text="BriTheMathGuy" title="BriTheMathGuy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChVUSXFzV8QCOKNWGfE56YQ" />
+      <outline type="rss" text="broke math student" title="broke math student" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4xt9IFvV56RIagIOtH1Liw" />
+      <outline type="rss" text="Caffè Design" title="Caffè Design" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6njEey49emrxFSzxPoKwFg" />
+      <outline type="rss" text="Cantare R&amp;B" title="Cantare R&amp;B" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsdAoTExSlEyfM-Fg53UScA" />
+      <outline type="rss" text="Cartobimbi" title="Cartobimbi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClJVddJWXeKY_xmS8u1HOIw" />
+      <outline type="rss" text="CARTONI MORTI" title="CARTONI MORTI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChn336v-fUYkJH09vA4ZuCA" />
+      <outline type="rss" text="Cartoon_international" title="Cartoon_international" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwXmY0gmRzL7C3fCiRhgugg" />
+      <outline type="rss" text="Christian Salerno" title="Christian Salerno" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8oJes2lAQBHaP60KuXqTng" />
+      <outline type="rss" text="CHRISTIAN SFILIGOI" title="CHRISTIAN SFILIGOI" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0ww1Bg9P1Eav2f_nR48Pnw" />
+      <outline type="rss" text="classica senza noia" title="classica senza noia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtEup4XN0xmxQqxAGIsye4A" />
+      <outline type="rss" text="Cleanwithbea" title="Cleanwithbea" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU_ZKTv5Vc3DPsowV1s1B6A" />
+      <outline type="rss" text="ClearMath" title="ClearMath" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJflS1UnbcNchcaqn3oOk5g" />
+      <outline type="rss" text="Closed Stacks" title="Closed Stacks" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI2ALzpfyun9xoBfmqMoi3g" />
+      <outline type="rss" text="CModGamma" title="CModGamma" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTgcQHhfcArHUgFFOHawRUQ" />
+      <outline type="rss" text="CodeParade" title="CodeParade" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrv269YwJzuZL3dH5PCgxUw" />
+      <outline type="rss" text="Cofiber" title="Cofiber" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPAbZYJVo2GfYccNDZ18-9w" />
+      <outline type="rss" text="coolcomputery" title="coolcomputery" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVjZBuVqbG0zOAM6tEmrU2A" />
+      <outline type="rss" text="Cultus Classicus" title="Cultus Classicus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0sDPpgOo6_u7CcCydN8MOw" />
+      <outline type="rss" text="DaniilRudenko" title="DaniilRudenko" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0rLPPWz9EH3yDKhqwoB9ng" />
+      <outline type="rss" text="Daniyyel Barrera" title="Daniyyel Barrera" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCR4aWbbj1erSciRjerpwtkA" />
+      <outline type="rss" text="DataMListic" title="DataMListic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRM1urw2ECVHH7ojJw8MXiQ" />
+      <outline type="rss" text="David Metzler" title="David Metzler" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYw_g19UWD-zIGTwNrhHlDw" />
+      <outline type="rss" text="David Raj Micheal" title="David Raj Micheal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCx1rEg4qR8OIqgj8NdmEixA" />
+      <outline type="rss" text="Davide Carretta" title="Davide Carretta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN3LqRvYgepAPwuSTWcWuQA" />
+      <outline type="rss" text="Davide Pioggia" title="Davide Pioggia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs2EjNq1ESut40rCMBmn3Sw" />
+      <outline type="rss" text="Demathify" title="Demathify" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwOxJQFq8TB7BCpLxvcPIAg" />
+      <outline type="rss" text="Dennis Sweeney" title="Dennis Sweeney" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyI1W35xX3AwrZJ7DkbnRQQ" />
+      <outline type="rss" text="Design Lovers" title="Design Lovers" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3WC-t0RGn9m4PqAnecO5MA" />
+      <outline type="rss" text="DesignSpo" title="DesignSpo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIsO3l05J4sjuJ30PkIPjWQ" />
+      <outline type="rss" text="Deutsche Grammophon - DG" title="Deutsche Grammophon - DG" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC34DbNyD_0t8tnOc5V38Big" />
+      <outline type="rss" text="DIBEOS" title="DIBEOS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3Z1rXCFFadHw69-PZpQRYQ" />
+      <outline type="rss" text="Didattica della matematica di Ornella Robutti" title="Didattica della matematica di Ornella Robutti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXWF_gKgyUXVSK3t35SdjFA" />
+      <outline type="rss" text="diinki" title="diinki" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrk2bNxxxLP-Qd77KxBJ3Xg" />
+      <outline type="rss" text="Distracted by Design" title="Distracted by Design" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdafAPpZsMMQ4FWvq5minvw" />
+      <outline type="rss" text="Divine JEE" title="Divine JEE" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLqLb7IAjoltceDr_BGfnEg" />
+      <outline type="rss" text="Dogmathic" title="Dogmathic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWyNqJZePvecq_0iyTevQXA" />
+      <outline type="rss" text="DoraDoraTV" title="DoraDoraTV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCavve77czTovCiyuR47gvMQ" />
+      <outline type="rss" text="Doraemon 6k Tube" title="Doraemon 6k Tube" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYDbWp8k6Rdg7L0HQwpjOzQ" />
+      <outline type="rss" text="doraemon episodi" title="doraemon episodi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5kfXeDqd_Yz2Od_-5Eae_A" />
+      <outline type="rss" text="Doraemon ITA" title="Doraemon ITA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDOTJdF8-_Uazmu4suPjpmQ" />
+      <outline type="rss" text="Doraemon Tv" title="Doraemon Tv" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRIECH_JXNyvsQBN3j5AWGQ" />
+      <outline type="rss" text="Doraemon Universal" title="Doraemon Universal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNvGgroffCyeRA9NxcPIKsw" />
+      <outline type="rss" text="Dr Peyam" title="Dr Peyam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoOjTxz-u5zU0W38zMkQIFw" />
+      <outline type="rss" text="DR Z PHD - Gender Specialist | Transgender Adults" title="DR Z PHD - Gender Specialist | Transgender Adults" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8QNOIOoi63U0arTgU47vEQ" />
+      <outline type="rss" text="Dr. Diinki Cattywampus" title="Dr. Diinki Cattywampus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLbk33Hw5fPBcP4yqaJ_q0w" />
+      <outline type="rss" text="Dr. Simulate" title="Dr. Simulate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaVPFapXUXYeZN3_5ty99xA" />
+      <outline type="rss" text="Dr. Trefor Bazett" title="Dr. Trefor Bazett" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9rTsvTxJnx1DNrDA3Rqa6A" />
+      <outline type="rss" text="Edoardo Prati" title="Edoardo Prati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCM9YrGtZcw0glCyJPuynFPg" />
+      <outline type="rss" text="EduNiBa" title="EduNiBa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRFQsAqaFxsw3XJZFfRGhTA" />
+      <outline type="rss" text="Eigen" title="Eigen" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3VC2GNNqnuM1SfSTDYkpdw" />
+      <outline type="rss" text="Elia Bombardelli" title="Elia Bombardelli" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3_rz0ss9O7Yy0ypBG4M6lg" />
+      <outline type="rss" text="Elisa Mangiaratti" title="Elisa Mangiaratti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4-oPmWzUMtD_YkzNMQO_RA" />
+      <outline type="rss" text="Ellie Sleightholm" title="Ellie Sleightholm" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCylqgu2ojsCxojFpQogowOA" />
+      <outline type="rss" text="Emanuele Viotti - Ad Maiora Vertite" title="Emanuele Viotti - Ad Maiora Vertite" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr7B6eobTBCJvbWaIA79reA" />
+      <outline type="rss" text="Enkk" title="Enkk" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvGwatHyCegYsG_y09qH1zw" />
+      <outline type="rss" text="Ennio Guglielmetto" title="Ennio Guglielmetto" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgL7VtJRnbXMM84sTF1MURQ" />
+      <outline type="rss" text="Enrique Neyra" title="Enrique Neyra" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJdoQVR4aghlT3ypMuFPPOQ" />
+      <outline type="rss" text="EpsilonDelta" title="EpsilonDelta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrn9HkH3trWYpxzlW9l8eSg" />
+      <outline type="rss" text="EpsilonDeltaItalia" title="EpsilonDeltaItalia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYM4ihhhR_PUJ3KXMF8n7-g" />
+      <outline type="rss" text="Etymology Nerd" title="Etymology Nerd" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNHb7I85BKnwbJF4fWBXJjA" />
+      <outline type="rss" text="Eva Munter" title="Eva Munter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZjTMHQr5t4rOs7LEO0dz-A" />
+      <outline type="rss" text="Ex-IT guy" title="Ex-IT guy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS54EwvnjCbd78lyRTFmcjw" />
+      <outline type="rss" text="exp(ert)" title="exp(ert)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIKgZjVZ_F52zZPFQ4rkjHQ" />
+      <outline type="rss" text="Eyesomorphic" title="Eyesomorphic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkgKbO073CuS1ZZFKoOgTVw" />
+      <outline type="rss" text="Famfam" title="Famfam" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg1tpJrsNCQgeiYI445jjmQ" />
+      <outline type="rss" text="Fee Phi Fo Fum" title="Fee Phi Fo Fum" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChe2BMaNGBcScgyFiODDrRQ" />
+      <outline type="rss" text="Fermion Physics" title="Fermion Physics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCf4vjyembz71q3ET6g3xkYg" />
+      <outline type="rss" text="Film in streaming, Musica e cartoni" title="Film in streaming, Musica e cartoni" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAemJtXHcJZy9xBF41S7KXg" />
+      <outline type="rss" text="Fisica PSP" title="Fisica PSP" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwCiXR8l29BwgoOqqos2GXw" />
+      <outline type="rss" text="FloatHeadPhysics" title="FloatHeadPhysics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGfFUc6eWxfbtjYeun6r9xg" />
+      <outline type="rss" text="Foolish Chemist" title="Foolish Chemist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxLoHj0sqCQZd5oaQYNXvuQ" />
+      <outline type="rss" text="Fraffrog" title="Fraffrog" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuL6cg-3m-ile8KOd5Q_Rtw" />
+      <outline type="rss" text="Frame of Essence" title="Frame of Essence" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQHsMwcGoH1ygyi-pJs5Z8A" />
+      <outline type="rss" text="Francesco Bigolin" title="Francesco Bigolin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZLx_x4MjtSEWlg7Nz5mzIw" />
+      <outline type="rss" text="Francesco Di Fortunato" title="Francesco Di Fortunato" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_GK8MC7edW6T4g9myfACEw" />
+      <outline type="rss" text="Francesco Garofalo" title="Francesco Garofalo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWkHaKX3HwNzBiA2Fqo2dgQ" />
+      <outline type="rss" text="Francesco Grigoli" title="Francesco Grigoli" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCM39tXnxW_uUXEAuNaOEMiA" />
+      <outline type="rss" text="Franco Bugnano" title="Franco Bugnano" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY0FJLR-Qh6v8jYTiMXs1Vw" />
+      <outline type="rss" text="Frank Swenton" title="Frank Swenton" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwdjsZWfvrgEelDby-QgfmA" />
+      <outline type="rss" text="Freya Holmér" title="Freya Holmér" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7M-Wz4zK8oikt6ATcoTwBA" />
+      <outline type="rss" text="friendlybeings" title="friendlybeings" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuwIwUdKtEIYPPrr_UXfFmw" />
+      <outline type="rss" text="Gabriel Piano" title="Gabriel Piano" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNEI-oWOivQJ9IMn8GeCrMg" />
+      <outline type="rss" text="Gaetano Di Caprio - Invito alla Matematica" title="Gaetano Di Caprio - Invito alla Matematica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIAJVf7DJ61hfGNY2JP4wow" />
+      <outline type="rss" text="Gaetano Licata" title="Gaetano Licata" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClYV7nMEx4qd5eH9JyztNlA" />
+      <outline type="rss" text="Gawx Art" title="Gawx Art" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFDxyA1H3VEN0VQwfMe2VMQ" />
+      <outline type="rss" text="GBopera Channel 2" title="GBopera Channel 2" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCsokq8urciySLSCm58S6gGw" />
+      <outline type="rss" text="Geometer's Garden" title="Geometer's Garden" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzPzR9WlFEdA9ZzlS5YPPMA" />
+      <outline type="rss" text="Geopop" title="Geopop" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCx7EWheHmjCW3vX8K2d09vg" />
+      <outline type="rss" text="Giuggi" title="Giuggi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdfw7VGCmBgLMd15NhAZv6Q" />
+      <outline type="rss" text="Giuseppe Bassi" title="Giuseppe Bassi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz_CE3r422cA8hsPFpbZvHw" />
+      <outline type="rss" text="GLITCH" title="GLITCH" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn_FAXem2-e3HQvmK-mOH4g" />
+      <outline type="rss" text="Gquadroblogesercizi" title="Gquadroblogesercizi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFtJElbc6-pDZ8urOY6yG_Q" />
+      <outline type="rss" text="Graphicode" title="Graphicode" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAzirdsF8ZPDX4wDjz4V_Cw" />
+      <outline type="rss" text="Graphics in 5 Minutes" title="Graphics in 5 Minutes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4r_gpcPz3Us9pmeGDjw_Rg" />
+      <outline type="rss" text="GreatScott!" title="GreatScott!" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6mIxFTvXkWQVEHPsEdflzQ" />
+      <outline type="rss" text="gregorian calendar" title="gregorian calendar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvd5uyHYtUQesuA7r3rvLaQ" />
+      <outline type="rss" text="Gruppo Filosofia" title="Gruppo Filosofia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClWQy8qj-MzwgJuOhEiR4kg" />
+      <outline type="rss" text="gupastro" title="gupastro" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtS9x9R3KGZA535XMs2qX4g" />
+      <outline type="rss" text="GuzMat" title="GuzMat" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnzw9eSddR7_tb4I6mkwDCQ" />
+      <outline type="rss" text="Hakuna MATH-ata" title="Hakuna MATH-ata" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCI6KL4kxZTFhzRUit2vJIug" />
+      <outline type="rss" text="Harvard Mathematics Department" title="Harvard Mathematics Department" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZgHOeJBfMKOZ5PMlZysy8Q" />
+      <outline type="rss" text="Hidden Patterns" title="Hidden Patterns" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPaPuuIdtIrPNINAOBnOeeQ" />
+      <outline type="rss" text="Hidden Russia" title="Hidden Russia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkh2BU7ydl1mhxhZyXleyFg" />
+      <outline type="rss" text="HumanSafari" title="HumanSafari" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCB9-VTcQkAh-J7FpcinYj2A" />
+      <outline type="rss" text="I Dalton" title="I Dalton" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2GxhRbDKJ8_iN_lsBpLpCw" />
+      <outline type="rss" text="ICKY" title="ICKY" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtEb98_ptdXj6N6woTfgxVQ" />
+      <outline type="rss" text="Il Divino Disegno" title="Il Divino Disegno" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCY9jlLtJmbDpunOW3LLSQ1Q" />
+      <outline type="rss" text="Il matematico dicotomico" title="Il matematico dicotomico" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnz5fHZQw0n3srNEy1B_z-A" />
+      <outline type="rss" text="il Matematico Mascherato" title="il Matematico Mascherato" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzBpTuWzLJ3qCVjh9DffocQ" />
+      <outline type="rss" text="Il Trovastorie" title="Il Trovastorie" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW8B_aMxQoR38siwN8VkJjQ" />
+      <outline type="rss" text="IlMondoDeiCartoni" title="IlMondoDeiCartoni" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChckLN_avM83GU0JwesFRMQ" />
+      <outline type="rss" text="imatics" title="imatics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKPuu29ByQ2aD5-dhsLo98g" />
+      <outline type="rss" text="ImToxiiq" title="ImToxiiq" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClVxtduchX883cIXi29bMYQ" />
+      <outline type="rss" text="Inorganic Chemistry Tutor" title="Inorganic Chemistry Tutor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_2rUC3Y-P3SkhXGuVN4fDA" />
+      <outline type="rss" text="Insights into Mathematics" title="Insights into Mathematics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXl0Zbk8_rvjyLwAR-Xh9pQ" />
+      <outline type="rss" text="Iper COSMOS" title="Iper COSMOS" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCujwWlcPvnw74_WVgMt9GpQ" />
+      <outline type="rss" text="iputupsomestuff" title="iputupsomestuff" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0zbGIVdsG41kUbg5RaGsPg" />
+      <outline type="rss" text="IrrazionaleX" title="IrrazionaleX" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC17PlLy7pQzIrcarDKsAitg" />
+      <outline type="rss" text="It's so blatant" title="It's so blatant" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHFx_7rUZJjAgT4uUtXq2cw" />
+      <outline type="rss" text="jacobneu" title="jacobneu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRfR7ivZHwXIC8kdydo5jdQ" />
+      <outline type="rss" text="Jakidale" title="Jakidale" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCz-KJn98sMCPW5kjG0ZnE-Q" />
+      <outline type="rss" text="Jessica Giorgia Senesi" title="Jessica Giorgia Senesi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcJ3xaB7eh-bZ00EfIC07lg" />
+      <outline type="rss" text="Joel David Hamkins" title="Joel David Hamkins" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCeMZeXYIhdxnQvZP360uoBg" />
+      <outline type="rss" text="Joshua Blais" title="Joshua Blais" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1tV5SjRyejRGeHAaMGYSsQ" />
+      <outline type="rss" text="Juxtopposed" title="Juxtopposed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa8W2_uf81Ew6gYuw0VPSeA" />
+      <outline type="rss" text="K-Theory" title="K-Theory" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRXC6M65qiFlHaXGDNC--VA" />
+      <outline type="rss" text="Kamil Laurent" title="Kamil Laurent" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuqPIeaetERtujt8ApDZcsQ" />
+      <outline type="rss" text="kavan" title="kavan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUEgJIixzlG53ybR9tZufxw" />
+      <outline type="rss" text="Ker(PoliTo)" title="Ker(PoliTo)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNLusZ7oFpBjFdcL27CaQiA" />
+      <outline type="rss" text="KoothBrush" title="KoothBrush" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxQfwMu5S83-B0rnvcxhmVw" />
+      <outline type="rss" text="Kreo Lisa" title="Kreo Lisa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCreBqzHY2M9vnqGT7LVWskw" />
+      <outline type="rss" text="Kyle Broder" title="Kyle Broder" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkDicHMdLaJQ3OIly7B6wug" />
+      <outline type="rss" text="La casa dei numeri" title="La casa dei numeri" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCV033hvYctt1lxpMaXm3Dbg" />
+      <outline type="rss" text="La Fisica di Valentino Rocco" title="La Fisica di Valentino Rocco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEnDGvrHSk26PkEfRK13ClQ" />
+      <outline type="rss" text="La Sedia a 2 Gambe" title="La Sedia a 2 Gambe" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzo08mBUvDuac6Z0obylktg" />
+      <outline type="rss" text="LadislauFernandes" title="LadislauFernandes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2d6iy_E1c5ojsvaHJrjEAg" />
+      <outline type="rss" text="Laura Pirotta" title="Laura Pirotta" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8cR09W1lqsq1XUtL4NEBMA" />
+      <outline type="rss" text="Lectures by Walter Lewin. They will make you ♥ Physics." title="Lectures by Walter Lewin. They will make you ♥ Physics." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiEHVhv0SBMpP75JbzJShqw" />
+      <outline type="rss" text="leeeyanah" title="leeeyanah" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4HMkYcpjMXmQ4sivUWV5yw" />
+      <outline type="rss" text="Leios" title="Leios" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCd0dc7kQA1FUpJ76o1EjLqQ" />
+      <outline type="rss" text="Lezioni di ripasso" title="Lezioni di ripasso" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKQL9bf8zau-AMVy7JmiZyw" />
+      <outline type="rss" text="Lezioni Geometria e Topologia Differenziale LeDonne" title="Lezioni Geometria e Topologia Differenziale LeDonne" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5jP0bGPvV3x-o7rIrW86Pg" />
+      <outline type="rss" text="Liminal" title="Liminal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCN73XIOFsfb10Js5iZIi9jw" />
+      <outline type="rss" text="Linguisticattiva" title="Linguisticattiva" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfi7oavT0eMFM-cRc4m_pdw" />
+      <outline type="rss" text="local meadows" title="local meadows" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMOoG4xb3o0XfG0DcQUkO4Q" />
+      <outline type="rss" text="Lord Sheamus" title="Lord Sheamus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGDIv0lr_CRMk0QM2lMwrQQ" />
+      <outline type="rss" text="Luca Cena" title="Luca Cena" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKyZq_0EZ9zL1y7KksEpi-g" />
+      <outline type="rss" text="LunaPienArt -giapponese originale" title="LunaPienArt -giapponese originale" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnCHhrE9-5h84tJE87OdDug" />
+      <outline type="rss" text="Madeline Brandt" title="Madeline Brandt" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSLl88C1v7xJHrgp-1dd68g" />
+      <outline type="rss" text="Magistralis Mens" title="Magistralis Mens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzsyus0BgVkQvCWu-iWwh1Q" />
+      <outline type="rss" text="maike born" title="maike born" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8uQ-h8IsykPW_4szHW8E3g" />
+      <outline type="rss" text="Make With Miles" title="Make With Miles" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQJQB-ij7HNYKCyNdi0Y--Q" />
+      <outline type="rss" text="MAKiT" title="MAKiT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzMG6kp_D-r1RIkiLzV847A" />
+      <outline type="rss" text="Marcello Dario Cerroni" title="Marcello Dario Cerroni" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCANRkcoSeqyJrD49RxpYiPQ" />
+      <outline type="rss" text="Marius Furter" title="Marius Furter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXdOGwYxJJZxbGBk02z5vVw" />
+      <outline type="rss" text="Mark The Hammer" title="Mark The Hammer" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYcXk-yEg9LgyAPm7mpIs-g" />
+      <outline type="rss" text="Martin Trifonov" title="Martin Trifonov" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJJw16zbMonJ72P9-hMG9qQ" />
+      <outline type="rss" text="Massimo Polidoro" title="Massimo Polidoro" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSKSPISyIsexROCyKZLkD9w" />
+      <outline type="rss" text="Mat Neth" title="Mat Neth" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPu1iG0B4uSn-jFM1aowk9g" />
+      <outline type="rss" text="Matemagica" title="Matemagica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdZkApXe4-VpzcOfvKzRi6w" />
+      <outline type="rss" text="Matematica" title="Matematica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjY5N4tX0tj7WYdOr-nmABw" />
+      <outline type="rss" text="Matematica tranquilla" title="Matematica tranquilla" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpfJvJZI5vEfqaloIduKHHQ" />
+      <outline type="rss" text="matematichiamo" title="matematichiamo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1AjW1sZHA3ISTrv9Ad3huQ" />
+      <outline type="rss" text="Math at Andrews University" title="Math at Andrews University" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfH0JZ7wVrJBeVUZl6vkvgw" />
+      <outline type="rss" text="Math For Life" title="Math For Life" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP-ZCMz7olJPUI78b_bQrvQ" />
+      <outline type="rss" text="Math in Action" title="Math in Action" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_7scteprrKFC3280b3Mrqw" />
+      <outline type="rss" text="Math Shortcuts" title="Math Shortcuts" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnbLrwLCsgxPSO2zepWNlgQ" />
+      <outline type="rss" text="Math Travel" title="Math Travel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9VVIpiTlX8DBeQok-rm6Eg" />
+      <outline type="rss" text="Math with Ming" title="Math with Ming" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCc605luB7EcVs6X9ZvTXwKw" />
+      <outline type="rss" text="MATH-segnale" title="MATH-segnale" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6iWBw4yIWT6ZzdWbCybEA" />
+      <outline type="rss" text="mathantics" title="mathantics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBuMwlP7kHkNxdPAqtFSJTw" />
+      <outline type="rss" text="Mathemaniac" title="Mathemaniac" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrlZs71h3mTR45FgQNINfrg" />
+      <outline type="rss" text="Mathematical Adventures" title="Mathematical Adventures" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXRmNJ0ptXqKjVLL10sKdIw" />
+      <outline type="rss" text="Mathematical Visual Proofs" title="Mathematical Visual Proofs" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCT9Fyqn0izh-wX-wDzKBwAA" />
+      <outline type="rss" text="mathematimpa" title="mathematimpa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgW2GeFYg4UFgRgDxbl8DsQ" />
+      <outline type="rss" text="MathMajor" title="MathMajor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC6Wl-xnWVS9FP0k-Hj5aiw" />
+      <outline type="rss" text="MathMind" title="MathMind" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvHdFi1iENie5GgA1BVaPnQ" />
+      <outline type="rss" text="mathOgenius" title="mathOgenius" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2lYY9pPyl44YyBd3kIEqHA" />
+      <outline type="rss" text="Mathone | Davide Murari" title="Mathone | Davide Murari" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8ABNpo02C6fz40BzddzJ3Q" />
+      <outline type="rss" text="Maths with Jay" title="Maths with Jay" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCD3qmkbrO5ol7mHl3x4ZGBQ" />
+      <outline type="rss" text="MathsLaundry" title="MathsLaundry" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbNVWe-lbLzVQvZMvbwvCWA" />
+      <outline type="rss" text="Matteo Saudino - BarbaSophia" title="Matteo Saudino - BarbaSophia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCczAmcE87UncfJLyrfA2wUA" />
+      <outline type="rss" text="Matthew Salomone" title="Matthew Salomone" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwtNK3_f99g3mqS36OtoO2w" />
+      <outline type="rss" text="MetaMaths" title="MetaMaths" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1FQyAL8cvaK0bR0RfM_fjA" />
+      <outline type="rss" text="Metamorphic" title="Metamorphic" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCX88rH5A6GhGxrlt9aooGcA" />
+      <outline type="rss" text="Michael MJD" title="Michael MJD" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS-WzPVpAAli-1IfEG2lN8A" />
+      <outline type="rss" text="Michael Penn" title="Michael Penn" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6jM0RFkr4eSkzT5Gx0HOAw" />
+      <outline type="rss" text="Michael Sambol" title="Michael Sambol" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzDJwLWoYCUQowF_nG3m5OQ" />
+      <outline type="rss" text="Michele Gavazzeni" title="Michele Gavazzeni" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCn2-xWhqf58GNkNk8cCdeCg" />
+      <outline type="rss" text="MindYourDecisions" title="MindYourDecisions" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnj59g7jezwTy5GeL8EA_g" />
+      <outline type="rss" text="minimalist sibu" title="minimalist sibu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS-Pde9wYof4AS0loCJCksA" />
+      <outline type="rss" text="minutephysics" title="minutephysics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUHW94eEFW7hkUMVaZz4eDg" />
+      <outline type="rss" text="Miolith" title="Miolith" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-HgdoFWtBwl-655rb7Vvdg" />
+      <outline type="rss" text="mmattia" title="mmattia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtnjtnCcPlxvWiepndD5C5w" />
+      <outline type="rss" text="mmi onlineclasses" title="mmi onlineclasses" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmC-l0pw3d9mzgDnrHfzIFw" />
+      <outline type="rss" text="Morphocular" title="Morphocular" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCu7Zwf4X_OQ-TEnou0zdyRA" />
+      <outline type="rss" text="morrolinux" title="morrolinux" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnDDucQDLncrauOCmanCIgw" />
+      <outline type="rss" text="Mr Bean And Teddy Cartoons" title="Mr Bean And Teddy Cartoons" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6TuVzyBZtvrddyV0yVNB1A" />
+      <outline type="rss" text="Mr Bean World" title="Mr Bean World" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzoFjzSkbrDD1GHsz2YNLig" />
+      <outline type="rss" text="Mr. Peka" title="Mr. Peka" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWNX6yGaeD77KKWHKIcTkEg" />
+      <outline type="rss" text="Mu Prime Math" title="Mu Prime Math" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo8T0D8my1Hz5KoHCRYOAnQ" />
+      <outline type="rss" text="Naomi Brockwell TV" title="Naomi Brockwell TV" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSuHzQ3GrHSzoBbwrIq3LLA" />
+      <outline type="rss" text="Narcelune" title="Narcelune" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC4cCa4NfxzCL7xanpxLiO8g" />
+      <outline type="rss" text="Nemean" title="Nemean" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtJPeNYnAXhB1-_h8xbIX_Q" />
+      <outline type="rss" text="NEVER TOO SMALL" title="NEVER TOO SMALL" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_zQ777U6YTyatP3P1wi3xw" />
+      <outline type="rss" text="Nick Houchin" title="Nick Houchin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuyh1JeLOLfxJXJuYBW5uuw" />
+      <outline type="rss" text="Nicole Gress" title="Nicole Gress" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfyZwqSsrMUQ_xhcou6YWjQ" />
+      <outline type="rss" text="Nicolò Balini" title="Nicolò Balini" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjMIGhRExEB-Q6ZyEr1gBeA" />
+      <outline type="rss" text="NiLTime" title="NiLTime" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCASGBz9CIre1P7MQrOaar-Q" />
+      <outline type="rss" text="Nova Lectio" title="Nova Lectio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRCWJCFoZUvkkWzIqzfBy6g" />
+      <outline type="rss" text="Numberphile" title="Numberphile" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCoxcjq-8xIDTYp3uz647V5A" />
+      <outline type="rss" text="Obeythegods" title="Obeythegods" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTKIiRzvUeS9VnDN6juW1mg" />
+      <outline type="rss" text="ohubrismine" title="ohubrismine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC8ZkYcIShqzPQEurjdP0SZA" />
+      <outline type="rss" text="OLIMPIA" title="OLIMPIA" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNte4HqGwvmcYVC49e77ewg" />
+      <outline type="rss" text="Olivia Flanigan" title="Olivia Flanigan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGM0n4-JYN8QYhPu7W8aqGg" />
+      <outline type="rss" text="onionboots" title="onionboots" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ_6yfSYOp98FfDURacHk0Q" />
+      <outline type="rss" text="OptWhiz" title="OptWhiz" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGFhjJI2t75REft9Koxp3rg" />
+      <outline type="rss" text="ORBITS - Luciano Floridi" title="ORBITS - Luciano Floridi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnOMEQUnLJHpFSE5TS9ALyA" />
+      <outline type="rss" text="Oscar" title="Oscar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrz1EgFHSkWpRkS0P-CPSXg" />
+      <outline type="rss" text="Ox educ" title="Ox educ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCkQXyTRPtdbZKcggIozIpyw" />
+      <outline type="rss" text="Pablo Garrido" title="Pablo Garrido" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-wMoXEPNBgGoIUZRm9zyyQ" />
+      <outline type="rss" text="Paolo Alessandrini - Matematica" title="Paolo Alessandrini - Matematica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ5SdBwDMjncYornb4j3NWw" />
+      <outline type="rss" text="Paolo Caressa" title="Paolo Caressa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCC40Patjx3g-aBq485raFOQ" />
+      <outline type="rss" text="Paolo Dall'Aglio" title="Paolo Dall'Aglio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU9r7WwC7I3xPzX2McJdgNQ" />
+      <outline type="rss" text="Paolo Papi" title="Paolo Papi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDknaekHwpg09Brior1qyZA" />
+      <outline type="rss" text="PerArtEM" title="PerArtEM" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5-aMamV_Q5q0SKiFEGchRA" />
+      <outline type="rss" text="pgpolygon" title="pgpolygon" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMBLdOxikrqbfat8PnbpBKA" />
+      <outline type="rss" text="Physics Duck" title="Physics Duck" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCKY_cQekH9AM7oS92nJwyA" />
+      <outline type="rss" text="Physics Tutoring Hub" title="Physics Tutoring Hub" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPoXCNuTGWI7Ew6AM10_Oug" />
+      <outline type="rss" text="Physics Videos by Eugene Khutoryansky" title="Physics Videos by Eugene Khutoryansky" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJ0yBou72Lz9fqeMXh9mkog" />
+      <outline type="rss" text="Physics with Elliot" title="Physics with Elliot" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP3alkHEJhoxTpy3iVON-lg" />
+      <outline type="rss" text="Physics' Mind" title="Physics' Mind" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmohDfdQQQZgpsQeg46-3dg" />
+      <outline type="rss" text="pierbii" title="pierbii" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3h2dpafuScrNGMYiUDwUiQ" />
+      <outline type="rss" text="Piergiorgio Odifreddi" title="Piergiorgio Odifreddi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIFzRzE8ne8_vxdrCm0w_Cg" />
+      <outline type="rss" text="Pinco Pallino" title="Pinco Pallino" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCGnYLkcPyxnfkKwFaBPPZBw" />
+      <outline type="rss" text="Poh’s Studio" title="Poh’s Studio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKHJBJeBqGvng5MpyobBIig" />
+      <outline type="rss" text="Polimi" title="Polimi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpsWnYht0ZrX85Qn0mn7QkQ" />
+      <outline type="rss" text="Polynerdeia" title="Polynerdeia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLQpESkGn5-RwBHT9Gl6ZSA" />
+      <outline type="rss" text="PRAGYAAN" title="PRAGYAAN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrmef-kSIRH8SzCLa89l_xA" />
+      <outline type="rss" text="Prime Newtons" title="Prime Newtons" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ3jbVA0UCuBJfqTWxOb1aQ" />
+      <outline type="rss" text="Probably Optimal" title="Probably Optimal" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCS3IFj-K9il9PKg0CQGwVVg" />
+      <outline type="rss" text="Prof. Andrea Pollini" title="Prof. Andrea Pollini" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0Ia5TK7poHITGYcKv3tlsA" />
+      <outline type="rss" text="Prof. Daniele Coluzzi" title="Prof. Daniele Coluzzi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfcnC5BCn8QYq2hLDi8UqNg" />
+      <outline type="rss" text="Prof. Stirati" title="Prof. Stirati" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2UUR2chVL5P3H4-W1SF70Q" />
+      <outline type="rss" text="Professor Dave Explains" title="Professor Dave Explains" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0cd_-e49hZpWLH3UIwoWRA" />
+      <outline type="rss" text="Professor Macauley" title="Professor Macauley" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCH1cV4RtgI_N97M8jepiUzw" />
+      <outline type="rss" text="professoressa Castaldo" title="professoressa Castaldo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC35mqRnNVkTti7Ywgn9ZxqA" />
+      <outline type="rss" text="Progetto Happiness" title="Progetto Happiness" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCDtBHQGboy9eTvNd_KqfTA" />
+      <outline type="rss" text="Progetto ItaCa" title="Progetto ItaCa" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKdVVjPg_dHhbIiuzLh4Llg" />
+      <outline type="rss" text="ProjectMaria" title="ProjectMaria" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYZjlxANTfoTkK3gr6c3SOw" />
+      <outline type="rss" text="Proof of Concept" title="Proof of Concept" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCFeTHAMU4wPstRNVHlKASBQ" />
+      <outline type="rss" text="Qilin Xue" title="Qilin Xue" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCuTrnVYH4z2urY0emPLvR2g" />
+      <outline type="rss" text="qncubed3" title="qncubed3" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCKzaeoktbf4mq-pzf_AwQvA" />
+      <outline type="rss" text="Quakers In Italy" title="Quakers In Italy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5HDAjdoz-Wu9PAtkYwKQaw" />
+      <outline type="rss" text="Quanta Magazine" title="Quanta Magazine" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCTpmmkp1E4nmZqWPS-dl5bg" />
+      <outline type="rss" text="Quantum Sense" title="Quantum Sense" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjZeJQVSkkydgZmSUucB9kA" />
+      <outline type="rss" text="Quella Pazza di Ipazia" title="Quella Pazza di Ipazia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHOjbFZ-l5y4ZHnzfETq_fQ" />
+      <outline type="rss" text="Qui Matematica" title="Qui Matematica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1gUaOpUJKmy3H_2jA1Q2Jw" />
+      <outline type="rss" text="Qwack" title="Qwack" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwWkwNYphVH0GIVZ2rz1HcQ" />
+      <outline type="rss" text="Random Physics" title="Random Physics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyE9-Zvq3xxWGS5Okf-TWwg" />
+      <outline type="rss" text="RedBeanieMaths" title="RedBeanieMaths" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_IHk5HoauxAo8AHgYQ__UQ" />
+      <outline type="rss" text="Renée Yoxon, Gender-Affirming Voice Teacher" title="Renée Yoxon, Gender-Affirming Voice Teacher" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2Bo7E-3lSG2LIEsgvC8wbg" />
+      <outline type="rss" text="Reumi's world" title="Reumi's world" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1s7X_WTiLsWvz4oxYgS0Ug" />
+      <outline type="rss" text="RH" title="RH" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmtelDcX6c-xSTyX6btx0Cw" />
+      <outline type="rss" text="Riccardo Palombo" title="Riccardo Palombo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIdYIrInVnUwHVbogLj6bqA" />
+      <outline type="rss" text="Richard E Borcherds" title="Richard E Borcherds" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIyDqfi_cbkp-RU20aBF-MQ" />
+      <outline type="rss" text="Richard Southwell" title="Richard Southwell" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHAtzWEoegu7Z5zEVzjOM_Q" />
+      <outline type="rss" text="RichardHTT" title="RichardHTT" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCg8voSgQr0OkF3mMj7HmHGQ" />
+      <outline type="rss" text="Roberto Mercadini" title="Roberto Mercadini" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCdoAFxCSeY94Wv2WWuNCng" />
+      <outline type="rss" text="Rohtu" title="Rohtu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-xeJc-mm7IR59fYy3sre_g" />
+      <outline type="rss" text="Runi" title="Runi" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvYCMicLA7TZNfYhOaSCOsw" />
+      <outline type="rss" text="Sacri Cuori Channel" title="Sacri Cuori Channel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpp7l7gkZXbog0qbZe-_4cQ" />
+      <outline type="rss" text="Salar" title="Salar" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2aJ6Xr170KRjxK9K7F1Xmg" />
+      <outline type="rss" text="Salvatore Sanfilippo" title="Salvatore Sanfilippo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDDG9vOcmgwlslJJpCWjqOg" />
+      <outline type="rss" text="Salvo Romeo" title="Salvo Romeo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgNxjFh5CIztINAEYWBkZXA" />
+      <outline type="rss" text="Sam Levey" title="Sam Levey" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdU9enLncyTiITtiiiErtVA" />
+      <outline type="rss" text="Saultoons" title="Saultoons" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMLJ_TROV89ll587opuuY4w" />
+      <outline type="rss" text="Scherzi da prete" title="Scherzi da prete" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNjerHVBE2HmYltEOYOiy8Q" />
+      <outline type="rss" text="Schiume" title="Schiume" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAim8GmJRCuZsxr7vMaddfg" />
+      <outline type="rss" text="Scorribande Filosofiche - Canale didattico" title="Scorribande Filosofiche - Canale didattico" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWWDw9BfameH5OmgTqIglSg" />
+      <outline type="rss" text="Scott Yu-Jan" title="Scott Yu-Jan" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCAbAsEZ-0LccTNbl8r-3EaQ" />
+      <outline type="rss" text="scrip" title="scrip" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_2OzUw2mnLmlqFEzNzzUjw" />
+      <outline type="rss" text="Scuola Normale Superiore" title="Scuola Normale Superiore" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCaTK_MP4BC2_MvXx2xlj7kg" />
+      <outline type="rss" text="Semiosfera – Semiotica, testi, culture" title="Semiosfera – Semiotica, testi, culture" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UClBwvLxkw8H2y6LDS0VEW2g" />
+      <outline type="rss" text="semiquaver" title="semiquaver" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgnLSszuaZcuUdCr86S2QCQ" />
+      <outline type="rss" text="semiscapes" title="semiscapes" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYrGLJhSk6lyfFPQghIKVaQ" />
+      <outline type="rss" text="Serpentine Integral" title="Serpentine Integral" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCo-H6EyTbD-7inMwW70QdtA" />
+      <outline type="rss" text="Sforzato" title="Sforzato" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC23y1Bf9J_E51e4EQnbHOqw" />
+      <outline type="rss" text="Sheldon Axler" title="Sheldon Axler" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtHp0WNe3OaSXAr1C_Oi0AQ" />
+      <outline type="rss" text="Shikarte" title="Shikarte" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCr8S5GkFfKBUTjPn6gYUY6Q" />
+      <outline type="rss" text="Sholto David" title="Sholto David" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUWRBES836QDNDT5jiIIj1A" />
+      <outline type="rss" text="simone coco" title="simone coco" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCMpHheeygOop1EOPPd0ZBag" />
+      <outline type="rss" text="Singgeek" title="Singgeek" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCs7XWnCjUFKtfAi_DlL7m6w" />
+      <outline type="rss" text="SMTOWN" title="SMTOWN" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCEf_Bc-KVd7onSeifS3py9g" />
+      <outline type="rss" text="Società Italiana di Storia delle Matematiche" title="Società Italiana di Storia delle Matematiche" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UChdpQ5HlEZYzwjpTwxcMcPA" />
+      <outline type="rss" text="Socratica" title="Socratica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCW6TXMZ5Pq6yL6_k5NZ2e0Q" />
+      <outline type="rss" text="soiboi soft" title="soiboi soft" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRsSVa7zu3l5e0CI3j14NrA" />
+      <outline type="rss" text="Sono un Caos di Acquario!" title="Sono un Caos di Acquario!" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXNxCPKETR0xlGnUCNZi04w" />
+      <outline type="rss" text="Spazi Attorcigliati | Davide De Biasio" title="Spazi Attorcigliati | Davide De Biasio" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiuphe0ieLa8YQ93wGJTb0Q" />
+      <outline type="rss" text="SpinnIt" title="SpinnIt" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCul6k2obsh85y2V0fA0fcmA" />
+      <outline type="rss" text="Stanford" title="Stanford" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC-EnprmCZ3OXyAoG7vjVNCA" />
+      <outline type="rss" text="Step by Step - Curiosità di Scienza" title="Step by Step - Curiosità di Scienza" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5WebUzNxhLXeClZhpytrIg" />
+      <outline type="rss" text="Step by Step - Fisica e Mate" title="Step by Step - Fisica e Mate" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCqbtBPwUuEhxvUtHGDumXkQ" />
+      <outline type="rss" text="Steve Brunton" title="Steve Brunton" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCm5mt-A4w61lknZ9lCsZtBw" />
+      <outline type="rss" text="Supreme Value" title="Supreme Value" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJpPsisHCCMHxEHZz8pcpXg" />
+      <outline type="rss" text="Switchaboo" title="Switchaboo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7uzqwJMX0ijebKPOC53VLw" />
+      <outline type="rss" text="sys128" title="sys128" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWaEPINutt-wn0hBhfxzNDQ" />
+      <outline type="rss" text="TAKASHii" title="TAKASHii" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPSx50w7WavmAXmYowlhNWQ" />
+      <outline type="rss" text="Taran Knutson" title="Taran Knutson" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCgLG8qUwgacWiMw2a870vRw" />
+      <outline type="rss" text="Taylor Dupuy" title="Taylor Dupuy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHWnZ1NtJ4WvE5AHmNVXziw" />
+      <outline type="rss" text="tazoh" title="tazoh" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2trYjcNvLq2KW9gIo9lUIA" />
+      <outline type="rss" text="TechDale" title="TechDale" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUTpKHPxgPL7q2PxQht5R0w" />
+      <outline type="rss" text="Tenebrae Choir" title="Tenebrae Choir" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCl-WbRCwODSd2BRQSxJcq2g" />
+      <outline type="rss" text="texplains" title="texplains" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1WVGAwVdSwrcEtDJjLR6lQ" />
+      <outline type="rss" text="ThatMathThing" title="ThatMathThing" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCNtOZ1eR5LUzu5DS_dGrxdw" />
+      <outline type="rss" text="The Bright Side of Mathematics" title="The Bright Side of Mathematics" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCdwo4k1RQHTcq_-WS7Cazqg" />
+      <outline type="rss" text="The Delta Instinct" title="The Delta Instinct" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDt0Nk5xpqXV9qraJxMpdYw" />
+      <outline type="rss" text="The Honest Torus" title="The Honest Torus" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpGPq70Csdqhc1YCbJWQrJQ" />
+      <outline type="rss" text="the Penguin Lectures on Mechanical Engineering" title="the Penguin Lectures on Mechanical Engineering" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7nmqPE7O_IX0n01wJU8AZA" />
+      <outline type="rss" text="THE PILLOW" title="THE PILLOW" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCLmrzwjR8yDW6ZYS3ILmroQ" />
+      <outline type="rss" text="The Stache Chronicles" title="The Stache Chronicles" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCIr4RbR-ktVM3LYYHhyR96w" />
+      <outline type="rss" text="The Underlying Math" title="The Underlying Math" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCfzRBHxnv2OR4Zo9SAZFNhA" />
+      <outline type="rss" text="The Unqualified Tutor" title="The Unqualified Tutor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC39VnEdRvgJmIKBDdmj0dIQ" />
+      <outline type="rss" text="TheGrayCuber" title="TheGrayCuber" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJZt93WO-evfsfi7YlVmrQA" />
+      <outline type="rss" text="TheHeadlessIndian" title="TheHeadlessIndian" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCU6VH043AhJv_rapxJZC_1Q" />
+      <outline type="rss" text="TheUltraMineyCrafter" title="TheUltraMineyCrafter" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCCQtTbGHm_fP124828E4DAQ" />
+      <outline type="rss" text="Thomas Kern" title="Thomas Kern" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5Zta21nuKTky9efBH_cTOQ" />
+      <outline type="rss" text="TI VA DI GIAPPARE? - giapponese per tutti" title="TI VA DI GIAPPARE? - giapponese per tutti" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBzduaAemsuVr_lavruHLmQ" />
+      <outline type="rss" text="Tibees" title="Tibees" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC52kszkc08-acFOuogFl5jw" />
+      <outline type="rss" text="Tokyo Lens" title="Tokyo Lens" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCnrVURWNd7VYjlQQ0UDpOQQ" />
+      <outline type="rss" text="Tom Rocks Maths" title="Tom Rocks Maths" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCRfo-DAifrP3lzcxUHtGm_A" />
+      <outline type="rss" text="TransVoiceLessons" title="TransVoiceLessons" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCBYlEnfAUbrYSwF0VujcmHA" />
+      <outline type="rss" text="tutto sulla matematica" title="tutto sulla matematica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCtVw-hy7rC1nAn6moFq0eRA" />
+      <outline type="rss" text="UniHelp" title="UniHelp" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCmDpzlVjD2jT8KAXJHOEDJA" />
+      <outline type="rss" text="unwiredo" title="unwiredo" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCXNN78kCwoCH1bPbbvcy8JQ" />
+      <outline type="rss" text="Urban Planner Explained" title="Urban Planner Explained" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQdI1zYa-0MvrGpCPNYj2CA" />
+      <outline type="rss" text="Utrecht Geometry Centre" title="Utrecht Geometry Centre" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjSaKppoeEGVphg5jPvIZAQ" />
+      <outline type="rss" text="Valen Feldmann" title="Valen Feldmann" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJLfZ6vJ-A6xo78rA3d9SlA" />
+      <outline type="rss" text="Valerio Pattaro - Fisica Matematica Logica" title="Valerio Pattaro - Fisica Matematica Logica" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxBa4j4NZnhA4fVgNKpsGYw" />
+      <outline type="rss" text="Vasco Calzia" title="Vasco Calzia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCcQOFvFHhqlI289utz5nO2Q" />
+      <outline type="rss" text="Vassalli di Barbero (ORIGINALS)" title="Vassalli di Barbero (ORIGINALS)" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCzrNebaJySYxAL9HNhw1MMQ" />
+      <outline type="rss" text="vcubingx" title="vcubingx" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv0nF8zWevEsSVcmz6mlw6A" />
+      <outline type="rss" text="Vector7" title="Vector7" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC2fsZZ5mJxsma5IJHFziULg" />
+      <outline type="rss" text="Veritasium" title="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" />
+      <outline type="rss" text="Veronica Paolucci - Cybersecurity Specialist" title="Veronica Paolucci - Cybersecurity Specialist" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCseOb7g4O_yPCXhp4RT3R2A" />
+      <outline type="rss" text="Video DIAG - Sapienza, Università di Roma" title="Video DIAG - Sapienza, Università di Roma" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCbaID7wz_ATPrddPkYlVK1w" />
+      <outline type="rss" text="Videobigini Letteratura Italiana" title="Videobigini Letteratura Italiana" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDVpYHzB4vQV2EoEZ-vm3Ug" />
+      <outline type="rss" text="Visual Kernel" title="Visual Kernel" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9Cz481L3CeYm-ZqwqevCPQ" />
+      <outline type="rss" text="VisualMath" title="VisualMath" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC7wuTzExlC6RDhCjmNdd4Hw" />
+      <outline type="rss" text="Vito Lo Re" title="Vito Lo Re" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCjGLjL_w-86wPVh5k5Qc7ug" />
+      <outline type="rss" text="Voyager" title="Voyager" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCrNoCQDcS2-0KIz5KLCm4Yg" />
+      <outline type="rss" text="Vsauce" title="Vsauce" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA" />
+      <outline type="rss" text="Václav Volhejn" title="Václav Volhejn" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCa7aFvWrjx-dvizHXltYxeg" />
+      <outline type="rss" text="webgoatguy" title="webgoatguy" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCELZxrNO67zAfUQWdVU8XPw" />
+      <outline type="rss" text="What is Math?" title="What is Math?" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCiCI74BPvQy23KkkhPaOwEg" />
+      <outline type="rss" text="White Whale Cafe - Eugenio Radin" title="White Whale Cafe - Eugenio Radin" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCq5Gl3kXA6GCyxdKOnqHCuA" />
+      <outline type="rss" text="WHYB maths" title="WHYB maths" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC9bTwyZMt5HxScZ5f7BT34Q" />
+      <outline type="rss" text="WikiWikipedia" title="WikiWikipedia" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC1XfNbMigDEQHxUKjQhrDqw" />
+      <outline type="rss" text="Wisdom237 - Maths Phyiques Info" title="Wisdom237 - Maths Phyiques Info" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHrvIrwxMSM7ThmqBICJaFQ" />
+      <outline type="rss" text="Wrath of Math" title="Wrath of Math" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyEKvaxi8mt9FMc62MHcliw" />
+      <outline type="rss" text="xForts EX" title="xForts EX" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCUj7QxY_mdLT5DWjtiXfvgg" />
+      <outline type="rss" text="XYZ" title="XYZ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC3U5mSh68WDHgK-3T8N6ofw" />
+      <outline type="rss" text="YouPhysics - Loris Fato" title="YouPhysics - Loris Fato" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC6Xu56XrRVA9ZLFXhQoNHbw" />
+      <outline type="rss" text="YouSciences by GIUX" title="YouSciences by GIUX" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDRadC4ba9hPE9E7KFLap0A" />
+      <outline type="rss" text="Zach Star" title="Zach Star" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCpCSAcbqs-sjEVfk_hMfY9w" />
+      <outline type="rss" text="zachy.mp4" title="zachy.mp4" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCJs02msGk9o-tEdlXFB38DA" />
+      <outline type="rss" text="zamzawed" title="zamzawed" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCVjT2Ca341A4BfnPUCrl84A" />
+      <outline type="rss" text="Zundamon's Theorem" title="Zundamon's Theorem" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC0QsIj9Ay0tWBT-aedecraw" />
+      <outline type="rss" text="ミニマリストしぶ" title="ミニマリストしぶ" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCWVO0OICQ1Q-8JBr_3hGKPw" />
+    </outline>
+    <outline text="Culture" title="Culture">
+      <outline type="rss" text="accademiadellacrusca.it" title="accademiadellacrusca.it" xmlUrl="https://accademiadellacrusca.it/" />
+      <outline type="rss" text="AppleZein.net" title="AppleZein.net" xmlUrl="https://www.applezein.net/feed" />
+      <outline type="rss" text="Cosa sto leggendo, cosa sto vedendo, a cosa sto pensando" title="Cosa sto leggendo, cosa sto vedendo, a cosa sto pensando" xmlUrl="https://scrip.substack.com/feed" />
+      <outline type="rss" text="Cultura" title="Cultura" xmlUrl="https://theundergroundmagazine.wordpress.com/category/cultura/feed" />
+      <outline type="rss" text="David Bessis" title="David Bessis" xmlUrl="https://davidbessis.substack.com/feed" />
+      <outline type="rss" text="Etymonline" title="Etymonline" xmlUrl="https://www.etymonline.com/feed/columns.xml" />
+      <outline type="rss" text="Femminismi | La newsletter di Anna Menale" title="Femminismi | La newsletter di Anna Menale" xmlUrl="https://femminismi.substack.com/feed" />
+      <outline type="rss" text="Filosofemme" title="Filosofemme" xmlUrl="https://www.filosofemme.it/feed" />
+      <outline type="rss" text="herfuturestem.org" title="herfuturestem.org" xmlUrl="https://herfuturestem.org/" />
+      <outline type="rss" text="Il Superuovo" title="Il Superuovo" xmlUrl="https://www.ilsuperuovo.it/feed" />
+      <outline type="rss" text="Il Tascabile" title="Il Tascabile" xmlUrl="https://www.iltascabile.com/feed" />
+      <outline type="rss" text="Language Log" title="Language Log" xmlUrl="https://languagelog.ldc.upenn.edu/nll/?feed=rss2" />
+      <outline type="rss" text="Maddmaths!" title="Maddmaths!" xmlUrl="https://maddmaths.simai.eu/feed/" />
+      <outline type="rss" text="NormaleNews on the web" title="NormaleNews on the web" xmlUrl="https://normalenews.sns.it/rss.xml" />
+      <outline type="rss" text="Prisma Magazine" title="Prisma Magazine" xmlUrl="https://www.prismamagazine.it/feed" />
+      <outline type="rss" text="Prisma magazine newsletter" title="Prisma magazine newsletter" xmlUrl="https://kill-the-newsletter.com/feeds/nvp9wwfvr60zvryrv5sd.xml" />
+      <outline type="rss" text="Studia Humanitatis – παιδεία" title="Studia Humanitatis – παιδεία" xmlUrl="https://studiahumanitatispaideia.wordpress.com/feed" />
+      <outline type="rss" text="The Etymology Nerd" title="The Etymology Nerd" xmlUrl="https://etymology.substack.com/feed" />
+      <outline type="rss" text="Tofugu" title="Tofugu" xmlUrl="https://www.tofugu.com/feed.xml" />
+      <outline type="rss" text="unaparolaalgiorno.it" title="unaparolaalgiorno.it" xmlUrl="https://unaparolaalgiorno.it/" />
+      <outline type="rss" text="UPAG" title="UPAG" xmlUrl="https://kill-the-newsletter.com/feeds/thri1kbw6fnn8s4boob6.xml" />
+      <outline type="rss" text="White Whale Cafe" title="White Whale Cafe" xmlUrl="https://whitewhalecafe.substack.com/feed" />
+      <outline type="rss" text="Women's History Network" title="Women's History Network" xmlUrl="https://womenshistorynetwork.org/feed" />
+      <outline type="rss" text="www.feministstudies.org" title="www.feministstudies.org" xmlUrl="https://www.feministstudies.org/home.html" />
+      <outline type="rss" text="www.ladyscience.com" title="www.ladyscience.com" xmlUrl="https://www.ladyscience.com/" />
+      <outline type="rss" text="www.lgbtmath.org" title="www.lgbtmath.org" xmlUrl="https://www.lgbtmath.org/" />
+      <outline type="rss" text="www.treccani.it" title="www.treccani.it" xmlUrl="https://www.treccani.it/" />
+    </outline>
+    <outline text="Software" title="Software">
+      <outline type="rss" text="Release notes from android-keyboard" title="Release notes from android-keyboard" xmlUrl="https://github.com/futo-org/android-keyboard/releases.atom" />
+      <outline type="rss" text="Release notes from Droidrops" title="Release notes from Droidrops" xmlUrl="https://github.com/thekester/Droidrops/releases.atom" />
+      <outline type="rss" text="Release notes from feed-flow" title="Release notes from feed-flow" xmlUrl="https://github.com/prof18/feed-flow/releases.atom" />
+      <outline type="rss" text="Release notes from florisboard" title="Release notes from florisboard" xmlUrl="https://github.com/florisboard/florisboard/releases.atom" />
+      <outline type="rss" text="Release notes from kill-the-newsletter" title="Release notes from kill-the-newsletter" xmlUrl="https://github.com/leafac/kill-the-newsletter/releases.atom" />
+      <outline type="rss" text="Release notes from localsend" title="Release notes from localsend" xmlUrl="https://github.com/localsend/localsend/releases.atom" />
+      <outline type="rss" text="Release notes from uBlock" title="Release notes from uBlock" xmlUrl="https://github.com/gorhill/uBlock/releases.atom" />
+      <outline type="rss" text="Waterfox" title="Waterfox" xmlUrl="https://www.waterfox.com/rss.xml" />
+    </outline>
+    <outline text="Mathematics" title="Mathematics">
+      <outline type="rss" text="" title="" xmlUrl="https://blogs.ams.org/mathmamas/feed" />
+      <outline type="rss" text="AMS News" title="AMS News" xmlUrl="https://www.ams.org/cgi-bin/content/news_items.cgi?rss=1" />
+      <outline type="rss" text="Column on Teaching and Learning" title="Column on Teaching and Learning" xmlUrl="https://mathvoices.ams.org/teachingandlearning/feed/" />
+      <outline type="rss" text="Contemporary Mathematics New Releases" title="Contemporary Mathematics New Releases" xmlUrl="https://www.ams.org/rss/conm.rss" />
+      <outline type="rss" text="EMS | News" title="EMS | News" xmlUrl="https://euromathsoc.org/news/feed/atom" />
+      <outline type="rss" text="Feature Column" title="Feature Column" xmlUrl="https://mathvoices.ams.org/featurecolumn/feed" />
+      <outline type="rss" text="GeCo GeDi Events" title="GeCo GeDi Events" xmlUrl="https://gecogedi.eu/events/rss.xml" />
+      <outline type="rss" text="icerm.brown.edu" title="icerm.brown.edu" xmlUrl="https://icerm.brown.edu/" />
+      <outline type="rss" text="Images des mathématiques" title="Images des mathématiques" xmlUrl="https://images.math.cnrs.fr/feed" />
+      <outline type="rss" text="MaddMaths!’s Substack" title="MaddMaths!’s Substack" xmlUrl="https://maddmaths.substack.com/feed" />
+      <outline type="rss" text="Math in the Media" title="Math in the Media" xmlUrl="https://mathvoices.ams.org/mathmedia/feed/" />
+      <outline type="rss" text="Mathematical Institute" title="Mathematical Institute" xmlUrl="https://www.maths.ox.ac.uk/rss.xml" />
+      <outline type="rss" text="Mathematical Moments from the American Mathematical Society" title="Mathematical Moments from the American Mathematical Society" xmlUrl="https://www.ams.org/rss/mathmoments.rss" />
+      <outline type="rss" text="Mathematics – Quanta Magazine" title="Mathematics – Quanta Magazine" xmlUrl="https://www.quantamagazine.org/mathematics/feed" />
+      <outline type="rss" text="Science — Mathematics | Aeon" title="Science — Mathematics | Aeon" xmlUrl="https://aeon.co/science/mathematics/feed.rss" />
+      <outline type="rss" text="What's new" title="What's new" xmlUrl="https://terrytao.wordpress.com/feed" />
+      <outline type="rss" text="xkcd.com" title="xkcd.com" xmlUrl="https://xkcd.com/rss.xml" />
+    </outline>
+    <outline text="News" title="News">
+      <outline type="rss" text="bibliotecheguidoniamontecelio - Instagram" title="bibliotecheguidoniamontecelio - Instagram" xmlUrl="https://rss-bridge.org/bridge01/?action=display&amp;bridge=InstagramBridge&amp;context=Username&amp;u=bibliotecheguidoniamontecelio&amp;media_type=all&amp;format=Atom" />
+      <outline type="rss" text="bollettino_criticita" title="bollettino_criticita" xmlUrl="https://api.protezionecivile.it/default/dpcPortalGenerateRss?categoria=bollettino_criticita" />
+      <outline type="rss" text="bollettino_vigilanza" title="bollettino_vigilanza" xmlUrl="https://api.protezionecivile.it/default/dpcPortalGenerateRss?categoria=bollettino_vigilanza" />
+      <outline type="rss" text="Città di Guidonia Montecelio" title="Città di Guidonia Montecelio" xmlUrl="https://www.comune.guidoniamontecelio.rm.it/rss.xml" />
+      <outline type="rss" text="Città di Guidonia Montecelio - Telegram Channel" title="Città di Guidonia Montecelio - Telegram Channel" xmlUrl="https://rsshub.rssforever.com/telegram/channel/cittadiguidoniamontecelio" />
+      <outline type="rss" text="Città di Guidonia Montecelio on Facebook" title="Città di Guidonia Montecelio on Facebook" xmlUrl="https://fetchrss.com/feed/1x3urx0rb6pI1x3uqpDi3CrC.rss" />
+      <outline type="rss" text="comunicato_stampa" title="comunicato_stampa" xmlUrl="https://api.protezionecivile.it/default/dpcPortalGenerateRss?categoria=comunicato_stampa" />
+      <outline type="rss" text="Guidonia Montecelio Domani - Telegram Channel" title="Guidonia Montecelio Domani - Telegram Channel" xmlUrl="https://rsshub.rssforever.com/telegram/channel/GuidoniaDomani" />
+      <outline type="rss" text="Il Post" title="Il Post" xmlUrl="https://www.ilpost.it/feed" />
+      <outline type="rss" text="Notizie" title="Notizie" xmlUrl="https://comune.guidoniamontecelio.rm.it/taxonomy/term/63/feed" />
+      <outline type="rss" text="ORA" title="ORA" xmlUrl="https://ora-italia.it/feed" />
+      <outline type="rss" text="RomaToday" title="RomaToday" xmlUrl="https://www.romatoday.it/rss" />
+      <outline type="rss" text="Tiburno Tv" title="Tiburno Tv" xmlUrl="https://tiburno.tv/feed/" />
+      <outline type="rss" text="www.cnr.it" title="www.cnr.it" xmlUrl="https://www.cnr.it/it/rss" />
+      <outline type="rss" text="www.governo.it" title="www.governo.it" xmlUrl="https://www.governo.it/rss/comunicati-stampa" />
+      <outline type="rss" text="www.mim.gov.it" title="www.mim.gov.it" xmlUrl="https://www.mim.gov.it/web/guest/concorsi" />
+      <outline type="rss" text="www.miur.gov.it" title="www.miur.gov.it" xmlUrl="https://www.miur.gov.it/" />
+      <outline type="rss" text="www.mur.gov.it" title="www.mur.gov.it" xmlUrl="https://www.mur.gov.it/it/rss" />
+      <outline type="rss" text="www.partitocapibara.it" title="www.partitocapibara.it" xmlUrl="https://www.partitocapibara.it/it" />
+    </outline>
+    <outline text="Transportation" title="Transportation">
+      <outline type="rss" text="cotralspa.it" title="cotralspa.it" xmlUrl="https://cotralspa.it/" />
+      <outline type="rss" text="RFI - NOTIZIE E DOCUMENTI - Comunicati stampa e news Lazio" title="RFI - NOTIZIE E DOCUMENTI - Comunicati stampa e news Lazio" xmlUrl="https://www.rfi.it/content/rfi/it/news-e-media/comunicati-stampa-e-news.rss.type.news.areas.lazio.xml" />
+      <outline type="rss" text="RFI - NOTIZIE E DOCUMENTI - NEWS Infomobilità Lazio" title="RFI - NOTIZIE E DOCUMENTI - NEWS Infomobilità Lazio" xmlUrl="https://www.rfi.it/content/rfi/it/news-e-media/infomobilita.rss.updates.lazio.xml" />
+      <outline type="rss" text="RFI - NOTIZIE E DOCUMENTI - NEWS Infomobilità Lazio" title="RFI - NOTIZIE E DOCUMENTI - NEWS Infomobilità Lazio" xmlUrl="https://www.rfi.it/content/rfi/it/news-e-media/infomobilita.rss.notices.lazio.xml" />
+      <outline type="rss" text="www.atac.roma.it" title="www.atac.roma.it" xmlUrl="https://www.atac.roma.it/feeds/lo-stato-del-servizio-in-tempo-reale" />
+      <outline type="rss" text="www.atac.roma.it" title="www.atac.roma.it" xmlUrl="https://www.atac.roma.it/notizie/avvisi-e-informazioni-per-il-viaggio" />
+      <outline type="rss" text="www.cotralspa.it" title="www.cotralspa.it" xmlUrl="https://www.cotralspa.it/category/avvisi/" />
+      <outline type="rss" text="www.regione.lazio.it" title="www.regione.lazio.it" xmlUrl="https://www.regione.lazio.it/feed/" />
+    </outline>
+  </body>
+</opml>
