@@ -198,102 +198,115 @@
             </table>
         </section>
 
-        <!-- TAPPA 3: ATAC - ORARI TUTTA LA GIORNATA -->
-        <section class="section-card">
-            <div class="section-header">
-                <div>
-                    <div class="section-title">
-                        <span>3. ATAC Roma</span>
-                        <span class="badge">Bus / Tram</span>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                        Orari Partenze da Stazione Tiburtina ➔ Verano / Università (Intera Giornata)
-                    </p>
-                </div>
-                <a id="atac-direct-link" href="https://viaggiacon.atac.roma.it/" target="_blank" rel="noopener" class="direct-btn">ViaggiaCon ATAC ↗</a>
+       <!-- TAPPA 3: ATAC -->
+<section class="section-card">
+    <div class="section-header">
+        <div>
+            <div class="section-title">
+                <span>3. ATAC Roma</span>
+                <span class="badge">Bus / Tram</span>
             </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                Partenze Ufficiali da Stazione Tiburtina ➔ Verano / Università
+            </p>
+        </div>
+        <a id="atac-direct-link" href="https://viaggiacon.atac.roma.it/" target="_blank" rel="noopener" class="direct-btn">ViaggiaCon ATAC ↗</a>
+    </div>
 
-            <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Seleziona linea:</p>
-            <div class="lines-list">
-                <button type="button" class="line-btn active" onclick="showAtacLine('492', this)">492</button>
-                <button type="button" class="line-btn" onclick="showAtacLine('163', this)">163</button>
-                <button type="button" class="line-btn" onclick="showAtacLine('545', this)">545</button>
-                <button type="button" class="line-btn" onclick="showAtacLine('71', this)">71</button>
-            </div>
+    <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Seleziona linea:</p>
+    <div class="lines-list">
+        <button type="button" class="line-btn active" onclick="showAtacLine('492', this)">492</button>
+        <button type="button" class="line-btn" onclick="showAtacLine('163', this)">163</button>
+        <button type="button" class="line-btn" onclick="showAtacLine('545', this)">545</button>
+        <button type="button" class="line-btn" onclick="showAtacLine('71', this)">71</button>
+    </div>
 
-            <p id="line-info-meta" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;"></p>
-            
-            <div id="atac-time-grid" class="time-grid">
-                <div style="grid-column: 1/-1; text-align:center; padding:10px;">Caricamento orari...</div>
-            </div>
-        </section>
+    <p id="line-info-meta" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;"></p>
+
+    <!-- Griglia Orari -->
+    <div id="atac-time-grid" class="time-grid">
+        <div style="grid-column: 1/-1; text-align:center; padding:12px; color: var(--text-secondary);">
+            Caricamento orari in corso...
+        </div>
+    </div>
+</section>
 
         <div id="last-update" style="font-size: 0.75rem; color: var(--text-secondary); text-align: right; margin-bottom: 20px;"></div>
     </main>
 
-    <script>
-        let atacDataGlobal = {};
+  <script>
+    let atacDataGlobal = {};
 
-        async function loadData() {
-            try {
-                const res = await fetch('./casa_universita_data.json');
-                const data = await res.json();
+    async function loadData() {
+        try {
+            const res = await fetch('./casa_universita_data.json');
+            const data = await res.json();
 
-                // 1. Render Cotral
-                const cotralBody = document.getElementById('cotral-list');
-                if (data.cotral && data.cotral.length > 0) {
-                    cotralBody.innerHTML = data.cotral.map(c => `
-                        <tr><td style="font-weight:600; color:var(--accent-color);">${c.partenza}</td><td>${c.arrivo}</td></tr>
-                    `).join('');
-                }
-
-                // 2. Render Treni
-                const treniBody = document.getElementById('treni-list');
-                if (data.treni && data.treni.length > 0) {
-                    treniBody.innerHTML = data.treni.map(t => {
-                        const ritardoStr = t.ritardo > 0 ? `<span style="color:#dc2626;">+${t.ritardo}'</span>` : '<span style="color:#16a34a;">In orario</span>';
-                        return `<tr>
-                            <td style="font-weight:600;">${t.numero}</td>
-                            <td>${t.destinazione}</td>
-                            <td>${t.orario}</td>
-                            <td>${ritardoStr}</td>
-                            <td>${t.binario}</td>
-                        </tr>`;
-                    }).join('');
-                }
-
-                // 3. Render ATAC Orari Giornalieri
-                atacDataGlobal = data.atac || {};
-                showAtacLine('492', document.querySelector('.line-btn.active'));
-
-                document.getElementById('last-update').innerText = 'Ultimo aggiornamento orari: ' + data.updated_at;
-
-            } catch (e) {
-                console.error("Errore caricamento dati:", e);
-            }
-        }
-
-        function showAtacLine(linea, btn) {
-            document.querySelectorAll('.line-btn').forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-
-            const grid = document.getElementById('atac-time-grid');
-            const meta = document.getElementById('line-info-meta');
-            const info = atacDataGlobal[linea];
-
-            if (info && info.orari && info.orari.length > 0) {
-                meta.innerText = `Partenze programmate da ${info.capolinea} (Totale corse: ${info.orari.length})`;
-                grid.innerHTML = info.orari.map(ora => `<div class="time-badge">${ora}</div>`).join('');
-            } else {
-                meta.innerText = 'Orari non disponibili';
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:10px;">Nessun orario trovato.</div>';
+            // 1. Render Cotral
+            const cotralBody = document.getElementById('cotral-list');
+            if (data.cotral && data.cotral.length > 0) {
+                cotralBody.innerHTML = data.cotral.map(c => `
+                    <tr><td style="font-weight:600; color:var(--accent-color);">${c.partenza}</td><td>${c.arrivo}</td></tr>
+                `).join('');
             }
 
-            document.getElementById('atac-direct-link').href = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${linea}`;
+            // 2. Render Treni
+            const treniBody = document.getElementById('treni-list');
+            if (data.treni && data.treni.length > 0) {
+                treniBody.innerHTML = data.treni.map(t => {
+                    const ritardoStr = t.ritardo > 0 ? `<span style="color:#dc2626;">+${t.ritardo}'</span>` : '<span style="color:#16a34a;">In orario</span>';
+                    return `<tr>
+                        <td style="font-weight:600;">${t.numero}</td>
+                        <td>${t.destinazione}</td>
+                        <td>${t.orario}</td>
+                        <td>${ritardoStr}</td>
+                        <td>${t.binario}</td>
+                    </tr>`;
+                }).join('');
+            }
+
+            // 3. Render ATAC Orari
+            atacDataGlobal = data.atac || {};
+            // Avvia mostrando la linea 492
+            const activeBtn = document.querySelector('.line-btn.active');
+            showAtacLine('492', activeBtn);
+
+            document.getElementById('last-update').innerText = 'Ultimo aggiornamento orari: ' + data.updated_at;
+
+        } catch (e) {
+            console.error("Errore nel caricamento del file JSON:", e);
+        }
+    }
+
+    function showAtacLine(linea, btnElement) {
+        // Aggiorna classe active dei pulsanti
+        document.querySelectorAll('.line-btn').forEach(b => b.classList.remove('active'));
+        if (btnElement) {
+            btnElement.classList.add('active');
         }
 
-        document.addEventListener('DOMContentLoaded', loadData);
-    </script>
+        const grid = document.getElementById('atac-time-grid');
+        const meta = document.getElementById('line-info-meta');
+        const info = atacDataGlobal[linea];
+
+        if (info && info.orari && info.orari.length > 0) {
+            meta.innerHTML = `<strong>Linea ${linea}:</strong> Partenze da ${info.capolinea} (${info.orari.length} corse estratte)`;
+            grid.innerHTML = info.orari.map(ora => `<div class="time-badge">${ora}</div>`).join('');
+        } else {
+            meta.innerHTML = `<strong>Linea ${linea}:</strong> Dati orari dettagliati non disponibili al momento.`;
+            grid.innerHTML = `
+                <div style="grid-column: 1/-1; text-align:center; padding:16px; color: var(--text-secondary);">
+                    Nessun orario schedulato trovato per la linea ${linea}. Consulta il sito ATAC tramite il pulsante in alto.
+                </div>`;
+        }
+
+        document.getElementById('atac-direct-link').href = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${linea}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', loadData);
+</script>
+
+    
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js');
