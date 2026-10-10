@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#2563eb">
     <title>Casa ➔ Università | Orari</title>
     <style>
         :root {
@@ -19,11 +19,7 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -54,10 +50,7 @@
             gap: 6px;
         }
 
-        .page-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
+        .page-title { font-size: 1.25rem; font-weight: 700; }
 
         .section-card {
             background-color: var(--card-bg);
@@ -105,11 +98,25 @@
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 500;
-            transition: background-color 0.2s;
         }
 
-        .direct-btn:hover {
-            background-color: var(--accent-hover);
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .data-table th, .data-table td {
+            padding: 10px 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .data-table th {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border-color);
         }
 
         .lines-list {
@@ -126,72 +133,13 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--text-primary);
             cursor: pointer;
-            transition: all 0.2s ease;
         }
 
-        .line-btn.active, .line-btn:hover {
+        .line-btn.active {
             background-color: var(--accent-color);
             color: #ffffff;
             border-color: var(--accent-color);
-        }
-
-        /* Contenitori iframe standard */
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: 520px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            background-color: #f1f5f9;
-        }
-
-        .iframe-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Maschera di ritaglio speciale per ATAC */
-        .crop-view {
-            width: 100%;
-            max-width: 400px;
-            height: 520px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            background-color: #ffffff;
-            box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
-        }
-
-        .crop-view iframe {
-            width: 1000px;
-            height: 850px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -48%);
-            border: none;
-        }
-
-        @media (max-width: 600px) {
-            .iframe-container {
-                height: 440px;
-            }
-            .crop-view {
-                height: 460px;
-            }
-            .crop-view iframe {
-                transform: translate(-50%, -48%) scale(0.95);
-            }
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
         }
     </style>
 </head>
@@ -203,7 +151,6 @@
     </header>
 
     <main>
-
         <!-- TAPPA 1: COTRAL -->
         <section class="section-card">
             <div class="section-header">
@@ -216,16 +163,19 @@
                         Viale Roma (Aeroporto) ➔ Colle Fiorito / Stazione FS
                     </p>
                 </div>
-                <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener" class="direct-btn">
-                    Apri Orari Cotral ↗
-                </a>
+                <a href="https://cotralspa.it/ricerca-orari/" target="_blank" rel="noopener" class="direct-btn">Apri Cotral ↗</a>
             </div>
-            <div class="iframe-container">
-                <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Orari Cotral"></iframe>
-            </div>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Partenza</th><th>Arrivo</th></tr>
+                </thead>
+                <tbody id="cotral-list">
+                    <tr><td colspan="2">Caricamento...</td></tr>
+                </tbody>
+            </table>
         </section>
 
-        <!-- TAPPA 2: TRENITALIA / RFI MONITOR -->
+        <!-- TAPPA 2: TRENITALIA / RFI -->
         <section class="section-card">
             <div class="section-header">
                 <div>
@@ -234,16 +184,19 @@
                         <span class="badge">Treno</span>
                     </div>
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                        Tabellone Partenze in Tempo Reale da Guidonia Montecelio
+                        Tabellone Live Partenze da Guidonia Montecelio
                     </p>
                 </div>
-                <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?Arrivals=False&Search=guidonia&PlaceId=3616" target="_blank" rel="noopener" class="direct-btn">
-                    Tabellone Live ↗
-                </a>
+                <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?Arrivals=False&Search=guidonia&PlaceId=3616" target="_blank" rel="noopener" class="direct-btn">Tabellone RFI ↗</a>
             </div>
-            <div class="iframe-container">
-                <iframe src="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?Arrivals=False&Search=guidonia&PlaceId=3616" title="Tabellone Stazione Guidonia Montecelio"></iframe>
-            </div>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Treno</th><th>Destinazione</th><th>Ora</th><th>Ritardo</th><th>Bin.</th></tr>
+                </thead>
+                <tbody id="treni-list">
+                    <tr><td colspan="5">Caricamento...</td></tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- TAPPA 3: ATAC -->
@@ -258,45 +211,90 @@
                         Piazzale Tiburtina ➔ Verano
                     </p>
                 </div>
-                <a id="atac-direct-link" href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=492&pathCode=492A" target="_blank" rel="noopener" class="direct-btn">
-                    Apri su ViaggiaCon ATAC ↗
-                </a>
+                <a id="atac-direct-link" href="https://viaggiacon.atac.roma.it/" target="_blank" rel="noopener" class="direct-btn">ViaggiaCon ATAC ↗</a>
             </div>
 
             <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Seleziona linea:</p>
             <div class="lines-list">
-                <button type="button" class="line-btn active" onclick="switchAtacLine('492', '492A', this)">492</button>
-                <button type="button" class="line-btn" onclick="switchAtacLine('163', '163R', this)">163</button>
-                <button type="button" class="line-btn" onclick="switchAtacLine('545', '545R', this)">545</button>
-                <button type="button" class="line-btn" onclick="switchAtacLine('71', '71A', this)">71</button>
+                <button type="button" class="line-btn active" onclick="showAtacLine('492', this)">492</button>
+                <button type="button" class="line-btn" onclick="showAtacLine('163', this)">163</button>
+                <button type="button" class="line-btn" onclick="showAtacLine('545', this)">545</button>
+                <button type="button" class="line-btn" onclick="showAtacLine('71', this)">71</button>
             </div>
-
-            <!-- Maschera di ritaglio che inquadra solo il popup centrale -->
-            <div class="crop-view">
-                <iframe id="atac-iframe" src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=492&pathCode=492A" title="Viaggia con ATAC"></iframe>
+            <div id="atac-info" style="background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 0.9rem;">
+                Caricamento dati ATAC...
             </div>
         </section>
-
+        
+        <div id="last-update" style="font-size: 0.75rem; color: var(--text-secondary); text-align: right; margin-bottom: 20px;"></div>
     </main>
 
     <script>
-        function switchAtacLine(lineCode, pathCode, btnElement) {
-            const url = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${lineCode}&pathCode=${pathCode}`;
-            
-            // Aggiorna src dell'iframe e del pulsante link diretto
-            document.getElementById('atac-iframe').src = url;
-            document.getElementById('atac-direct-link').href = url;
-            
-            // Aggiorna lo stato visivo dei pulsanti
-            const buttons = document.querySelectorAll('.line-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
+        let atacDataGlobal = {};
+
+        async function loadData() {
+            try {
+                const res = await fetch('./casa_universita_data.json');
+                const data = await res.json();
+
+                // Render Cotral
+                const cotralBody = document.getElementById('cotral-list');
+                if (data.cotral && data.cotral.length > 0) {
+                    cotralBody.innerHTML = data.cotral.map(c => `
+                        <tr><td style="font-weight:600; color:var(--accent-color);">${c.partenza}</td><td>${c.arrivo}</td></tr>
+                    `).join('');
+                } else {
+                    cotralBody.innerHTML = '<tr><td colspan="2">Nessuna corsa programmata disponibile.</td></tr>';
+                }
+
+                // Render Treni
+                const treniBody = document.getElementById('treni-list');
+                if (data.treni && data.treni.length > 0) {
+                    treniBody.innerHTML = data.treni.map(t => {
+                        const ritardoStr = t.ritardo > 0 ? `<span style="color:#dc2626;">+${t.ritardo}'</span>` : '<span style="color:#16a34a;">In orario</span>';
+                        return `<tr>
+                            <td style="font-weight:600;">${t.numero}</td>
+                            <td>${t.destinazione}</td>
+                            <td>${t.orario}</td>
+                            <td>${ritardoStr}</td>
+                            <td>${t.binario}</td>
+                        </tr>`;
+                    }).join('');
+                } else {
+                    treniBody.innerHTML = '<tr><td colspan="5">Nessun treno in partenza al momento.</td></tr>';
+                }
+
+                // Render ATAC
+                atacDataGlobal = data.atac || {};
+                showAtacLine('492', document.querySelector('.line-btn.active'));
+
+                document.getElementById('last-update').innerText = 'Ultimo aggiornamento dati: ' + data.updated_at;
+
+            } catch (e) {
+                document.getElementById('cotral-list').innerHTML = '<tr><td colspan="2">Dati non disponibili offline.</td></tr>';
+            }
+        }
+
+        function showAtacLine(linea, btn) {
+            document.querySelectorAll('.line-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const infoBox = document.getElementById('atac-info');
+            const info = atacDataGlobal[linea];
+            if (info) {
+                infoBox.innerHTML = `<strong>Linea ${linea}:</strong> ${info.stato}<br><span style="color:var(--text-secondary); font-size:0.85rem;">Percorso: ${info.info}</span>`;
+            } else {
+                infoBox.innerHTML = `<strong>Linea ${linea}:</strong> Servizio regolare su P.le Tiburtina ➔ Verano`;
+            }
+            document.getElementById('atac-direct-link').href = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${linea}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
         }
     </script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
 </body>
 </html>
