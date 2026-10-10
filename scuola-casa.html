@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+    <title>Scuola ➔ Casa | Orari</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            background-color: #eff6ff;
+            color: var(--accent-color);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .direct-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .direct-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: #f1f5f9;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .iframe-container {
+                height: 460px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← Torna alle Tratte</a>
+        <h1 class="page-title">Scuola ➔ Casa</h1>
+    </header>
+
+    <main>
+        <section class="section-card">
+    <div class="section-header">
+        <div>
+            <div class="section-title">
+                <span>1. Bus Cotral</span>
+                <span class="badge">Bus Interurbano</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                Bagni di Tivoli (Via Morante / Via Tiburtina) ➔ Guidonia (Viale Roma - Aeroporto)
+            </p>
+        </div>
+        <a href="https://cotralspa.it/ricerca-orari/" target="_blank" rel="noopener" class="direct-btn">
+            Sito Ufficiale Cotral ↗
+        </a>
+    </div>
+
+    <!-- Sezione Avvisi -->
+    <div id="avvisi-box" style="margin-bottom: 16px; display: none;"></div>
+
+    <!-- Tabella Orari -->
+    <div style="overflow-x: auto;">
+        <table id="orari-table" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--border-color); text-align: left; font-size: 0.85rem; color: var(--text-secondary);">
+                    <th style="padding: 8px;">Partenza</th>
+                    <th style="padding: 8px;">Arrivo</th>
+                    <th style="padding: 8px;">Stato</th>
+                </tr>
+            </thead>
+            <tbody id="orari-list">
+                <tr>
+                    <td colspan="3" style="padding: 16px; text-align: center; color: var(--text-secondary);">Caricamento orari...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="last-update" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 12px; text-align: right;"></div>
+</section>
+    </main>
+
+  <script>
+    async function loadCotralData() {
+        try {
+            const response = await fetch('./cotral_data.json');
+            if (!response.ok) throw new Error("Dati non disponibili");
+            const data = await response.json();
+
+            // Render Avvisi
+            const avvisiBox = document.getElementById('avvisi-box');
+            if (data.avvisi && data.avvisi.length > 0) {
+                avvisiBox.style.display = 'block';
+                avvisiBox.innerHTML = data.avvisi.map(a => `
+                    <div style="background-color: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 8px;">
+                        ⚠️ <strong>Avviso:</strong> <a href="${a.link}" target="_blank" style="color: #991b1b; font-weight: 600; text-decoration: underline;">${a.titolo}</a>
+                    </div>
+                `).join('');
+            }
+
+            // Render Orari
+            const tbody = document.getElementById('orari-list');
+            if (data.orari && data.orari.length > 0) {
+                tbody.innerHTML = data.orari.map(o => `
+                    <tr style="border-bottom: 1px solid var(--border-color); font-size: 0.95rem;">
+                        <td style="padding: 10px 8px; font-weight: 600; color: var(--accent-color);">${o.partenza}</td>
+                        <td style="padding: 10px 8px;">${o.arrivo}</td>
+                        <td style="padding: 10px 8px;"><span style="color: #16a34a; font-size: 0.8rem; font-weight: 600;">Programmato</span></td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = '<tr><td colspan="3" style="padding: 16px; text-align: center; color: var(--text-secondary);">Nessuna corsa trovata per la giornata.</td></tr>';
+            }
+
+            // Data aggiornamento
+            document.getElementById('last-update').innerText = 'Aggiornato il: ' + data.updated_at;
+
+        } catch (err) {
+            document.getElementById('orari-list').innerHTML = '<tr><td colspan="3" style="padding: 16px; text-align: center; color: var(--text-secondary);">Impossibile caricare gli orari. Consulta il sito ufficiale.</td></tr>';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCotralData);
+</script>
+
+  
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+  
+</body>
+</html>
