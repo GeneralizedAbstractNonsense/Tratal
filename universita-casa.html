@@ -2,220 +2,371 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#0f172a">
     <title>Università ➔ Casa | Orari</title>
     <style>
         :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --accent-color: #2563eb;
-            --accent-hover: #1d4ed8;
-            --metro-b-color: #00529b;
-            --border-color: #e2e8f0;
-            --radius: 16px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-hover: #f1f5f9;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-subtle: #94a3b8;
+            
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-border: #bfdbfe;
+            --metro-b: #00529b;
+            --metro-b-light: rgba(0, 82, 155, 0.12);
+
+            --success-text: #16a34a;
+            --danger-text: #dc2626;
+            
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            
+            --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
+            --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.06);
+            --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #090d16;
+                --surface: #131b2e;
+                --surface-hover: #1c2742;
+                --border: #1e293b;
+                --border-hover: #334155;
+                
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --text-subtle: #64748b;
+                
+                --primary: #3b82f6;
+                --primary-light: rgba(59, 130, 246, 0.12);
+                --primary-border: rgba(59, 130, 246, 0.3);
+                --metro-b: #38bdf8;
+                --metro-b-light: rgba(56, 189, 248, 0.15);
+
+                --success-text: #4ade80;
+                --danger-text: #f87171;
+                
+                --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.2);
+                --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
+            }
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            font-family: var(--font);
+            background-color: var(--bg);
+            color: var(--text-main);
             line-height: 1.5;
-            padding: 16px;
-            max-width: 900px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px 16px 40px 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Top Navigation Header */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
         }
 
         .back-btn {
             text-decoration: none;
-            color: var(--accent-color);
+            color: var(--text-muted);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.875rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            padding: 8px 12px;
+            border-radius: 9999px;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .back-btn:hover, .back-btn:focus-visible {
+            color: var(--primary);
+            border-color: var(--primary-border);
+            background-color: var(--primary-light);
+            outline: none;
+        }
+
+        .back-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            fill: none;
         }
 
         .page-title {
             font-size: 1.25rem;
             font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
         }
 
-        /* Selettore Percorsi */
-        .route-selector-title {
-            font-size: 0.9rem;
+        /* Route Selector Grid */
+        .selector-section {
+            margin-bottom: 24px;
+        }
+
+        .selector-title {
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
         }
 
         .route-tabs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 10px;
-            margin-bottom: 24px;
         }
 
         .route-tab {
-            background-color: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
             cursor: pointer;
             text-align: left;
-            transition: all 0.2s ease;
-            box-shadow: var(--shadow);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
 
         .route-tab:hover {
-            border-color: var(--accent-color);
+            border-color: var(--border-hover);
         }
 
         .route-tab.active {
-            border-color: var(--accent-color);
-            background-color: #eff6ff;
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
         }
 
-        .route-tab .num {
-            font-size: 0.75rem;
+        .route-tab .opt-tag {
+            font-size: 0.7rem;
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--primary);
             text-transform: uppercase;
-            display: block;
-            margin-bottom: 2px;
+            letter-spacing: 0.05em;
         }
 
-        .route-tab .title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.3;
+        .route-tab .opt-title {
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.35;
         }
 
-        /* Cards Tappe */
+        /* Route Content Transitions */
         .route-content {
             display: none;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .route-content.active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .section-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
+        /* Timeline Step Card */
+        .step-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-subtle);
+            transition: border-color 0.2s ease;
         }
 
-        .section-header {
+        .step-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .step-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 14px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            gap: 12px;
             flex-wrap: wrap;
-            gap: 10px;
         }
 
-        .section-title {
+        .step-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .step-title {
             font-size: 1.05rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid var(--primary-border);
         }
 
         .badge {
-            background-color: #eff6ff;
-            color: var(--accent-color);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.75rem;
+            background-color: var(--bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 0.725rem;
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .badge-metro {
-            background-color: var(--metro-b-color);
-            color: #ffffff;
+            background-color: var(--metro-b-light);
+            color: var(--metro-b);
+            border-color: rgba(0, 82, 155, 0.2);
+        }
+
+        .step-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-left: 36px;
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
         }
 
         .direct-btn {
             display: inline-flex;
             align-items: center;
-            padding: 6px 12px;
-            background-color: var(--accent-color);
-            color: #ffffff;
+            gap: 6px;
+            padding: 8px 14px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid var(--primary-border);
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background-color 0.2s;
-            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.825rem;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: inherit;
         }
 
-        .direct-btn:hover {
-            background-color: var(--accent-hover);
+        .direct-btn:hover, .direct-btn:focus-visible {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .direct-btn svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        /* Line Switcher Pills */
+        .lines-selector {
+            margin-bottom: 16px;
         }
 
         .lines-list {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 14px;
         }
 
         .line-btn {
-            background-color: #f1f5f9;
-            border: 1px solid var(--border-color);
-            padding: 6px 16px;
-            border-radius: 20px;
+            background-color: var(--bg);
+            border: 1px solid var(--border);
+            padding: 6px 18px;
+            border-radius: 9999px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--text-muted);
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: inherit;
         }
 
-        .line-btn.active, .line-btn:hover {
-            background-color: var(--accent-color);
+        .line-btn:hover {
+            border-color: var(--border-hover);
+            color: var(--text-main);
+        }
+
+        .line-btn.active {
+            background-color: var(--primary);
             color: #ffffff;
-            border-color: var(--accent-color);
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
         }
 
-        /* Contenitori iframe & crop */
+        /* Frame & Crop View Containers */
         .iframe-container {
             position: relative;
             width: 100%;
-            height: 520px;
-            border-radius: 12px;
+            height: 500px;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            border: 1px solid var(--border-color);
-            background-color: #f1f5f9;
+            border: 1px solid var(--border);
+            background-color: var(--bg);
         }
 
         .iframe-container iframe {
@@ -226,15 +377,15 @@
 
         .crop-view {
             width: 100%;
-            max-width: 400px;
-            height: 520px;
+            max-width: 440px;
+            height: 500px;
             margin: 0 auto;
             overflow: hidden;
             position: relative;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
             background-color: #ffffff;
-            box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+            box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.04);
         }
 
         .crop-view iframe {
@@ -247,405 +398,481 @@
             border: none;
         }
 
-        /* Tabellone Treni Live */
+        /* Train Live Board Styling */
         .trains-board {
             width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            background-color: #ffffff;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            background-color: var(--surface);
             overflow-x: auto;
-            min-height: 200px;
+            min-height: 180px;
         }
 
         .train-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             text-align: left;
         }
 
         .train-table th {
-            padding: 12px;
-            background-color: #f8fafc;
-            color: var(--text-secondary);
+            padding: 12px 14px;
+            background-color: var(--bg);
+            color: var(--text-muted);
             font-weight: 600;
-            border-bottom: 2px solid var(--border-color);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
             white-space: nowrap;
         }
 
         .train-table td {
-            padding: 12px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
             vertical-align: middle;
             white-space: nowrap;
         }
 
+        .train-table tr:last-child td {
+            border-bottom: none;
+        }
+
         .train-code {
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--text-main);
         }
 
         .delay-ok {
-            color: #16a34a;
+            color: var(--success-text);
             font-weight: 600;
         }
 
         .delay-bad {
-            color: #dc2626;
+            color: var(--danger-text);
             font-weight: 600;
         }
 
         .loading-state {
             text-align: center;
-            padding: 30px 20px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+            padding: 36px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 16px 12px 32px 12px;
+            }
+
             .iframe-container {
+                height: 420px;
+            }
+
+            .crop-view {
                 height: 440px;
             }
-            .crop-view {
-                height: 460px;
-            }
+
             .crop-view iframe {
-                transform: translate(-50%, -48%) scale(0.95);
+                transform: translate(-50%, -48%) scale(0.92);
             }
-            .section-header {
+
+            .step-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            .route-tabs {
-                grid-template-columns: 1fr;
+
+            .btn-group {
+                width: 100%;
+            }
+
+            .direct-btn {
+                flex: 1;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="back-btn">← Torna alle Tratte</a>
-        <h1 class="page-title">Università ➔ Casa</h1>
-    </header>
+    <div class="container">
+        <!-- Top Header -->
+        <header>
+            <a href="index.html" class="back-btn" aria-label="Torna alle Tratte">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Tratte</span>
+            </a>
+            <h1 class="page-title">Università ➔ Casa</h1>
+        </header>
 
-    <main>
-        <div class="route-selector-title">Scegli la combinazione di percorso:</div>
-        
-        <!-- Pulsanti Selezione Percorso -->
-        <div class="route-tabs">
-            <div class="route-tab active" onclick="selectRoute(1, this)">
-                <span class="num">Option 1</span>
-                <span class="title">Bus 163 ➔ Cotral (Ponte Mammolo)</span>
-            </div>
-            <div class="route-tab" onclick="selectRoute(2, this)">
-                <span class="num">Option 2</span>
-                <span class="title">Bus 163/545 ➔ Treno ➔ Cotral (Tiburtina)</span>
-            </div>
-            <div class="route-tab" onclick="selectRoute(3, this)">
-                <span class="num">Option 3</span>
-                <span class="title">3NAV ➔ Metro B ➔ Cotral (P.te Mammolo)</span>
-            </div>
-            <div class="route-tab" onclick="selectRoute(4, this)">
-                <span class="num">Option 4</span>
-                <span class="title">3NAV ➔ Metro B ➔ Treno ➔ Cotral (Tiburtina)</span>
-            </div>
-        </div>
-
-        <!-- ================= PERCORSO 1 ================= -->
-        <div id="route-1" class="route-content active">
-            <!-- TAPPA 1: ATAC 163 -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>1. ATAC 163</span>
-                            <span class="badge">Bus</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Verano ➔ Ponte Mammolo
-                        </p>
-                    </div>
-                    <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" target="_blank" rel="noopener" class="direct-btn">
-                        Apri su ViaggiaCon ↗
-                    </a>
-                </div>
-                <div class="crop-view">
-                    <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" title="ATAC 163"></iframe>
+        <main>
+            <!-- Route Selector -->
+            <section class="selector-section">
+                <div class="selector-title">Seleziona combinazione di percorso</div>
+                <div class="route-tabs" role="tablist" aria-label="Combinazioni di percorso">
+                    <button class="route-tab active" role="tab" aria-selected="true" onclick="selectRoute(1, this)">
+                        <span class="opt-tag">Opzione 1</span>
+                        <span class="opt-title">Bus 163 ➔ Cotral (Ponte Mammolo)</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(2, this)">
+                        <span class="opt-tag">Opzione 2</span>
+                        <span class="opt-title">Bus 163/545 ➔ Treno ➔ Cotral</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(3, this)">
+                        <span class="opt-tag">Opzione 3</span>
+                        <span class="opt-title">3NAV ➔ Metro B ➔ Cotral</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(4, this)">
+                        <span class="opt-tag">Opzione 4</span>
+                        <span class="opt-title">3NAV ➔ Metro B ➔ Treno ➔ Cotral</span>
+                    </button>
                 </div>
             </section>
 
-            <!-- TAPPA 2: COTRAL -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>2. Cotral</span>
-                            <span class="badge">Bus Interurbano</span>
+            <!-- ================= PERCORSO 1 ================= -->
+            <div id="route-1" class="route-content active">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC 163</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Ponte Mammolo</p>
                         </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)
-                        </p>
-                    </div>
-                    <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener" class="direct-btn">
-                        Apri Orari Cotral ↗
-                    </a>
-                </div>
-                <div class="iframe-container">
-                    <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Ponte Mammolo Guidonia"></iframe>
-                </div>
-            </section>
-        </div>
-
-        <!-- ================= PERCORSO 2 ================= -->
-        <div id="route-2" class="route-content">
-            <!-- TAPPA 1: ATAC 163 / 545 -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>1. ATAC Bus</span>
-                            <span class="badge">Bus</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Verano ➔ Stazione Tiburtina
-                        </p>
-                    </div>
-                    <a id="atac-r2-direct-link" href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" target="_blank" rel="noopener" class="direct-btn">
-                        Apri su ViaggiaCon ↗
-                    </a>
-                </div>
-
-                <div class="lines-list">
-                    <button type="button" class="line-btn active" onclick="switchAtacLine('163', '163A', 'atac-r2-iframe', 'atac-r2-direct-link', this)">163</button>
-                    <button type="button" class="line-btn" onclick="switchAtacLine('545', '545A', 'atac-r2-iframe', 'atac-r2-direct-link', this)">545</button>
-                </div>
-
-                <div class="crop-view">
-                    <iframe id="atac-r2-iframe" src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" title="ATAC Verano Tiburtina"></iframe>
-                </div>
-            </section>
-
-            <!-- TAPPA 2: TRENO TIBURTINA -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>2. Trenitalia</span>
-                            <span class="badge">Treno</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Partenze Live da Roma Tiburtina verso Guidonia Montecelio
-                        </p>
-                    </div>
-                    <div style="display: flex; gap: 8px;">
-                        <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">
-                            Aggiorna 🔄
-                        </button>
-                        <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener" class="direct-btn" style="background-color: #64748b;">
-                            RFI Monitor ↗
+                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>ViaggiaCon ATAC</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
                         </a>
                     </div>
-                </div>
-
-                <div id="tiburtina-trains-container" class="trains-board">
-                    <div class="loading-state">Caricamento partenze live da Tiburtina...</div>
-                </div>
-            </section>
-
-            <!-- TAPPA 3: COTRAL GUIDONIA FS -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>3. Cotral</span>
-                            <span class="badge">Bus</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)
-                        </p>
+                    <div class="crop-view">
+                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" title="ATAC 163 Verano Ponte Mammolo"></iframe>
                     </div>
-                    <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener" class="direct-btn">
-                        Apri Orari Cotral ↗
-                    </a>
-                </div>
-                <div class="iframe-container">
-                    <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Guidonia Stazione FS"></iframe>
-                </div>
-            </section>
-        </div>
+                </section>
 
-        <!-- ================= PERCORSO 3 ================= -->
-        <div id="route-3" class="route-content">
-            <!-- TAPPA 1: 3NAV ATAC -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>1. ATAC 3NAV</span>
-                            <span class="badge">Bus / Tram</span>
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus Interurbano</span>
+                            </div>
+                            <p class="step-subtitle">Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)</p>
                         </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Verano ➔ Policlinico
-                        </p>
-                    </div>
-                    <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" target="_blank" rel="noopener" class="direct-btn">
-                        Apri su ViaggiaCon ↗
-                    </a>
-                </div>
-                <div class="crop-view">
-                    <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" title="ATAC 3NAV"></iframe>
-                </div>
-            </section>
-
-            <!-- TAPPA 2: METRO B -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span style="color: var(--metro-b-color);">2. Metro B</span>
-                            <span class="badge badge-metro">Metropolitana</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Policlinico ➔ Ponte Mammolo (Direzione Rebibbia)
-                        </p>
-                    </div>
-                    <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" target="_blank" rel="noopener" class="direct-btn">
-                        Apri su ViaggiaCon ↗
-                    </a>
-                </div>
-                <div class="crop-view">
-                    <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" title="Metro B ATAC"></iframe>
-                </div>
-            </section>
-
-            <!-- TAPPA 3: COTRAL PONTE MAMMOLO -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>3. Cotral</span>
-                            <span class="badge">Bus</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)
-                        </p>
-                    </div>
-                    <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener" class="direct-btn">
-                        Apri Orari Cotral ↗
-                    </a>
-                </div>
-                <div class="iframe-container">
-                    <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Ponte Mammolo"></iframe>
-                </div>
-            </section>
-        </div>
-
-        <!-- ================= PERCORSO 4 ================= -->
-        <div id="route-4" class="route-content">
-            <!-- TAPPA 1: 3NAV ATAC -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>1. ATAC 3NAV</span>
-                            <span class="badge">Bus / Tram</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Verano ➔ Policlinico
-                        </p>
-                    </div>
-                    <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" target="_blank" rel="noopener" class="direct-btn">
-                        Apri su ViaggiaCon ↗
-                    </a>
-                </div>
-                <div class="crop-view">
-                    <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" title="ATAC 3NAV"></iframe>
-                </div>
-            </section>
-
-            <!-- TAPPA 2: METRO B -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span style="color: var(--metro-b-color);">2. Metro B</span>
-                            <span class="badge badge-metro">Metropolitana</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Policlinico ➔ Roma Tiburtina (Direzione Rebibbia / Jonio)
-                        </p>
-                    </div>
-                    <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" target="_blank" rel="noopener" class="direct-btn">
-                        Apri su ViaggiaCon ↗
-                    </a>
-                </div>
-                <div class="crop-view">
-                    <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" title="Metro B ATAC"></iframe>
-                </div>
-            </section>
-
-            <!-- TAPPA 3: TRENO TIBURTINA -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>3. Trenitalia</span>
-                            <span class="badge">Treno</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Partenze Live da Roma Tiburtina verso Guidonia Montecelio
-                        </p>
-                    </div>
-                    <div style="display: flex; gap: 8px;">
-                        <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">
-                            Aggiorna 🔄
-                        </button>
-                        <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener" class="direct-btn" style="background-color: #64748b;">
-                            RFI Monitor ↗
+                        <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>Orari Cotral</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
                         </a>
                     </div>
-                </div>
-
-                <div id="tiburtina-trains-container-2" class="trains-board">
-                    <div class="loading-state">Caricamento partenze live da Tiburtina...</div>
-                </div>
-            </section>
-
-            <!-- TAPPA 4: COTRAL GUIDONIA FS -->
-            <section class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">
-                            <span>4. Cotral</span>
-                            <span class="badge">Bus</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
-                            Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)
-                        </p>
+                    <div class="iframe-container">
+                        <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Ponte Mammolo Guidonia"></iframe>
                     </div>
-                    <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener" class="direct-btn">
-                        Apri Orari Cotral ↗
-                    </a>
-                </div>
-                <div class="iframe-container">
-                    <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Guidonia FS"></iframe>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
 
-    </main>
+            <!-- ================= PERCORSO 2 ================= -->
+            <div id="route-2" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC Bus</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Stazione Tiburtina</p>
+                        </div>
+                        <a id="atac-r2-direct-link" href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>ViaggiaCon ATAC</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="lines-selector">
+                        <div class="lines-list">
+                            <button type="button" class="line-btn active" onclick="switchAtacLine('163', '163A', 'atac-r2-iframe', 'atac-r2-direct-link', this)">163</button>
+                            <button type="button" class="line-btn" onclick="switchAtacLine('545', '545A', 'atac-r2-iframe', 'atac-r2-direct-link', this)">545</button>
+                        </div>
+                    </div>
+
+                    <div class="crop-view">
+                        <iframe id="atac-r2-iframe" src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" title="ATAC Verano Tiburtina"></iframe>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Trenitalia</span>
+                                <span class="badge">Treno</span>
+                            </div>
+                            <p class="step-subtitle">Partenze Live da Roma Tiburtina verso Guidonia Montecelio</p>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">
+                                🔄 Aggiorna
+                            </button>
+                            <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                                <span>RFI Monitor</span>
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="tiburtina-trains-container" class="trains-board">
+                        <div class="loading-state">Caricamento partenze live da Tiburtina...</div>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)</p>
+                        </div>
+                        <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>Orari Cotral</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Guidonia Stazione FS"></iframe>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= PERCORSO 3 ================= -->
+            <div id="route-3" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC 3NAV</span>
+                                <span class="badge">Bus / Tram</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Policlinico</p>
+                        </div>
+                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>ViaggiaCon ATAC</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="crop-view">
+                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" title="ATAC 3NAV"></iframe>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Metro B</span>
+                                <span class="badge badge-metro">Metropolitana</span>
+                            </div>
+                            <p class="step-subtitle">Policlinico ➔ Ponte Mammolo (Direzione Rebibbia)</p>
+                        </div>
+                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>ViaggiaCon ATAC</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="crop-view">
+                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" title="Metro B ATAC"></iframe>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)</p>
+                        </div>
+                        <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>Orari Cotral</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Ponte Mammolo"></iframe>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ================= PERCORSO 4 ================= -->
+            <div id="route-4" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC 3NAV</span>
+                                <span class="badge">Bus / Tram</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Policlinico</p>
+                        </div>
+                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>ViaggiaCon ATAC</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="crop-view">
+                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" title="ATAC 3NAV"></iframe>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Metro B</span>
+                                <span class="badge badge-metro">Metropolitana</span>
+                            </div>
+                            <p class="step-subtitle">Policlinico ➔ Roma Tiburtina (Direzione Rebibbia / Jonio)</p>
+                        </div>
+                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>ViaggiaCon ATAC</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="crop-view">
+                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" title="Metro B ATAC"></iframe>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <span>Trenitalia</span>
+                                <span class="badge">Treno</span>
+                            </div>
+                            <p class="step-subtitle">Partenze Live da Roma Tiburtina verso Guidonia Montecelio</p>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">
+                                🔄 Aggiorna
+                            </button>
+                            <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                                <span>RFI Monitor</span>
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="tiburtina-trains-container-2" class="trains-board">
+                        <div class="loading-state">Caricamento partenze live da Tiburtina...</div>
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">4</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)</p>
+                        </div>
+                        <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                            <span>Orari Cotral</span>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Cotral Guidonia FS"></iframe>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 
     <script>
-        // Gestione cambio percorso
+        // Gestione cambio opzione di percorso
         function selectRoute(routeNumber, tabElement) {
             const contents = document.querySelectorAll('.route-content');
             contents.forEach(c => c.classList.remove('active'));
-            document.getElementById(`route-${routeNumber}`).classList.add('active');
+            
+            const selectedContent = document.getElementById(`route-${routeNumber}`);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
 
             const tabs = document.querySelectorAll('.route-tab');
-            tabs.forEach(t => t.classList.remove('active'));
+            tabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+
             tabElement.classList.add('active');
+            tabElement.setAttribute('aria-selected', 'true');
 
             if (routeNumber === 2 || routeNumber === 4) {
                 loadTiburtinaBoard();
@@ -655,8 +882,12 @@
         // Switcher per ATAC dinamico
         function switchAtacLine(lineCode, pathCode, iframeId, linkId, btnElement) {
             const url = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${lineCode}&pathCode=${pathCode}`;
-            document.getElementById(iframeId).src = url;
-            document.getElementById(linkId).href = url;
+            
+            const iframe = document.getElementById(iframeId);
+            const link = document.getElementById(linkId);
+            
+            if (iframe) iframe.src = url;
+            if (link) link.href = url;
             
             const parent = btnElement.parentElement;
             const buttons = parent.querySelectorAll('.line-btn');
@@ -664,7 +895,7 @@
             btnElement.classList.add('active');
         }
 
-        // Fetch Tabellone Partenze Live Roma Tiburtina
+        // Fetch Tabellone Partenze Live Roma Tiburtina da Viaggiatreno API
         async function loadTiburtinaBoard() {
             const containers = [
                 document.getElementById('tiburtina-trains-container'),
@@ -675,26 +906,27 @@
                 if (c) c.innerHTML = '<div class="loading-state">Caricamento partenze live da Tiburtina...</div>';
             });
 
-            const stationId = 'S08405'; // Roma Tiburtina
+            const stationId = 'S08405'; // Codice Stazione Roma Tiburtina
             const now = new Date().toString();
             const rawUrl = `http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/partenze/${stationId}/${encodeURIComponent(now)}`;
             const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rawUrl)}`;
 
             try {
                 const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error("Errore nel recupero dati");
+                if (!response.ok) throw new Error("Errore nel recupero dati dal server Viaggiatreno");
                 const data = await response.json();
 
+                // Filtraggio treni verso la direttrice Guidonia / Tivoli / Abruzzo
                 const relevantTrains = data.filter(t => {
                     const dest = (t.destinazione || '').toLowerCase();
-                    return dest.includes('guidonia') || dest.includes('tivoli') || dest.includes('avezzo') || dest.includes('pescara') || dest.includes('sulmona');
+                    return dest.includes('guidonia') || dest.includes('tivoli') || dest.includes('avezzano') || dest.includes('pescara') || dest.includes('sulmona');
                 });
 
-                const displayData = relevantTrains.length > 0 ? relevantTrains : data.slice(0, 10);
+                const displayData = relevantTrains.length > 0 ? relevantTrains : data.slice(0, 8);
 
                 if (!displayData || displayData.length === 0) {
                     containers.forEach(c => {
-                        if (c) c.innerHTML = '<div class="loading-state">Nessun treno in partenza al momento.</div>';
+                        if (c) c.innerHTML = '<div class="loading-state">Nessun treno in partenza al momento sulla tratta.</div>';
                     });
                     return;
                 }
@@ -750,25 +982,27 @@
                 });
 
             } catch (error) {
-                console.error("Errore partenze Tiburtina:", error);
-                const errHtml = `
-                    <div class="loading-state" style="color: #dc2626;">
-                        Impossibile caricare i dati in tempo reale.<br>
-                        <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener" style="color: var(--accent-color); font-weight:600; text-decoration: underline; display:inline-block; margin-top:8px;">
-                            Apri Monitor RFI Roma Tiburtina ↗
-                        </a>
-                    </div>
-                `;
+                console.warn("Errore durante il recupero partenze live:", error);
                 containers.forEach(c => {
-                    if (c) c.innerHTML = errHtml;
+                    if (c) {
+                        c.innerHTML = `
+                            <div class="loading-state">
+                                Impossibile caricare il tabellone automatico in questo momento.
+                                <br><br>
+                                <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener noreferrer" class="direct-btn">
+                                    Consulta Monitor RFI Ufficiale ↗
+                                </a>
+                            </div>
+                        `;
+                    }
                 });
             }
         }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
     </script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
 </body>
 </html>
