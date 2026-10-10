@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2563eb">
-    <title>Dashboard Trasporti</title>
+    <title>Trasporti</title>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -296,7 +296,7 @@
                         <span class="route-title">Casa ➔ Scuola</span>
                         <span class="icon">➔</span>
                     </div>
-                    <span class="route-subtitle">Cotral, ATAC, Trenitalia</span>
+                    <span class="route-subtitle">Cotral</span>
                 </a>
 
                 <a href="scuola-casa.html" class="route-card">
@@ -304,7 +304,7 @@
                         <span class="route-title">Scuola ➔ Casa</span>
                         <span class="icon">➔</span>
                     </div>
-                    <span class="route-subtitle">Cotral, ATAC, Trenitalia</span>
+                    <span class="route-subtitle">Cotral</span>
                 </a>
             </div>
         </section>
@@ -327,22 +327,22 @@
     </main>
 
     <footer>
-        <p>Dashboard personale orari</p>
+        <p></p>
     </footer>
 
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
-        <button type="button" class="nav-btn active" id="btn-percorsi" onclick="showTab('percorsi')">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            <span>Percorsi</span>
-        </button>
         <button type="button" class="nav-btn" id="btn-feed" onclick="showTab('feed')">
             <svg viewBox="0 0 24 24">
                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
             </svg>
             <span>Feed</span>
+        </button>
+        <button type="button" class="nav-btn active" id="btn-percorsi" onclick="showTab('percorsi')">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Percorsi</span>
         </button>
     </nav>
 
