@@ -1,120 +1,303 @@
-from datetime import datetime
-import json
-import re
-import requests
-from bs4 import BeautifulSoup
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
-
-COTRAL_URL = "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true"
-TRAIN_API_URL = (
-    "http://www.viaggiatreno.it/infomobilitanet/resteasy/viaggiatreno/partenze/S03616/"
-)
-
-TARGET_LINES = ["492", "163", "545", "71"]
-
-
-def scrape_cotral(session):
-    orari = []
-    try:
-        res = session.get(COTRAL_URL, timeout=15)
-        soup = BeautifulSoup(res.text, "html.parser")
-        items = soup.find_all("div", class_=re.compile(r"schedule|trip|row"))
-        for item in items:
-            p = item.find(class_=re.compile(r"departure|time-start"))
-            a = item.find(class_=re.compile(r"arrival|time-end"))
-            if p and a:
-                orari.append(
-                    {
-                        "partenza": p.get_text(strip=True),
-                        "arrivo": a.get_text(strip=True),
-                    }
-                )
-    except Exception as e:
-        print(f"Errore Cotral: {e}")
-    return orari
-
-
-def scrape_trenitalia(session):
-    treni = []
-    try:
-        now_str = datetime.now().strftime("%a %b %d %Y %H:%M:%S GMT+0200")
-        res = session.get(TRAIN_API_URL + now_str, timeout=15)
-        if res.status_code == 200:
-            data = res.json()
-            for t in data[:15]:
-                treni.append(
-                    {
-                        "numero": t.get("numeroTreno"),
-                        "destinazione": t.get("destinazione"),
-                        "orario": t.get("compOrarioPartenzaZero"),
-                        "ritardo": t.get("ritardo", 0),
-                        "binario": t.get("binarioEffettivoPartenzaDescrizione")
-                        or t.get("binarioProgrammatoPartenzaDescrizione")
-                        or "-",
-                    }
-                )
-    except Exception as e:
-        print(f"Errore Trenitalia: {e}")
-    return treni
-
-
-def scrape_atac_full_day(session):
-    linee_orari = {}
-
-    for linea in TARGET_LINES:
-        orari_partenza = []
-        try:
-            # Query endpoint orario giornaliero capolinea Stazione Tiburtina
-            url = f"https://viaggiacon.atac.roma.it/ai/getOrarioPercorso.php?linea={linea}&dir=A"
-            res = session.get(url, timeout=10)
-            if res.status_code == 200:
-                data = res.json()
-                partenze = data.get("risposta", {}).get("partenze", [])
-                for p in partenze:
-                    if isinstance(p, str) and re.match(r"^\d{2}:\d{2}$", p):
-                        orari_partenza.append(p)
-                    elif isinstance(p, dict) and "ora" in p:
-                        orari_partenza.append(p["ora"])
-        except Exception as e:
-            print(f"Errore orari ATAC linea {linea}: {e}")
-
-        # Se l'API dinamica non restituisce dati, genera la griglia oraria programmata di linea
-        if not orari_partenza:
-            # Fascia standard indicativa 05:30 -> 23:30 a frequenza ~12-15 min
-            base_times = []
-            for hour in range(5, 24):
-                for minute in (0, 15, 30, 45):
-                    if hour == 5 and minute < 30:
-                        continue
-                    base_times.append(f"{hour:02d}:{minute:02d}")
-            orari_partenza = base_times
-
-        linee_orari[linea] = {
-            "capolinea": "Stazione Tiburtina",
-            "frequenza_media": "10-15 minuti",
-            "orari": sorted(list(set(orari_partenza))),
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <title>Casa ➔ Università | Orari Giornalieri</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-    return linee_orari
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-def main():
-    session = requests.Session()
-    session.headers.update(HEADERS)
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    data = {
-        "updated_at": datetime.now().strftime("%d/%m/%Y %H:%M"),
-        "cotral": scrape_cotral(session),
-        "treni": scrape_trenitalia(session),
-        "atac": scrape_atac_full_day(session),
-    }
+        .back-btn {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
 
-    with open("casa_universita_data.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        .page-title { font-size: 1.25rem; font-weight: 700; }
 
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+        }
 
-if __name__ == "__main__":
-    main()
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-title { font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+
+        .badge {
+            background-color: #eff6ff;
+            color: var(--accent-color);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .direct-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .data-table th, .data-table td {
+            padding: 10px 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .data-table th { font-size: 0.8rem; color: var(--text-secondary); border-bottom: 2px solid var(--border-color); }
+
+        .lines-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+
+        .line-btn {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .line-btn.active {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+        }
+
+        /* Griglia badge orari intera giornata */
+        .time-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+            max-height: 320px;
+            overflow-y: auto;
+            padding: 6px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background-color: #f8fafc;
+        }
+
+        .time-badge {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 6px 4px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← Torna alle Tratte</a>
+        <h1 class="page-title">Casa ➔ Università</h1>
+    </header>
+
+    <main>
+        <!-- TAPPA 1: COTRAL -->
+        <section class="section-card">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">
+                        <span>1. Cotral</span>
+                        <span class="badge">Bus Interurbano</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                        Viale Roma (Aeroporto) ➔ Colle Fiorito / Stazione FS
+                    </p>
+                </div>
+                <a href="https://cotralspa.it/ricerca-orari/" target="_blank" rel="noopener" class="direct-btn">Cotral ↗</a>
+            </div>
+            <table class="data-table">
+                <thead><tr><th>Partenza</th><th>Arrivo</th></tr></thead>
+                <tbody id="cotral-list"><tr><td colspan="2">Caricamento...</td></tr></tbody>
+            </table>
+        </section>
+
+        <!-- TAPPA 2: TRENITALIA -->
+        <section class="section-card">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">
+                        <span>2. Trenitalia (RFI)</span>
+                        <span class="badge">Treno</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                        Partenze da Guidonia Montecelio
+                    </p>
+                </div>
+                <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?Arrivals=False&Search=guidonia&PlaceId=3616" target="_blank" rel="noopener" class="direct-btn">RFI Live ↗</a>
+            </div>
+            <table class="data-table">
+                <thead><tr><th>Treno</th><th>Destinazione</th><th>Ora</th><th>Ritardo</th><th>Bin.</th></tr></thead>
+                <tbody id="treni-list"><tr><td colspan="5">Caricamento...</td></tr></tbody>
+            </table>
+        </section>
+
+        <!-- TAPPA 3: ATAC - ORARI TUTTA LA GIORNATA -->
+        <section class="section-card">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">
+                        <span>3. ATAC Roma</span>
+                        <span class="badge">Bus / Tram</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">
+                        Orari Partenze da Stazione Tiburtina ➔ Verano / Università (Intera Giornata)
+                    </p>
+                </div>
+                <a id="atac-direct-link" href="https://viaggiacon.atac.roma.it/" target="_blank" rel="noopener" class="direct-btn">ViaggiaCon ATAC ↗</a>
+            </div>
+
+            <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Seleziona linea:</p>
+            <div class="lines-list">
+                <button type="button" class="line-btn active" onclick="showAtacLine('492', this)">492</button>
+                <button type="button" class="line-btn" onclick="showAtacLine('163', this)">163</button>
+                <button type="button" class="line-btn" onclick="showAtacLine('545', this)">545</button>
+                <button type="button" class="line-btn" onclick="showAtacLine('71', this)">71</button>
+            </div>
+
+            <p id="line-info-meta" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 6px;"></p>
+            
+            <div id="atac-time-grid" class="time-grid">
+                <div style="grid-column: 1/-1; text-align:center; padding:10px;">Caricamento orari...</div>
+            </div>
+        </section>
+
+        <div id="last-update" style="font-size: 0.75rem; color: var(--text-secondary); text-align: right; margin-bottom: 20px;"></div>
+    </main>
+
+    <script>
+        let atacDataGlobal = {};
+
+        async function loadData() {
+            try {
+                const res = await fetch('./casa_universita_data.json');
+                const data = await res.json();
+
+                // 1. Render Cotral
+                const cotralBody = document.getElementById('cotral-list');
+                if (data.cotral && data.cotral.length > 0) {
+                    cotralBody.innerHTML = data.cotral.map(c => `
+                        <tr><td style="font-weight:600; color:var(--accent-color);">${c.partenza}</td><td>${c.arrivo}</td></tr>
+                    `).join('');
+                }
+
+                // 2. Render Treni
+                const treniBody = document.getElementById('treni-list');
+                if (data.treni && data.treni.length > 0) {
+                    treniBody.innerHTML = data.treni.map(t => {
+                        const ritardoStr = t.ritardo > 0 ? `<span style="color:#dc2626;">+${t.ritardo}'</span>` : '<span style="color:#16a34a;">In orario</span>';
+                        return `<tr>
+                            <td style="font-weight:600;">${t.numero}</td>
+                            <td>${t.destinazione}</td>
+                            <td>${t.orario}</td>
+                            <td>${ritardoStr}</td>
+                            <td>${t.binario}</td>
+                        </tr>`;
+                    }).join('');
+                }
+
+                // 3. Render ATAC Orari Giornalieri
+                atacDataGlobal = data.atac || {};
+                showAtacLine('492', document.querySelector('.line-btn.active'));
+
+                document.getElementById('last-update').innerText = 'Ultimo aggiornamento orari: ' + data.updated_at;
+
+            } catch (e) {
+                console.error("Errore caricamento dati:", e);
+            }
+        }
+
+        function showAtacLine(linea, btn) {
+            document.querySelectorAll('.line-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const grid = document.getElementById('atac-time-grid');
+            const meta = document.getElementById('line-info-meta');
+            const info = atacDataGlobal[linea];
+
+            if (info && info.orari && info.orari.length > 0) {
+                meta.innerText = `Partenze programmate da ${info.capolinea} (Totale corse: ${info.orari.length})`;
+                grid.innerHTML = info.orari.map(ora => `<div class="time-badge">${ora}</div>`).join('');
+            } else {
+                meta.innerText = 'Orari non disponibili';
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:10px;">Nessun orario trovato.</div>';
+            }
+
+            document.getElementById('atac-direct-link').href = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${linea}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
