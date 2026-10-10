@@ -56,6 +56,17 @@
             align-items: center;
             justify-content: space-between;
             box-shadow: var(--shadow-sm);
+            text-decoration: none; /* Mantiene lo stile pulito senza sottolineature */
+            color: inherit; /* Eredita il colore dei testi */
+            transition: all 0.2s ease-in-out;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .weather-card:hover, .weather-card:focus-visible {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-hover);
+            outline: none;
         }
 
         .weather-info {
@@ -252,18 +263,18 @@
 
     <!-- Meteo in alto -->
     <div class="weather-container">
-        <div class="weather-card">
+        <a href="https://www.ilmeteo.it/meteo/Guidonia" target="_blank" rel="noopener noreferrer" class="weather-card">
             <div class="weather-info">
                 <span class="weather-city">Guidonia</span>
                 <div class="weather-status" id="weather-guidonia">Caricamento...</div>
             </div>
-        </div>
-        <div class="weather-card">
+        </a>
+        <a href="https://www.ilmeteo.it/meteo/Roma" target="_blank" rel="noopener noreferrer" class="weather-card">
             <div class="weather-info">
                 <span class="weather-city">Roma</span>
                 <div class="weather-status" id="weather-roma">Caricamento...</div>
             </div>
-        </div>
+        </a>
     </div>
 
     <header>
