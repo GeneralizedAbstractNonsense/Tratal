@@ -1,0 +1,23 @@
+{
+  "updated_at": "10/10/2026 03:54",
+  "cotral": [],
+  "treni": [],
+  "atac": {
+    "492": {
+      "stato": "In servizio",
+      "info": "Piazzale Tiburtina ➔ Verano / Roma Termini"
+    },
+    "163": {
+      "stato": "In servizio",
+      "info": "Piazzale Tiburtina ➔ Verano / Roma Termini"
+    },
+    "545": {
+      "stato": "In servizio",
+      "info": "Piazzale Tiburtina ➔ Verano / Roma Termini"
+    },
+    "71": {
+      "stato": "In servizio",
+      "info": "Piazzale Tiburtina ➔ Verano / Roma Termini"
+    }
+  }
+}
