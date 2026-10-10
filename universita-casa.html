@@ -87,7 +87,6 @@
             width: 100%;
         }
 
-        /* Top Navigation Header */
         header {
             display: flex;
             align-items: center;
@@ -134,7 +133,6 @@
             color: var(--text-main);
         }
 
-        /* Route Selector Grid */
         .selector-section {
             margin-bottom: 24px;
         }
@@ -193,7 +191,6 @@
             line-height: 1.35;
         }
 
-        /* Route Content Transitions */
         .route-content {
             display: none;
             opacity: 0;
@@ -207,7 +204,6 @@
             transform: translateY(0);
         }
 
-        /* Timeline Step Card */
         .step-card {
             background-color: var(--surface);
             border: 1px solid var(--border);
@@ -283,7 +279,6 @@
             margin-left: 36px;
         }
 
-        /* Action Buttons */
         .btn-group {
             display: flex;
             gap: 8px;
@@ -322,8 +317,11 @@
             fill: none;
         }
 
-        /* Line Switcher Pills */
-        .lines-selector {
+        /* Controlli e Tabella Orari ATAC */
+        .timetable-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             margin-bottom: 16px;
         }
 
@@ -336,13 +334,13 @@
         .line-btn {
             background-color: var(--bg);
             border: 1px solid var(--border);
-            padding: 6px 18px;
+            padding: 6px 16px;
             border-radius: 9999px;
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-muted);
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.2s ease;
             font-family: inherit;
         }
 
@@ -358,7 +356,96 @@
             box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
         }
 
-        /* Frame & Crop View Containers */
+        .control-inputs {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .input-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .input-item label {
+            font-size: 0.725rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .input-item input {
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-main);
+            font-size: 0.875rem;
+            width: 110px;
+        }
+
+        .fetch-btn {
+            padding: 8px 16px;
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .fetch-btn:hover {
+            opacity: 0.9;
+        }
+
+        .timetable-wrapper {
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        .atac-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .atac-table th, .atac-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .atac-table th {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .atac-table td.hour-cell {
+            font-weight: 700;
+            width: 80px;
+            color: var(--primary);
+        }
+
+        .atac-table td.minutes-cell {
+            letter-spacing: 0.05em;
+        }
+
+        .timetable-placeholder {
+            padding: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            border: 1px dashed var(--border);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+        }
+
         .iframe-container {
             position: relative;
             width: 100%;
@@ -375,42 +462,6 @@
             border: none;
         }
 
-        .crop-view {
-    width: 100%;
-    max-width: 440px;
-    height: 520px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    background-color: #ffffff;
-    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.04);
-}
-
-.crop-view iframe {
-    width: 1000px;
-    height: 900px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -110px); /* Elimina la barra superiore ATAC e inquadra subito gli orari */
-    transform-origin: top center;
-    border: none;
-}
-
-/* Adattamento per dispositivi Mobile */
-@media (max-width: 600px) {
-    .crop-view {
-        height: 480px;
-    }
-    
-    .crop-view iframe {
-        transform: translate(-50%, -95px) scale(0.92);
-    }
-}
-
-        /* Train Live Board Styling */
         .trains-board {
             width: 100%;
             border-radius: var(--radius-md);
@@ -481,14 +532,6 @@
                 height: 420px;
             }
 
-            .crop-view {
-                height: 440px;
-            }
-
-            .crop-view iframe {
-                transform: translate(-50%, -48%) scale(0.92);
-            }
-
             .step-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -508,7 +551,7 @@
 <body>
 
     <div class="container">
-        <!-- Top Header -->
+        <!-- Header -->
         <header>
             <a href="index.html" class="back-btn" aria-label="Torna alle Tratte">
                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -544,7 +587,7 @@
                 </div>
             </section>
 
-            <!-- ================= PERCORSO 1 ================= -->
+            <!-- PERCORSO 1 -->
             <div id="route-1" class="route-content active">
                 <section class="step-card">
                     <div class="step-header">
@@ -556,18 +599,27 @@
                             </div>
                             <p class="step-subtitle">Verano ➔ Ponte Mammolo</p>
                         </div>
-                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                            <span>ViaggiaCon ATAC</span>
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
                     </div>
-                    <div class="crop-view">
-                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" title="ATAC 163 Verano Ponte Mammolo"></iframe>
+
+                    <div class="timetable-controls">
+                        <div class="lines-list">
+                            <button type="button" class="line-btn active" onclick="setAtacControl('r1-path', 'r1-days', 'r1-table', '163A', this)">163A</button>
+                            <button type="button" class="line-btn" onclick="setAtacControl('r1-path', 'r1-days', 'r1-table', '545A', this)">545A</button>
+                        </div>
+                        <div class="control-inputs">
+                            <div class="input-item">
+                                <label for="r1-path">Codice Tratta:</label>
+                                <input type="text" id="r1-path" value="163A">
+                            </div>
+                            <div class="input-item">
+                                <label for="r1-days">Giorni da oggi:</label>
+                                <input type="number" id="r1-days" value="0" min="0" max="7">
+                            </div>
+                            <button type="button" class="fetch-btn" onclick="loadAtacTimetable('r1-path', 'r1-days', 'r1-table')">Carica Orari</button>
+                        </div>
                     </div>
+
+                    <div id="r1-table" class="timetable-wrapper"></div>
                 </section>
 
                 <section class="step-card">
@@ -595,7 +647,7 @@
                 </section>
             </div>
 
-            <!-- ================= PERCORSO 2 ================= -->
+            <!-- PERCORSO 2 -->
             <div id="route-2" class="route-content">
                 <section class="step-card">
                     <div class="step-header">
@@ -607,26 +659,27 @@
                             </div>
                             <p class="step-subtitle">Verano ➔ Stazione Tiburtina</p>
                         </div>
-                        <a id="atac-r2-direct-link" href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                            <span>ViaggiaCon ATAC</span>
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
                     </div>
 
-                    <div class="lines-selector">
+                    <div class="timetable-controls">
                         <div class="lines-list">
-                            <button type="button" class="line-btn active" onclick="switchAtacLine('163', '163A', 'atac-r2-iframe', 'atac-r2-direct-link', this)">163</button>
-                            <button type="button" class="line-btn" onclick="switchAtacLine('545', '545A', 'atac-r2-iframe', 'atac-r2-direct-link', this)">545</button>
+                            <button type="button" class="line-btn active" onclick="setAtacControl('r2-path', 'r2-days', 'r2-table', '163A', this)">163A</button>
+                            <button type="button" class="line-btn" onclick="setAtacControl('r2-path', 'r2-days', 'r2-table', '545A', this)">545A</button>
+                        </div>
+                        <div class="control-inputs">
+                            <div class="input-item">
+                                <label for="r2-path">Codice Tratta:</label>
+                                <input type="text" id="r2-path" value="163A">
+                            </div>
+                            <div class="input-item">
+                                <label for="r2-days">Giorni da oggi:</label>
+                                <input type="number" id="r2-days" value="0" min="0" max="7">
+                            </div>
+                            <button type="button" class="fetch-btn" onclick="loadAtacTimetable('r2-path', 'r2-days', 'r2-table')">Carica Orari</button>
                         </div>
                     </div>
 
-                    <div class="crop-view">
-                        <iframe id="atac-r2-iframe" src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=163&pathCode=163A" title="ATAC Verano Tiburtina"></iframe>
-                    </div>
+                    <div id="r2-table" class="timetable-wrapper"></div>
                 </section>
 
                 <section class="step-card">
@@ -640,9 +693,7 @@
                             <p class="step-subtitle">Partenze Live da Roma Tiburtina verso Guidonia Montecelio</p>
                         </div>
                         <div class="btn-group">
-                            <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">
-                                🔄 Aggiorna
-                            </button>
+                            <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">🔄 Aggiorna</button>
                             <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener noreferrer" class="direct-btn">
                                 <span>RFI Monitor</span>
                                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -684,7 +735,7 @@
                 </section>
             </div>
 
-            <!-- ================= PERCORSO 3 ================= -->
+            <!-- PERCORSO 3 -->
             <div id="route-3" class="route-content">
                 <section class="step-card">
                     <div class="step-header">
@@ -696,18 +747,26 @@
                             </div>
                             <p class="step-subtitle">Verano ➔ Policlinico</p>
                         </div>
-                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                            <span>ViaggiaCon ATAC</span>
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
                     </div>
-                    <div class="crop-view">
-                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" title="ATAC 3NAV"></iframe>
+
+                    <div class="timetable-controls">
+                        <div class="lines-list">
+                            <button type="button" class="line-btn active" onclick="setAtacControl('r3-path1', 'r3-days1', 'r3-table1', '3NAVA', this)">3NAVA</button>
+                        </div>
+                        <div class="control-inputs">
+                            <div class="input-item">
+                                <label for="r3-path1">Codice Tratta:</label>
+                                <input type="text" id="r3-path1" value="3NAVA">
+                            </div>
+                            <div class="input-item">
+                                <label for="r3-days1">Giorni da oggi:</label>
+                                <input type="number" id="r3-days1" value="0" min="0" max="7">
+                            </div>
+                            <button type="button" class="fetch-btn" onclick="loadAtacTimetable('r3-path1', 'r3-days1', 'r3-table1')">Carica Orari</button>
+                        </div>
                     </div>
+
+                    <div id="r3-table1" class="timetable-wrapper"></div>
                 </section>
 
                 <section class="step-card">
@@ -720,18 +779,26 @@
                             </div>
                             <p class="step-subtitle">Policlinico ➔ Ponte Mammolo (Direzione Rebibbia)</p>
                         </div>
-                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                            <span>ViaggiaCon ATAC</span>
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
                     </div>
-                    <div class="crop-view">
-                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" title="Metro B ATAC"></iframe>
+
+                    <div class="timetable-controls">
+                        <div class="lines-list">
+                            <button type="button" class="line-btn active" onclick="setAtacControl('r3-path2', 'r3-days2', 'r3-table2', 'METROBA', this)">METROBA (Rebibbia)</button>
+                        </div>
+                        <div class="control-inputs">
+                            <div class="input-item">
+                                <label for="r3-path2">Codice Tratta:</label>
+                                <input type="text" id="r3-path2" value="METROBA">
+                            </div>
+                            <div class="input-item">
+                                <label for="r3-days2">Giorni da oggi:</label>
+                                <input type="number" id="r3-days2" value="0" min="0" max="7">
+                            </div>
+                            <button type="button" class="fetch-btn" onclick="loadAtacTimetable('r3-path2', 'r3-days2', 'r3-table2')">Carica Orari</button>
+                        </div>
                     </div>
+
+                    <div id="r3-table2" class="timetable-wrapper"></div>
                 </section>
 
                 <section class="step-card">
@@ -759,7 +826,7 @@
                 </section>
             </div>
 
-            <!-- ================= PERCORSO 4 ================= -->
+            <!-- PERCORSO 4 -->
             <div id="route-4" class="route-content">
                 <section class="step-card">
                     <div class="step-header">
@@ -771,18 +838,26 @@
                             </div>
                             <p class="step-subtitle">Verano ➔ Policlinico</p>
                         </div>
-                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                            <span>ViaggiaCon ATAC</span>
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
                     </div>
-                    <div class="crop-view">
-                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=3NAV&pathCode=3NAVA" title="ATAC 3NAV"></iframe>
+
+                    <div class="timetable-controls">
+                        <div class="lines-list">
+                            <button type="button" class="line-btn active" onclick="setAtacControl('r4-path1', 'r4-days1', 'r4-table1', '3NAVA', this)">3NAVA</button>
+                        </div>
+                        <div class="control-inputs">
+                            <div class="input-item">
+                                <label for="r4-path1">Codice Tratta:</label>
+                                <input type="text" id="r4-path1" value="3NAVA">
+                            </div>
+                            <div class="input-item">
+                                <label for="r4-days1">Giorni da oggi:</label>
+                                <input type="number" id="r4-days1" value="0" min="0" max="7">
+                            </div>
+                            <button type="button" class="fetch-btn" onclick="loadAtacTimetable('r4-path1', 'r4-days1', 'r4-table1')">Carica Orari</button>
+                        </div>
                     </div>
+
+                    <div id="r4-table1" class="timetable-wrapper"></div>
                 </section>
 
                 <section class="step-card">
@@ -795,18 +870,26 @@
                             </div>
                             <p class="step-subtitle">Policlinico ➔ Roma Tiburtina (Direzione Rebibbia / Jonio)</p>
                         </div>
-                        <a href="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                            <span>ViaggiaCon ATAC</span>
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
                     </div>
-                    <div class="crop-view">
-                        <iframe src="https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=MEB&pathCode=MEBA" title="Metro B ATAC"></iframe>
+
+                    <div class="timetable-controls">
+                        <div class="lines-list">
+                            <button type="button" class="line-btn active" onclick="setAtacControl('r4-path2', 'r4-days2', 'r4-table2', 'METROBA', this)">METROBA</button>
+                        </div>
+                        <div class="control-inputs">
+                            <div class="input-item">
+                                <label for="r4-path2">Codice Tratta:</label>
+                                <input type="text" id="r4-path2" value="METROBA">
+                            </div>
+                            <div class="input-item">
+                                <label for="r4-days2">Giorni da oggi:</label>
+                                <input type="number" id="r4-days2" value="0" min="0" max="7">
+                            </div>
+                            <button type="button" class="fetch-btn" onclick="loadAtacTimetable('r4-path2', 'r4-days2', 'r4-table2')">Carica Orari</button>
+                        </div>
                     </div>
+
+                    <div id="r4-table2" class="timetable-wrapper"></div>
                 </section>
 
                 <section class="step-card">
@@ -820,9 +903,7 @@
                             <p class="step-subtitle">Partenze Live da Roma Tiburtina verso Guidonia Montecelio</p>
                         </div>
                         <div class="btn-group">
-                            <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">
-                                🔄 Aggiorna
-                            </button>
+                            <button type="button" onclick="loadTiburtinaBoard()" class="direct-btn">🔄 Aggiorna</button>
                             <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener noreferrer" class="direct-btn">
                                 <span>RFI Monitor</span>
                                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -867,7 +948,6 @@
     </div>
 
     <script>
-        // Gestione cambio opzione di percorso
         function selectRoute(routeNumber, tabElement) {
             const contents = document.querySelectorAll('.route-content');
             contents.forEach(c => c.classList.remove('active'));
@@ -886,28 +966,97 @@
             tabElement.classList.add('active');
             tabElement.setAttribute('aria-selected', 'true');
 
-            if (routeNumber === 2 || routeNumber === 4) {
+            if (routeNumber === 1) loadAtacTimetable('r1-path', 'r1-days', 'r1-table');
+            if (routeNumber === 2) {
+                loadAtacTimetable('r2-path', 'r2-days', 'r2-table');
+                loadTiburtinaBoard();
+            }
+            if (routeNumber === 3) {
+                loadAtacTimetable('r3-path1', 'r3-days1', 'r3-table1');
+                loadAtacTimetable('r3-path2', 'r3-days2', 'r3-table2');
+            }
+            if (routeNumber === 4) {
+                loadAtacTimetable('r4-path1', 'r4-days1', 'r4-table1');
+                loadAtacTimetable('r4-path2', 'r4-days2', 'r4-table2');
                 loadTiburtinaBoard();
             }
         }
 
-        // Switcher per ATAC dinamico
-        function switchAtacLine(lineCode, pathCode, iframeId, linkId, btnElement) {
-            const url = `https://viaggiacon.atac.roma.it/?cercaLinee=1&lineCode=${lineCode}&pathCode=${pathCode}`;
-            
-            const iframe = document.getElementById(iframeId);
-            const link = document.getElementById(linkId);
-            
-            if (iframe) iframe.src = url;
-            if (link) link.href = url;
-            
-            const parent = btnElement.parentElement;
-            const buttons = parent.querySelectorAll('.line-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
+        function setAtacControl(pathInputId, daysInputId, containerId, pathCode, btnElement) {
+            document.getElementById(pathInputId).value = pathCode;
+            if (btnElement && btnElement.parentElement) {
+                const buttons = btnElement.parentElement.querySelectorAll('.line-btn');
+                buttons.forEach(b => b.classList.remove('active'));
+                btnElement.classList.add('active');
+            }
+            loadAtacTimetable(pathInputId, daysInputId, containerId);
         }
 
-        // Fetch Tabellone Partenze Live Roma Tiburtina da Viaggiatreno API
+        async function loadAtacTimetable(pathInputId, daysInputId, containerId) {
+            const pathCode = document.getElementById(pathInputId).value.trim();
+            const daysFromNow = document.getElementById(daysInputId).value || '0';
+            const container = document.getElementById(containerId);
+
+            if (!pathCode || !container) return;
+
+            container.innerHTML = '<div class="timetable-placeholder">Caricamento orari in corso...</div>';
+
+            const endpoint = `https://viaggiacon.atac.roma.it/proxy/proxy.ashx?url=url.tpPortalPathTimetable/pathCode=${pathCode}&daysFromNow=${daysFromNow}`;
+
+            try {
+                const response = await fetch(endpoint);
+                if (!response.ok) throw new Error('Errore nella risposta di rete');
+                
+                const data = await response.json();
+
+                if (data.status === 'ok' && Array.isArray(data.timinglist)) {
+                    renderTimetable(container, data.timinglist, pathCode, daysFromNow);
+                } else {
+                    container.innerHTML = `<div class="timetable-placeholder">Nessun orario trovato per la linea ${pathCode}.</div>`;
+                }
+            } catch (err) {
+                container.innerHTML = `
+                    <div class="timetable-placeholder">
+                        Impossibile caricare direttamente (blocco CORS browser).<br>
+                        <a href="${endpoint}" target="_blank" style="color:var(--primary); margin-top:8px; display:inline-block;">Apri JSON grezzo ➔</a>
+                    </div>`;
+            }
+        }
+
+        function renderTimetable(container, timinglist, pathCode, days) {
+            const sortedList = [...timinglist].sort((a, b) => {
+                const hA = parseInt(a.time, 10);
+                const hB = parseInt(b.time, 10);
+                const adjA = hA < 4 ? hA + 24 : hA;
+                const adjB = hB < 4 ? hB + 24 : hB;
+                return adjA - adjB;
+            });
+
+            let html = `
+                <table class="atac-table">
+                    <thead>
+                        <tr>
+                            <th>Ora</th>
+                            <th>Minuti di passaggio (${pathCode} — Giorno +${days})</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+            sortedList.forEach(item => {
+                const hourFormatted = item.time.padStart(2, '0');
+                const minutesFormatted = item.minute ? item.minute.split(' ').join(', ') : '-';
+
+                html += `
+                    <tr>
+                        <td class="hour-cell">${hourFormatted}</td>
+                        <td class="minutes-cell">${minutesFormatted}</td>
+                    </tr>`;
+            });
+
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+        }
+
         async function loadTiburtinaBoard() {
             const containers = [
                 document.getElementById('tiburtina-trains-container'),
@@ -918,17 +1067,16 @@
                 if (c) c.innerHTML = '<div class="loading-state">Caricamento partenze live da Tiburtina...</div>';
             });
 
-            const stationId = 'S08405'; // Codice Stazione Roma Tiburtina
+            const stationId = 'S08405';
             const now = new Date().toString();
             const rawUrl = `http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/partenze/${stationId}/${encodeURIComponent(now)}`;
             const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rawUrl)}`;
 
             try {
                 const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error("Errore nel recupero dati dal server Viaggiatreno");
+                if (!response.ok) throw new Error("Errore nel recupero partenze");
                 const data = await response.json();
 
-                // Filtraggio treni verso la direttrice Guidonia / Tivoli / Abruzzo
                 const relevantTrains = data.filter(t => {
                     const dest = (t.destinazione || '').toLowerCase();
                     return dest.includes('guidonia') || dest.includes('tivoli') || dest.includes('avezzano') || dest.includes('pescara') || dest.includes('sulmona');
@@ -954,15 +1102,13 @@
                                 <th>Binario</th>
                             </tr>
                         </thead>
-                        <tbody>
-                `;
+                        <tbody>`;
 
                 displayData.forEach(train => {
                     const category = train.compTipologiaTreno || '';
                     const number = train.numeroTreno || '';
                     const trainCode = `${category} ${number}`.trim();
                     const destination = train.destinazione || 'N/D';
-                    
                     const time = train.orarioPartenza 
                         ? new Date(train.orarioPartenza).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) 
                         : '--:--';
@@ -983,8 +1129,7 @@
                             <td>${time}</td>
                             <td class="${delayClass}">${delayText}</td>
                             <td><strong>${track}</strong></td>
-                        </tr>
-                    `;
+                        </tr>`;
                 });
 
                 html += '</tbody></table>';
@@ -994,24 +1139,24 @@
                 });
 
             } catch (error) {
-                console.warn("Errore durante il recupero partenze live:", error);
                 containers.forEach(c => {
                     if (c) {
                         c.innerHTML = `
                             <div class="loading-state">
-                                Impossibile caricare il tabellone automatico in questo momento.
-                                <br><br>
+                                Impossibile caricare il tabellone automatico in questo momento.<br><br>
                                 <a href="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor" target="_blank" rel="noopener noreferrer" class="direct-btn">
                                     Consulta Monitor RFI Ufficiale ↗
                                 </a>
-                            </div>
-                        `;
+                            </div>`;
                     }
                 });
             }
         }
 
-        // Service Worker Registration
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAtacTimetable('r1-path', 'r1-days', 'r1-table');
+        });
+
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(() => {});
         }
