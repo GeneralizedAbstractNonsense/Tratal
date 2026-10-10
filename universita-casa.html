@@ -1064,29 +1064,32 @@
             ];
 
             containers.forEach(c => {
-                if (c) c.innerHTML = '<div class="loading-state">Caricamento partenze live da Tiburtina...</div>';
+                if (c) c.innerHTML = '<div class="loading-state">Caricamento partenze live da Roma Tiburtina...</div>';
             });
 
-            const stationId = 'S08405';
-            const now = new Date().toString();
-            const rawUrl = `http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/partenze/${stationId}/${encodeURIComponent(now)}`;
-            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rawUrl)}`;
+            const stationId = 'S08409'; // Roma Tiburtina
+            const dateStr = new Date().toUTCString();
+            const targetUrl = `http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno/partenze/${stationId}/${dateStr}`;
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
 
             try {
-                const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error("Errore nel recupero partenze");
+                let response = await fetch(proxyUrl);
+                if (!response.ok) {
+                    response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`);
+                }
                 const data = await response.json();
 
+                const filterDest = ['GUIDONIA', 'TIVOLI', 'AVEZZANO', 'MANDELA', 'SUBIACO', 'PESCARA', 'SULMONA'];
                 const relevantTrains = data.filter(t => {
-                    const dest = (t.destinazione || '').toLowerCase();
-                    return dest.includes('guidonia') || dest.includes('tivoli') || dest.includes('avezzano') || dest.includes('pescara') || dest.includes('sulmona');
+                    const dest = (t.destinazione || '').toUpperCase();
+                    return filterDest.some(d => dest.includes(d));
                 });
 
                 const displayData = relevantTrains.length > 0 ? relevantTrains : data.slice(0, 8);
 
                 if (!displayData || displayData.length === 0) {
                     containers.forEach(c => {
-                        if (c) c.innerHTML = '<div class="loading-state">Nessun treno in partenza al momento sulla tratta.</div>';
+                        if (c) c.innerHTML = '<div class="loading-state">Nessun treno in partenza al momento sulla tratta per Guidonia/Tivoli.</div>';
                     });
                     return;
                 }
@@ -1105,18 +1108,19 @@
                         <tbody>`;
 
                 displayData.forEach(train => {
-                    const category = train.compTipologiaTreno || '';
+                    const category = train.compTipologiaTreno || 'REG';
                     const number = train.numeroTreno || '';
                     const trainCode = `${category} ${number}`.trim();
                     const destination = train.destinazione || 'N/D';
-                    const time = train.orarioPartenza 
+                    const time = train.compOrarioPartenza || (train.orarioPartenza 
                         ? new Date(train.orarioPartenza).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) 
-                        : '--:--';
+                        : '--:--');
 
                     let delayText = 'In orario';
                     let delayClass = 'delay-ok';
-                    if (train.ritardo > 0) {
-                        delayText = `+${train.ritardo} min`;
+                    const delay = train.ritardo || 0;
+                    if (delay > 0) {
+                        delayText = `+${delay} min`;
                         delayClass = 'delay-bad';
                     }
 
@@ -1139,6 +1143,7 @@
                 });
 
             } catch (error) {
+                console.error("Errore fetch Tiburtina:", error);
                 containers.forEach(c => {
                     if (c) {
                         c.innerHTML = `
