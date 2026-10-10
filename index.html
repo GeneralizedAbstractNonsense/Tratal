@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <title>Dashboard Trasporti</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 16px 16px 80px 16px; /* Spazio in basso per la bottom nav */
+        }
+
+        /* Widget Meteo in alto */
+        .weather-container {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .weather-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .weather-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .weather-city {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .weather-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 2px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        main {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* Gestione tab percorsi e feed */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .grid-routes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 520px) {
+            .grid-routes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .route-card, .feed-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 120px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease-in-out;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .route-card:hover, .route-card:focus-visible,
+        .feed-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-hover);
+            outline: none;
+        }
+
+        .route-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .route-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        .route-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .feed-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feed-card h3 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .feed-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .feed-time {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        /* Bottom Nav Bar */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 8px 0 env(safe-area-inset-bottom, 8px);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            width: 50%;
+            padding: 6px 0;
+            transition: color 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-btn.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .nav-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Meteo in alto -->
+    <div class="weather-container">
+        <div class="weather-card">
+            <div class="weather-info">
+                <span class="weather-city">Guidonia</span>
+                <div class="weather-status" id="weather-guidonia">Caricamento...</div>
+            </div>
+        </div>
+        <div class="weather-card">
+            <div class="weather-info">
+                <span class="weather-city">Roma</span>
+                <div class="weather-status" id="weather-roma">Caricamento...</div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1 id="page-title">Orari Trasporti</h1>
+        <p id="page-subtitle">Seleziona una tratta per consultare gli orari</p>
+    </header>
+
+    <main>
+        <!-- Sezione Percorsi (Schermata Principale) -->
+        <section id="section-percorsi" class="tab-content active">
+            <div class="grid-routes">
+                <a href="casa-universita.html" class="route-card">
+                    <div class="route-info">
+                        <span class="route-title">Casa ➔ Università</span>
+                        <span class="icon">➔</span>
+                    </div>
+                    <span class="route-subtitle">Cotral, ATAC, Trenitalia</span>
+                </a>
+
+                <a href="universita-casa.html" class="route-card">
+                    <div class="route-info">
+                        <span class="route-title">Università ➔ Casa</span>
+                        <span class="icon">➔</span>
+                    </div>
+                    <span class="route-subtitle">Cotral, ATAC, Trenitalia</span>
+                </a>
+
+                <a href="casa-scuola.html" class="route-card">
+                    <div class="route-info">
+                        <span class="route-title">Casa ➔ Scuola</span>
+                        <span class="icon">➔</span>
+                    </div>
+                    <span class="route-subtitle">Cotral, ATAC, Trenitalia</span>
+                </a>
+
+                <a href="scuola-casa.html" class="route-card">
+                    <div class="route-info">
+                        <span class="route-title">Scuola ➔ Casa</span>
+                        <span class="icon">➔</span>
+                    </div>
+                    <span class="route-subtitle">Cotral, ATAC, Trenitalia</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sezione Feed -->
+        <section id="section-feed" class="tab-content">
+            <div class="feed-list">
+                <div class="feed-card">
+                    <span class="feed-time">Informativa</span>
+                    <h3>Aggiornamenti in tempo reale</h3>
+                    <p>Qui troverai avvisi sul traffico, sciopero dei mezzi o variazioni di percorso Cotral, ATAC e Trenitalia.</p>
+                </div>
+                <div class="feed-card">
+                    <span class="feed-time">Stato Servizio</span>
+                    <h3>Circolazione Regolare</h3>
+                    <p>Nessuna interruzione segnalata sulle tratte principali tra Guidonia e Roma.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Dashboard personale orari</p>
+    </footer>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button type="button" class="nav-btn active" id="btn-percorsi" onclick="showTab('percorsi')">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Percorsi</span>
+        </button>
+        <button type="button" class="nav-btn" id="btn-feed" onclick="showTab('feed')">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <span>Feed</span>
+        </button>
+    </nav>
+
+    <script>
+        // Gestione cambio Tab
+        function showTab(tab) {
+            const percorsiSec = document.getElementById('section-percorsi');
+            const feedSec = document.getElementById('section-feed');
+            const btnPercorsi = document.getElementById('btn-percorsi');
+            const btnFeed = document.getElementById('btn-feed');
+            const title = document.getElementById('page-title');
+            const subtitle = document.getElementById('page-subtitle');
+
+            if (tab === 'percorsi') {
+                percorsiSec.classList.add('active');
+                feedSec.classList.remove('active');
+                btnPercorsi.classList.add('active');
+                btnFeed.classList.remove('active');
+                title.textContent = "Orari Trasporti";
+                subtitle.textContent = "Seleziona una tratta per consultare gli orari";
+            } else {
+                feedSec.classList.add('active');
+                percorsiSec.classList.remove('active');
+                btnFeed.classList.add('active');
+                btnPercorsi.classList.remove('active');
+                title.textContent = "Feed & News";
+                subtitle.textContent = "Avvisi e aggiornamenti sui trasporti";
+            }
+        }
+
+        // Fetch Meteo via Open-Meteo API
+        async function fetchWeather() {
+            const locations = [
+                { id: 'weather-guidonia', lat: 41.9961, lon: 12.7214 },
+                { id: 'weather-roma', lat: 41.8919, lon: 12.5113 }
+            ];
+
+            const codeMap = {
+                0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
+                45: '🌫️', 48: '🌫️',
+                51: '🌧️', 53: '🌧️', 55: '🌧️',
+                61: '🌧️', 63: '🌧️', 65: '🌧️',
+                71: '❄️', 80: '🌦️', 81: '🌧️', 95: '⛈️'
+            };
+
+            for (const loc of locations) {
+                try {
+                    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current=temperature_2m,weather_code&timezone=Europe%2FRome`);
+                    const data = await res.json();
+                    if (data && data.current) {
+                        const temp = Math.round(data.current.temperature_2m);
+                        const icon = codeMap[data.current.weather_code] || '🌡️';
+                        document.getElementById(loc.id).innerHTML = `<span>${icon}</span> <span>${temp}°C</span>`;
+                    }
+                } catch (e) {
+                    document.getElementById(loc.id).textContent = 'N/D';
+                }
+            }
+        }
+
+        fetchWeather();
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
