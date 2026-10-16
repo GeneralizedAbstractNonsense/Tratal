@@ -10,6 +10,8 @@
     --primary: #2563eb;
     --primary-light: #eff6ff;
     --primary-border: #bfdbfe;
+    --metro-b: #00529b;
+    --metro-b-light: rgba(0, 82, 155, 0.12);
     --success: #16a34a;
     --success-bg: #f0fdf4;
     --warning: #d97706;
@@ -35,6 +37,8 @@
         --primary: #3b82f6;
         --primary-light: rgba(59, 130, 246, 0.12);
         --primary-border: rgba(59, 130, 246, 0.3);
+        --metro-b: #38bdf8;
+        --metro-b-light: rgba(56, 189, 248, 0.15);
         --success: #4ade80;
         --success-bg: rgba(74, 222, 128, 0.1);
         --warning: #fbbf24;
@@ -55,15 +59,17 @@ body {
     flex-direction: column;
     min-height: 100vh;
     padding: 20px 16px 40px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container { max-width: 760px; margin: 0 auto; width: 100%; }
 
+/* Header  */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border);
 }
@@ -91,6 +97,75 @@ header {
 
 .page-title { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
 
+/* Routes */
+.selector-section { margin-bottom: 24px; }
+.selector-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.route-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+}
+
+.route-tab {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: inherit;
+}
+
+.route-tab:hover { border-color: var(--border-hover); }
+.route-tab.active {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.route-tab .opt-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.route-tab .opt-title {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.35;
+}
+
+
+.route-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.route-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .step-card {
     background-color: var(--surface);
     border: 1px solid var(--border);
@@ -110,7 +185,7 @@ header {
 }
 
 .step-title-group { display: flex; flex-direction: column; gap: 4px; }
-.step-title { font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.step-title { font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
 .step-number {
     display: inline-flex;
     align-items: center;
@@ -151,25 +226,15 @@ header {
     font-size: 0.825rem;
     font-weight: 600;
     transition: all 0.2s ease;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .direct-btn:hover { background-color: var(--primary); color: #ffffff; }
 
-/* Iframe */
-.iframe-container {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background-color: var(--bg);
-}
 
-.iframe-container iframe { width: 100%; height: 100%; border: none; }
-
-/* ATAC */
-.lines-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.timetable-controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.lines-list { display: flex; gap: 8px; flex-wrap: wrap; }
 .line-btn {
     background-color: var(--bg);
     border: 1px solid var(--border);
@@ -179,19 +244,48 @@ header {
     font-weight: 600;
     color: var(--text-muted);
     cursor: pointer;
+    font-family: inherit;
 }
 .line-btn.active { background-color: var(--primary); color: #fff; border-color: var(--primary); }
 
-.atac-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.control-inputs { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.input-item { display: flex; flex-direction: column; gap: 4px; }
+.input-item label { font-size: 0.725rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+.input-item input {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-main);
+    font-size: 0.875rem;
+    width: 100px;
+}
+
+.fetch-btn {
+    padding: 8px 16px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.timetable-wrapper { margin-top: 10px; overflow-x: auto; }
+.atac-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
 .atac-table th, .atac-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left; }
 .atac-table th { background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem; text-transform: uppercase; }
 .atac-table td.hour-cell { font-weight: 700; color: var(--primary); width: 80px; }
 
 .timetable-placeholder {
-    padding: 20px; text-align: center; color: var(--text-muted); border: 1px dashed var(--border); border-radius: var(--radius-md);
+    padding: 20px; text-align: center; color: var(--text-muted); border: 1px dashed var(--border); border-radius: var(--radius-md); font-size: 0.875rem;
 }
 
 /* Trains */
+.iframe-container { position: relative; width: 100%; height: 500px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); background-color: var(--bg); }
+.iframe-container iframe { width: 100%; height: 100%; border: none; }
+
 .train-list { display: flex; flex-direction: column; gap: 10px; }
 .train-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); }
 .train-time { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
@@ -200,4 +294,3 @@ header {
 .status-badge { padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
 .status-badge.ontime { background-color: var(--success-bg); color: var(--success); }
 .status-badge.delay { background-color: var(--warning-bg); color: var(--warning); }
-
