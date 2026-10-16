@@ -26,6 +26,15 @@ To identify the specific route codes (`pathCode`) used by ATAC's backend (such a
    `https://viaggiacon.atac.roma.it/proxy/proxy.ashx?url=url.tpPortalPathTimetable/pathCode=CODE&daysFromNow=0`
 5. Extracted the exact `pathCode` values and embedded them directly into HTML attributes (e.g., `data-atac-lines="492A, 163R, 545R, 71A, MEBA, METROB1R, ..."`).
 
+### Weather Data Integration and Local Accuracy
+* **Forecast Accuracy and ilMeteo:** *ilMeteo.it* was chosen as the primary weather reference for external links because it consistently delivers the most precise hyper-local forecasts for the specific commuting corridors between Guidonia and Rome according to my experience.
+* **Real-time Processing and Severity Alerts:** Meteorological data (current temperature, WMO weather condition codes, wind speed and maximum precipitation probability) is fetched dynamically via the Open-Meteo API for both location coordinates. The client-side script parses these metrics to generate contextual alert badges directly within the weather cards flagging severe weather conditions (e.g., rain probability > 50% or winds > 30 km/h) that could disrupt extraurban Cotral buses and road traffic.
+
+### Live Transit Alerts and News Aggregation
+* **RSS Feed Processing:** Real-time mobility news and service disruptions are asynchronously retrieved from regional transportation feeds (such as *Astral Mobilità*) using a client-side proxy.
+* **Sanitization and Categorization:** Raw feed items are parsed through a browser `DOMParser` instance to strip HTML tags and decode HTML entities cleanly. The script applies keyword-matching regex patterns (detecting terms like *sciopero*, *FL2*, *Cotral*, *ATAC*) to classify items, apply visual priority tags, and sort advisories hierarchically (placing strikes and critical alerts at the top).
+
+
 ## Incomplete To-Do List
 - [ ] **Trenitalia Scraping / API Integration:** Implement direct status scraping/fetching for FL2 regional trains to display route-specific delays and real-time monitor alerts.
 - [ ] **Cotral Live Route Alerts:** Scrape and parse Cotral advisories for specific extraurban routes.
