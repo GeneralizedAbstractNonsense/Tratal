@@ -1,50 +1,63 @@
 :root {
-    --bg: #f8fafc;
-    --surface: #ffffff;
-    --surface-hover: #f1f5f9;
-    --border: #e2e8f0;
-    --border-hover: #cbd5e1;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --text-subtle: #94a3b8;
-    --primary: #2563eb;
-    --primary-light: #eff6ff;
-    --primary-border: #bfdbfe;
+    /* Light Theme Palette */
+    --bg: #ffffff;
+    --surface: #f6f6f6;
+    --surface-hover: #ededed;
+    --border: #e0e0e0;
+    --border-hover: #cccccc;
+    
+    --text-main: #222222;
+    --text-muted: #666666;
+    --text-subtle: #999999;
+    
+    --primary: #7543ea;
+    --primary-light: #f1ecfe;
+    --primary-border: #d8c8fc;
+    
     --metro-b: #00529b;
     --metro-b-light: rgba(0, 82, 155, 0.12);
-    --success: #16a34a;
-    --success-bg: #f0fdf4;
-    --warning: #d97706;
-    --warning-bg: #fffbeb;
-    --radius-lg: 20px;
-    --radius-md: 14px;
+    
+    --success: #2e7d32;
+    --success-bg: #edf7ed;
+    --warning: #e67e22;
+    --warning-bg: #fef5e7;
+    
+    --radius-lg: 16px;
+    --radius-md: 12px;
     --radius-sm: 8px;
-    --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
-    --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.06);
+    
+    --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.04);
+    --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
     --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #090d16;
-        --surface: #131b2e;
-        --surface-hover: #1c2742;
-        --border: #1e293b;
-        --border-hover: #334155;
-        --text-main: #f8fafc;
-        --text-muted: #94a3b8;
-        --text-subtle: #64748b;
-        --primary: #3b82f6;
-        --primary-light: rgba(59, 130, 246, 0.12);
-        --primary-border: rgba(59, 130, 246, 0.3);
+        /* Dark Theme Palette */
+        --bg: #1e1e1e;
+        --surface: #262626;
+        --surface-hover: #333333;
+        --border: #363636;
+        --border-hover: #484848;
+        
+        --text-main: #dcddde;
+        --text-muted: #a3a3a3;
+        --text-subtle: #666666;
+        
+        --primary: #a882ff;
+        --primary-light: rgba(168, 130, 255, 0.15);
+        --primary-border: rgba(168, 130, 255, 0.35);
+        
         --metro-b: #38bdf8;
         --metro-b-light: rgba(56, 189, 248, 0.15);
+        
         --success: #4ade80;
-        --success-bg: rgba(74, 222, 128, 0.1);
+        --success-bg: rgba(46, 125, 50, 0.15);
         --warning: #fbbf24;
-        --warning-bg: rgba(251, 191, 36, 0.1);
-        --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.2);
-        --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
+        --warning-bg: rgba(230, 126, 34, 0.15);
+        
+        --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.3);
+        --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -138,7 +151,7 @@ header {
 .route-tab.active {
     border-color: var(--primary);
     background-color: var(--primary-light);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    box-shadow: 0 4px 12px rgba(117, 67, 234, 0.18);
 }
 
 .route-tab .opt-tag {
@@ -156,7 +169,6 @@ header {
     line-height: 1.35;
 }
 
-
 .route-content {
     display: none;
     opacity: 0;
@@ -169,7 +181,6 @@ header {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 .step-card {
     background-color: var(--surface);
@@ -236,7 +247,6 @@ header {
 }
 
 .direct-btn:hover { background-color: var(--primary); color: #ffffff; }
-
 
 .timetable-controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
 .lines-list { display: flex; gap: 8px; flex-wrap: wrap; }
