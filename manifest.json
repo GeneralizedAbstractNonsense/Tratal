@@ -1,6 +1,6 @@
 {
-  "name": "Orari Trasporti",
-  "short_name": "Trasporti",
+  "name": "Tratal",
+  "short_name": "Tratal",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",
