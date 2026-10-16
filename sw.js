@@ -1,10 +1,15 @@
-const CACHE_NAME = 'trasporti-v1';
+const CACHE_NAME = 'trasporti-v2';
 const ASSETS = [
   './',
   './index.html',
+  './casa-universita.html',
   './universita-casa.html',
   './casa-scuola.html',
-  './scuola-casa.html'
+  './scuola-casa.html',
+  './style.css',
+  './manifest.json',
+  './js/components.js',
+  './js/atac.js'
 ];
 
 self.addEventListener('install', (event) => {
