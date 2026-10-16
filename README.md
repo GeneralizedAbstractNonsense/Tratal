@@ -18,7 +18,7 @@ Gemini free plan was used to generate an initial draft, which I then reviewed, e
 ### ATAC Timetable Integration & Route Code Extraction
 The application retrieves live timetables for Rome's transit network (ATAC) by querying ATAC's public proxy endpoint (`proxy.ashx`). The frontend script parses server responses and dynamically renders line schedules into containers specified by custom data attributes like `data-atac-lines`.
 
-To identify the specific route codes (`pathCode`) used by ATAC's backend (such as `METROB1R`, `163R`, or `492A`)[cite: 2], the following reverse-engineering process was performed using **Waterfox Developer Tools**:
+To identify the specific route codes (`pathCode`) used by ATAC's backend (such as `METROB1R`, `163R`, or `492A`), the following reverse-engineering process was performed using **Waterfox Developer Tools**:
 1. Opened the official ATAC / ViaggaConATAC timetable portal in Waterfox and launched Developer Tools (`F12`).
 2. Navigated to the **Network** tab and filtered traffic by **XHR / Fetch**.
 3. Selected and interacted with specific transit lines on the website.
@@ -27,7 +27,7 @@ To identify the specific route codes (`pathCode`) used by ATAC's backend (such a
 5. Extracted the exact `pathCode` values and embedded them directly into HTML attributes (e.g., `data-atac-lines="492A, 163R, 545R, 71A, MEBA, METROB1R, ..."`).
 
 ## Incomplete To-Do List
-- [ ] **Trenitalia Scraping / API Integration:** Implement direct status scraping/fetching for FL2 regional trains to display route-specific delays and real-time monitor alerts[cite: 2, 3].
+- [ ] **Trenitalia Scraping / API Integration:** Implement direct status scraping/fetching for FL2 regional trains to display route-specific delays and real-time monitor alerts.
 - [ ] **Cotral Live Route Alerts:** Scrape and parse Cotral advisories for specific extraurban routes.
 - [ ] **Targeted Push Notifications:** Add visual indicators and alert banners dedicated strictly to saved personal routes.
 - [ ] **Redesign:** Replace functional AI-made design with a self-made one.
