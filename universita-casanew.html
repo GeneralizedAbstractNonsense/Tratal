@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <title>Università ➔ Casa | Orari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+      
+        <header>
+            <a href="index.html" class="back-btn" aria-label="Torna alle Tratte">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Tratte</span>
+            </a>
+            <h1 class="page-title">Università ➔ Casa</h1>
+        </header>
+
+        <main>
+            <!-- Routes -->
+            <section class="selector-section">
+                <div class="selector-title">Selezionare il percorso</div>
+                <div class="route-tabs" role="tablist" aria-label="Combinazioni di percorso">
+                    <button class="route-tab active" role="tab" aria-selected="true" onclick="selectRoute(1, this)">
+                        <span class="opt-tag">Opzione 1</span>
+                        <span class="opt-title">Bus 163 ➔ Cotral (Ponte Mammolo)</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(2, this)">
+                        <span class="opt-tag">Opzione 2</span>
+                        <span class="opt-title">Bus 163/545 ➔ Treno ➔ Cotral</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(3, this)">
+                        <span class="opt-tag">Opzione 3</span>
+                        <span class="opt-title">3NAV ➔ Metro B ➔ Cotral</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(4, this)">
+                        <span class="opt-tag">Opzione 4</span>
+                        <span class="opt-title">3NAV ➔ Metro B ➔ Treno ➔ Cotral</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- PERCORSO 1 -->
+            <div id="route-1" class="route-content active">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC 163</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Ponte Mammolo</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="163A, 545A"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)</p>
+                        </div>
+                    </div>
+                    <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" data-label="Orari Cotral"></div>
+                </section>
+            </div>
+
+            <!-- PERCORSO 2 -->
+            <div id="route-2" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Stazione Tiburtina</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="163A, 545A"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Trenitalia</span>
+                                <span class="badge">Train FL2</span>
+                            </div>
+                            <p class="step-subtitle">Partenze da Roma Tiburtina verso Guidonia Montecelio</p>
+                        </div>
+                    </div>
+                    <div data-treni-station="S08409" 
+                         data-treni-filter="GUIDONIA,TIVOLI,AVEZZANO,MANDELA,SUBIACO,PESCARA,SULMONA" 
+                         data-rfi-url="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor">
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)</p>
+                        </div>
+                    </div>
+                    <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" data-label="Orari Cotral"></div>
+                </section>
+            </div>
+
+            <!-- PERCORSO 3 -->
+            <div id="route-3" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC 3NAV</span>
+                                <span class="badge">Bus / Tram</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Policlinico</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="3NAVA"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Metro B</span>
+                                <span class="badge">Metro</span>
+                            </div>
+                            <p class="step-subtitle">Policlinico ➔ Ponte Mammolo (Direzione Rebibbia)</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="METROBA"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)</p>
+                        </div>
+                    </div>
+                    <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" data-label="Orari Cotral"></div>
+                </section>
+            </div>
+
+            <!-- PERCORSO 4 -->
+            <div id="route-4" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>ATAC 3NAV</span>
+                                <span class="badge">Bus / Tram</span>
+                            </div>
+                            <p class="step-subtitle">Verano ➔ Policlinico</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="3NAVA"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>Metro B</span>
+                                <span class="badge">Metro</span>
+                            </div>
+                            <p class="step-subtitle">Policlinico ➔ Roma Tiburtina (Direzione Rebibbia / Jonio)</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="METROBA"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">3</span>
+                                <span>Trenitalia</span>
+                                <span class="badge">Train FL2</span>
+                            </div>
+                            <p class="step-subtitle">Partenze da Roma Tiburtina verso Guidonia Montecelio</p>
+                        </div>
+                    </div>
+                    <div data-treni-station="S08409" 
+                         data-treni-filter="GUIDONIA,TIVOLI,AVEZZANO,MANDELA,SUBIACO,PESCARA,SULMONA" 
+                         data-rfi-url="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor">
+                    </div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">4</span>
+                                <span>Cotral</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)</p>
+                        </div>
+                    </div>
+                    <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" data-label="Orari Cotral"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function selectRoute(routeNumber, tabElement) {
+            document.querySelectorAll('.route-content').forEach(c => c.classList.remove('active'));
+            const selectedContent = document.getElementById(`route-${routeNumber}`);
+            if (selectedContent) selectedContent.classList.add('active');
+
+            document.querySelectorAll('.route-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tabElement.classList.add('active');
+            tabElement.setAttribute('aria-selected', 'true');
+        }
+    </script>
+
+    <script src="js/atac.js" defer></script>
+    <script src="js/components.js" defer></script>
+</body>
+</html>
