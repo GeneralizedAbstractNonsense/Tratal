@@ -1,6 +1,6 @@
-# TrATal
+# Tratal
 ## Purpose
-Commuting across Rome and its province requires constantly checking multiple fragmented transit services, each with its own separate website or application. **TrATal** (whose name is a blend of **Tr**enitalia, **AT**AC and Co**tral**) was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
+Commuting across Rome and its province requires constantly checking multiple fragmented transit services, each with its own separate website or application. **Tratal** (whose name is a blend of **Tr**enitalia, **AT**AC and Co**tral**) was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
 
 Beyond route timetables, the dashboard aggregates transit alerts (such as strikes and line disruptions) and real-time weather forecasts to provide a complete overview of the daily commute at a glance.
 
