@@ -1,7 +1,7 @@
 # Tratal
 
-## Purpose & Scope
-Commuting across Rome and its province requires constantly checking multiple fragmented transit services—including Trenitalia, Cotral, and ATAC, each with its own separate website or application. **Tratal** was created to fix this personal problem[cite: 3].
+## Purpose
+Commuting across Rome and its province requires constantly checking multiple fragmented transit services—including Trenitalia, Cotral, and ATAC, each with its own separate website or application. **Tratal** was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
 
 Beyond route timetables, the dashboard aggregates transit alerts (such as strikes and line disruptions) and real-time weather forecasts to provide a complete overview of the daily commute at a glance.
 
@@ -9,6 +9,9 @@ Beyond route timetables, the dashboard aggregates transit alerts (such as strike
 * **Simplicity & Lightweight Architecture:** Built using standard HTML, CSS, and vanilla JavaScript without heavy frameworks in order to be easy to mantain.
 * **Cross-Platform Portability:** Runs seamlessly on any operating system (iOS, Android, Windows, macOS, Linux) through any modern web browser.
 * **PWA Ready:** Configured with a Service Worker and Web App Manifest, allowing it to be installed directly on mobile home screens as a progressive web app.
+
+## How was this application developed?
+Gemini free plan was used to generate an initial draft, which I then reviewed, edited and refined as needed.
 
 ## Technical Notes
 
@@ -27,3 +30,4 @@ To identify the specific route codes (`pathCode`) used by ATAC's backend (such a
 - [ ] **Trenitalia Scraping / API Integration:** Implement direct status scraping/fetching for FL2 regional trains to display route-specific delays and real-time monitor alerts[cite: 2, 3].
 - [ ] **Cotral Live Route Alerts:** Scrape and parse Cotral advisories for specific extraurban routes.
 - [ ] **Targeted Push Notifications:** Add visual indicators and alert banners dedicated strictly to saved personal routes.
+- [ ] **Redesign:** Replace functional AI-made design with a self-made one.
