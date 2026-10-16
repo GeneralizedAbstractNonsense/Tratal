@@ -15,7 +15,7 @@ Gemini free plan was used to generate an initial draft, which I then reviewed, e
 
 ## Technical Notes
 
-### ATAC Timetable Integration & Route Code Extraction
+### ATAC Timetable Integration and Route Code Extraction
 The application retrieves live timetables for Rome's transit network (ATAC) by querying ATAC's public proxy endpoint (`proxy.ashx`). The frontend script parses server responses and dynamically renders line schedules into containers specified by custom data attributes like `data-atac-lines`.
 
 To identify the specific route codes (`pathCode`) used by ATAC's backend (such as `METROB1R`, `163R`, or `492A`), the following reverse-engineering process was performed using **Waterfox Developer Tools**:
