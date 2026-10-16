@@ -25,11 +25,10 @@ const TransportComponents = {
             const filter = widget.dataset.treniFilter ? widget.dataset.treniFilter.split(',') : [];
             const rfiUrl = widget.dataset.rfiUrl || '';
 
-            // Render del layout immediato (con link RFI subito cliccabile)
             widget.innerHTML = `
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:8px; flex-wrap:wrap;">
                     <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                        <button type="button" class="direct-btn btn-refresh-trains">🔄 Aggiorna</button>
+                        <button type="button" class="direct-btn btn-refresh-trains">Reload</button>
                         ${rfiUrl ? `
                             <a href="${rfiUrl}" target="_blank" rel="noopener noreferrer" class="direct-btn">
                                 <span>RFI Monitor</span>
