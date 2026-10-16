@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <title>[Origin] ➔ [Destination] | Timetable</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+      
+        <header>
+            <a href="index.html" class="back-btn" aria-label="Back to Routes">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Routes</span>
+            </a>
+            <h1 class="page-title">[Origin] ➔ [Destination]</h1>
+        </header>
+
+        <main>
+            <!-- ================================================================= -->
+            <!-- ROUTE SELECTOR (Remove this section if you only need 1 route)    -->
+            <!-- ================================================================= -->
+            <section class="selector-section">
+                <div class="selector-title">Select Route</div>
+                <div class="route-tabs" role="tablist" aria-label="Route options">
+                    <button class="route-tab active" role="tab" aria-selected="true" onclick="selectRoute(1, this)">
+                        <span class="opt-tag">Option 1</span>
+                        <span class="opt-title">[Option 1 Description / Summary]</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(2, this)">
+                        <span class="opt-tag">Option 2</span>
+                        <span class="opt-title">[Option 2 Description / Summary]</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ================================================================= -->
+            <!-- ROUTE 1 (Default visible route)                                   -->
+            <!-- ================================================================= -->
+            <div id="route-1" class="route-content active">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>[Transport Line / Operator]</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">[Departure Stop] ➔ [Arrival Stop]</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="[LINE_CODE]"></div>
+                </section>
+
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">2</span>
+                                <span>[Transport Line / Operator]</span>
+                                <span class="badge">Bus</span>
+                            </div>
+                            <p class="step-subtitle">[Departure Stop] ➔ [Arrival Stop]</p>
+                        </div>
+                    </div>
+                    <div data-cotral-url="[URL]" data-label="Timetable"></div>
+                </section>
+            </div>
+
+            <!-- ================================================================= -->
+            <!-- ROUTE 2 (Optional: delete if single route)                       -->
+            <!-- ================================================================= -->
+            <div id="route-2" class="route-content">
+                <section class="step-card">
+                    <div class="step-header">
+                        <div class="step-title-group">
+                            <div class="step-title">
+                                <span class="step-number">1</span>
+                                <span>[Transport Line / Operator]</span>
+                                <span class="badge">Metro</span>
+                            </div>
+                            <p class="step-subtitle">[Departure Stop] ➔ [Arrival Stop]</p>
+                        </div>
+                    </div>
+                    <div data-atac-lines="[LINE_CODE]"></div>   <!-- Look on README.md, you have to separate them with commas.  -->
+                </section>
+            </div>
+        </main>
+    </div>
+
+             <!-- ================================================================= -->
+            <!-- ROUTE SELECTOR SCRIPT (Optional: delete if single route)          -->
+            <!-- ================================================================= -->
+    <script>
+        function selectRoute(routeNumber, tabElement) {
+            document.querySelectorAll('.route-content').forEach(c => c.classList.remove('active'));
+            const selectedContent = document.getElementById(`route-${routeNumber}`);
+            if (selectedContent) selectedContent.classList.add('active');
+
+            document.querySelectorAll('.route-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tabElement.classList.add('active');
+            tabElement.setAttribute('aria-selected', 'true');
+        }
+    </script>
+
+
+   <!-- ================================================================= -->
+                     <!-- COMPONENTS SCRIPTS  -->
+    <!-- ================================================================= -->
+
+    <script src="js/atac.js" defer></script>
+    <script src="js/components.js" defer></script>
+</body>
+</html>
+
+
+
+<!--
+=================================================================================
+ COMPONENT USAGE GUIDE (ATAC, COTRAL, TRENITALIA)
+=================================================================================
+
+1. ATAC BUS / METRO / TRAM COMPONENT:
+   Renders real-time or scheduled bus/tram/metro lines managed by ATAC.
+   
+   Syntax:
+     <div data-atac-lines="LINE_CODES"></div>
+
+   Examples:
+     - Single or multiple bus lines:
+       <div data-atac-lines="163A, 545A"></div>
+     - Metro line:
+       <div data-atac-lines="METROBA"></div>
+     - Tram replacement bus (e.g., 3NAV):
+       <div data-atac-lines="3NAVA"></div>
+
+2. COTRAL BUS COMPONENT:
+   Renders a link or timetable section to external Cotral route search.
+
+   Syntax:
+     <div data-cotral-url="COTRAL_TIMETABLE_URL" data-label="BUTTON_LABEL"></div>
+
+   Attributes:
+     - data-cotral-url: Direct URL to the Cotral search query with departure/arrival Stop IDs.
+     - data-label: Optional custom button label (defaults to "Timetable" or "Orari Cotral").
+
+   Example:
+     <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&arriveStopId=60717" 
+          data-label="Cotral Timetable">
+     </div>
+
+3. TRENITALIA / RFI TRAIN COMPONENT:
+   Renders train departures from a station with optional destination filtering and live monitor link.
+
+   Syntax:
+     <div data-treni-station="STATION_ID"
+          data-treni-filter="COMMA_SEPARATED_DESTINATIONS"
+          data-rfi-url="RFI_LIVE_MONITOR_URL">
+     </div>
+
+   Attributes:
+     - data-treni-station: RFI Station Code (e.g., "S08409" for Roma Tiburtina).
+     - data-treni-filter: Comma-separated list of stations/destinations to filter train listings.
+     - data-rfi-url: Direct RFI iEChub monitor URL for real-time arrival/departure boards.
+
+   Example:
+     <div data-treni-station="S08409" 
+          data-treni-filter="GUIDONIA,TIVOLI,AVEZZANO,MANDELA" 
+          data-rfi-url="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor">
+     </div>
+=================================================================================
+-->
