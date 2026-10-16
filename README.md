@@ -6,7 +6,7 @@ Commuting across Rome and its province requires constantly checking multiple fra
 Beyond route timetables, the dashboard aggregates transit alerts (such as strikes and line disruptions) and real-time weather forecasts to provide a complete overview of the daily commute at a glance.
 
 ## Why I decided to create a Web App?
-* **Simplicity & Lightweight Architecture:** Built using standard HTML, CSS, and vanilla JavaScript without heavy frameworks in order to be easy to mantain.
+* **Simplicity & Lightweight Architecture:** Built using standard HTML, CSS and vanilla JavaScript without heavy frameworks in order to be easy to mantain.
 * **Cross-Platform Portability:** Runs seamlessly on any operating system (iOS, Android, Windows, macOS, Linux) through any modern web browser.
 * **PWA Ready:** Configured with a Service Worker and Web App Manifest, allowing it to be installed directly on mobile home screens as a progressive web app.
 
