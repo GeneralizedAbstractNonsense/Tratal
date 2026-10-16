@@ -1,7 +1,7 @@
 # Tratal
 
 ## Purpose
-Commuting across Rome and its province requires constantly checking multiple fragmented transit services—including Trenitalia, Cotral, and ATAC, each with its own separate website or application. **Tratal** was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
+Commuting across Rome and its province requires constantly checking multiple fragmented transit services, each with its own separate website or application. **Tratal** was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
 
 Beyond route timetables, the dashboard aggregates transit alerts (such as strikes and line disruptions) and real-time weather forecasts to provide a complete overview of the daily commute at a glance.
 
