@@ -1,86 +1,88 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#1e1e1e">
     <title>Tratal | Home</title>
     <style>
         :root {
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --surface-hover: #f1f5f9;
-            --border: #e2e8f0;
-            --border-hover: #cbd5e1;
+            /* Light Theme Palette */
+            --bg: #ffffff;
+            --surface: #f6f6f6;
+            --surface-hover: #ededed;
+            --border: #e0e0e0;
+            --border-hover: #cccccc;
             
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --text-subtle: #94a3b8;
+            --text-main: #222222;
+            --text-muted: #666666;
+            --text-subtle: #999999;
             
-            --primary: #2563eb;
-            --primary-light: #eff6ff;
-            --primary-border: #bfdbfe;
+            --primary: #7543ea;
+            --primary-light: #f1ecfe;
+            --primary-border: #d8c8fc;
 
-            --danger-bg: #fef2f2;
-            --danger-text: #dc2626;
-            --danger-border: #fecaca;
+            --danger-bg: #fdeded;
+            --danger-text: #e53935;
+            --danger-border: #fbcfe8;
 
-            --warning-bg: #fffbeb;
-            --warning-text: #d97706;
-            --warning-border: #fef3c7;
+            --warning-bg: #fef5e7;
+            --warning-text: #e67e22;
+            --warning-border: #fdebd0;
 
-            --info-bg: #eff6ff;
-            --info-text: #2563eb;
-            --info-border: #bfdbfe;
+            --info-bg: #f1ecfe;
+            --info-text: #7543ea;
+            --info-border: #d8c8fc;
 
-            --success-bg: #f0fdf4;
-            --success-text: #16a34a;
-            --success-border: #bbf7d0;
+            --success-bg: #edf7ed;
+            --success-text: #2e7d32;
+            --success-border: #c8e6c9;
             
-            --radius-lg: 20px;
-            --radius-md: 14px;
+            --radius-lg: 16px;
+            --radius-md: 12px;
             --radius-sm: 8px;
             
-            --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
-            --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.06);
+            --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.04);
+            --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
             --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg: #090d16;
-                --surface: #131b2e;
-                --surface-hover: #1c2742;
-                --border: #1e293b;
-                --border-hover: #334155;
+                /* Dark Theme Palette */
+                --bg: #1e1e1e;
+                --surface: #262626;
+                --surface-hover: #333333;
+                --border: #363636;
+                --border-hover: #484848;
                 
-                --text-main: #f8fafc;
-                --text-muted: #94a3b8;
-                --text-subtle: #64748b;
+                --text-main: #dcddde;
+                --text-muted: #a3a3a3;
+                --text-subtle: #666666;
                 
-                --primary: #3b82f6;
-                --primary-light: rgba(59, 130, 246, 0.12);
-                --primary-border: rgba(59, 130, 246, 0.3);
+                --primary: #a882ff;
+                --primary-light: rgba(168, 130, 255, 0.15);
+                --primary-border: rgba(168, 130, 255, 0.35);
 
-                --danger-bg: rgba(220, 38, 38, 0.15);
+                --danger-bg: rgba(229, 57, 53, 0.15);
                 --danger-text: #f87171;
-                --danger-border: rgba(220, 38, 38, 0.3);
+                --danger-border: rgba(229, 57, 53, 0.3);
 
-                --warning-bg: rgba(217, 119, 6, 0.15);
+                --warning-bg: rgba(230, 126, 34, 0.15);
                 --warning-text: #fbbf24;
-                --warning-border: rgba(217, 119, 6, 0.3);
+                --warning-border: rgba(230, 126, 34, 0.3);
 
-                --info-bg: rgba(59, 130, 246, 0.15);
-                --info-text: #60a5fa;
-                --info-border: rgba(59, 130, 246, 0.3);
+                --info-bg: rgba(168, 130, 255, 0.15);
+                --info-text: #a882ff;
+                --info-border: rgba(168, 130, 255, 0.3);
 
-                --success-bg: rgba(22, 163, 74, 0.15);
+                --success-bg: rgba(46, 125, 50, 0.15);
                 --success-text: #4ade80;
-                --success-border: rgba(22, 163, 74, 0.3);
+                --success-border: rgba(46, 125, 50, 0.3);
                 
-                --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.2);
-                --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
+                --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.3);
+                --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.5);
             }
         }
 
@@ -109,7 +111,7 @@
             width: 100%;
         }
 
-        /* Widget Meteo Ingrandito */
+        /* Weather Widget */
         .weather-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -487,7 +489,6 @@
             border-radius: var(--radius-lg);
         }
 
- 
         .bottom-nav-wrapper {
             position: fixed;
             bottom: 0;
@@ -543,7 +544,7 @@
         .nav-btn.active {
             background-color: var(--primary);
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 4px 12px rgba(117, 67, 234, 0.3);
         }
     </style>
 </head>
@@ -551,11 +552,11 @@
 
     <div class="container">
         
-        <div class="weather-grid" aria-label="Informazioni Meteo">
+        <div class="weather-grid" aria-label="Weather Information">
             <a href="https://www.ilmeteo.it/meteo/Guidonia" target="_blank" rel="noopener noreferrer" class="weather-card" id="weather-card-guidonia">
                 <div class="weather-header">
                     <span class="weather-city">Guidonia</span>
-                    <span class="weather-condition">Caricamento...</span>
+                    <span class="weather-condition">Loading...</span>
                 </div>
                 <div class="weather-body">
                     <div class="skeleton"></div>
@@ -563,8 +564,8 @@
             </a>
             <a href="https://www.ilmeteo.it/meteo/Roma" target="_blank" rel="noopener noreferrer" class="weather-card" id="weather-card-roma">
                 <div class="weather-header">
-                    <span class="weather-city">Roma</span>
-                    <span class="weather-condition">Caricamento...</span>
+                    <span class="weather-city">Rome</span>
+                    <span class="weather-condition">Loading...</span>
                 </div>
                 <div class="weather-body">
                     <div class="skeleton"></div>
@@ -572,13 +573,12 @@
             </a>
         </div>
 
-   
         <header>
             <div>
-                <h1 id="page-title">Percorsi</h1>
-                <p id="page-subtitle">Seleziona una tratta per visualizzare gli orari</p>
+                <h1 id="page-title">Routes</h1>
+                <p id="page-subtitle">Select a route to view schedules</p>
             </div>
-            <button class="btn-refresh" id="refresh-btn" onclick="refreshData()" title="Aggiorna dati" aria-label="Ricarica feed e meteo">
+            <button class="btn-refresh" id="refresh-btn" onclick="refreshData()" title="Refresh data" aria-label="Reload feed and weather">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="23 4 23 10 17 10"></polyline>
                     <polyline points="1 20 1 14 7 14"></polyline>
@@ -588,12 +588,12 @@
         </header>
 
         <main>
-            <!-- Sezione Percorsi -->
+            <!-- Routes Section -->
             <section id="section-percorsi" class="tab-content active" role="tabpanel" aria-labelledby="btn-percorsi" aria-hidden="false">
                 <div class="routes-list">
                     <a href="casa-universita.html" class="route-card">
                         <div class="route-header">
-                            <span class="route-title">Casa ➔ Università</span>
+                            <span class="route-title">Home ➔ University</span>
                             <svg class="route-icon-arrow" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -608,7 +608,7 @@
 
                     <a href="universita-casa.html" class="route-card">
                         <div class="route-header">
-                            <span class="route-title">Università ➔ Casa</span>
+                            <span class="route-title">University ➔ Home</span>
                             <svg class="route-icon-arrow" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -623,7 +623,7 @@
 
                     <a href="casa-scuola.html" class="route-card">
                         <div class="route-header">
-                            <span class="route-title">Casa ➔ Scuola</span>
+                            <span class="route-title">Home ➔ School</span>
                             <svg class="route-icon-arrow" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -636,7 +636,7 @@
 
                     <a href="scuola-casa.html" class="route-card">
                         <div class="route-header">
-                            <span class="route-title">Scuola ➔ Casa</span>
+                            <span class="route-title">School ➔ Home</span>
                             <svg class="route-icon-arrow" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -649,10 +649,10 @@
                 </div>
             </section>
 
-           
+            <!-- Feed Section -->
             <section id="section-feed" class="tab-content" role="tabpanel" aria-labelledby="btn-feed" aria-hidden="true">
                 <div class="feed-list" id="feed-container">
-                    <div class="empty-feed">Scansione avvisi in tempo reale...</div>
+                    <div class="empty-feed">Scanning live alerts...</div>
                 </div>
             </section>
         </main>
@@ -665,7 +665,7 @@
                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
                 </svg>
-                <span>Percorsi</span>
+                <span>Routes</span>
             </button>
             <button type="button" class="nav-btn" id="btn-feed" role="tab" aria-selected="false" aria-controls="section-feed" onclick="showTab('feed')">
                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -680,7 +680,6 @@
     <script>
         let allFeedItems = [];
 
-    
         function parseCleanText(htmlString) {
             if (!htmlString) return '';
             const parser = new DOMParser();
@@ -688,18 +687,17 @@
             return (doc.body.textContent || '').trim();
         }
 
-   
         const transportAlertsBase = [
             {
                 id: 'sciopero-garanzia',
                 category: 'scioperi',
                 isStrike: true,
                 type: 'danger',
-                tag: '🚨 Sciopero & Garanzie',
+                tag: '🚨 Strike & Guarantees',
                 tagClass: 'tag-danger',
-                time: 'Info Sempre Valida',
-                title: 'Regole Fasce di Garanzia TPL',
-                description: 'In caso di sciopero proclamato per ATAC, Cotral o Trenitalia, i servizi sono GARANTITI esclusivamente nelle fasce 06:00-09:00 e 17:00-20:00.',
+                time: 'Always Valid Info',
+                title: 'Public Transit Guaranteed Hours',
+                description: 'In case of an announced strike for ATAC, Cotral, or Trenitalia, services are GUARANTEED exclusively during the 06:00-09:00 and 17:00-20:00 time slots.',
                 link: 'https://www.commissionegaranziasciopero.it/'
             },
             {
@@ -707,11 +705,11 @@
                 category: 'fl2',
                 isStrike: false,
                 type: 'info',
-                tag: 'Linea FL2',
+                tag: 'FL2 Line',
                 tagClass: 'tag-info',
-                time: 'Stato Tratta',
+                time: 'Route Status',
                 title: 'FL2 Roma Tiburtina ⇄ Guidonia ⇄ Tivoli',
-                description: 'Circolazione sulle corse pendolari del nodo Roma-Guidonia. Consultare il monitor di Stazione o Infomobilità Trenitalia per eventuali ritardi istantanei.',
+                description: 'Commuter trains operating on the Rome-Guidonia route. Check station monitors or Trenitalia Infomobilità for real-time delay updates.',
                 link: 'https://www.trenitalia.com/it/informazioni/infomobilita/notizie-infomobilita.html'
             },
             {
@@ -721,9 +719,9 @@
                 type: 'info',
                 tag: 'Cotral',
                 tagClass: 'tag-info',
-                time: 'Stato Tratta',
-                title: 'Corse Guidonia - Roma Ponte Mammolo',
-                description: 'Servizio extraurbano attivo lungo l\'asse Tiburtina. Gli orari possono subire variazioni in base al traffico sulla statale.',
+                time: 'Route Status',
+                title: 'Guidonia - Roma Ponte Mammolo Routes',
+                description: 'Intercity bus service active along the Tiburtina route. Timetables may vary depending on highway traffic.',
                 link: 'https://www.cotralspa.it/'
             },
             {
@@ -733,13 +731,12 @@
                 type: 'info',
                 tag: 'ATAC & Metro',
                 tagClass: 'tag-info',
-                time: 'Stato Tratta',
-                title: 'Rete Metro Roma (A, B/B1, C)',
-                description: 'Servizio regolare sulle linee metropolitane con nodo di scambio FL2 presso la stazione Roma Tiburtina.',
+                time: 'Route Status',
+                title: 'Rome Metro Network (A, B/B1, C)',
+                description: 'Regular service on metro lines with FL2 interchange at Roma Tiburtina station.',
                 link: 'https://www.atac.roma.it/'
             }
         ];
-
 
         function sortFeedByHierarchy(items) {
             return items.sort((a, b) => {
@@ -752,7 +749,6 @@
             });
         }
 
-
         async function fetchLiveRSS() {
             const rssUrl = 'https://astralmobilita.it/feed/';
             const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
@@ -764,14 +760,14 @@
                 if (data && data.status === 'ok' && data.items && data.items.length > 0) {
                     return data.items.map((item, idx) => {
                         const fullText = (item.title + " " + item.description).toLowerCase();
-                        const isStrike = /sciopero|agitazione|astensione|proclamato/i.test(fullText);
+                        const isStrike = /sciopero|agitazione|astensione|proclamato|strike/i.test(fullText);
                         const isFL2 = /fl2|guidonia|tivoli|roma-pescara|tiburtina/i.test(fullText);
                         const isCotral = /cotral/i.test(fullText);
                         const isAtac = /atac|metro|bus/i.test(fullText);
 
                         let cat = 'atac';
-                        let tag = 'Mobilità Lazio';
-                        if (isStrike) { cat = 'scioperi'; tag = '🚨 Sciopero Live'; }
+                        let tag = 'Lazio Mobility';
+                        if (isStrike) { cat = 'scioperi'; tag = '🚨 Live Strike'; }
                         else if (isFL2) { cat = 'fl2'; tag = 'FL2 Trenitalia'; }
                         else if (isCotral) { cat = 'cotral'; tag = 'Cotral'; }
                         else if (isAtac) { cat = 'atac'; tag = 'ATAC Roma'; }
@@ -786,7 +782,7 @@
                             type: isStrike ? 'danger' : 'warning',
                             tag: tag,
                             tagClass: isStrike ? 'tag-danger' : 'tag-warning',
-                            time: item.pubDate ? new Date(item.pubDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'Oggi',
+                            time: item.pubDate ? new Date(item.pubDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'Today',
                             title: parseCleanText(item.title),
                             description: cleanDesc,
                             link: item.link
@@ -794,31 +790,30 @@
                     });
                 }
             } catch(e) {
-                console.warn("Impossibile recuperare feed RSS live:", e);
+                console.warn("Unable to fetch live RSS feed:", e);
             }
             return [];
         }
 
-
         async function fetchWeatherAndAlerts() {
             const locations = [
                 { cardId: 'weather-card-guidonia', name: 'Guidonia', lat: 41.9961, lon: 12.7214 },
-                { cardId: 'weather-card-roma', name: 'Roma', lat: 41.8919, lon: 12.5113 }
+                { cardId: 'weather-card-roma', name: 'Rome', lat: 41.8919, lon: 12.5113 }
             ];
 
             const getWeatherInfo = (code) => {
-                if (code === 0) return { icon: '☀️', text: 'Sereno' };
-                if (code === 1) return { icon: '🌤️', text: 'Poco Nuvoloso' };
-                if (code === 2) return { icon: '⛅', text: 'Parzialmente Nuvoloso' };
-                if (code === 3) return { icon: '☁️', text: 'Coperto' };
-                if (code === 45 || code === 48) return { icon: '🌫️', text: 'Nebbia' };
-                if (code >= 51 && code <= 57) return { icon: '🌧️', text: 'Pioviggine' };
-                if (code >= 61 && code <= 67) return { icon: '🌧️', text: 'Pioggia' };
-                if (code >= 71 && code <= 77) return { icon: '❄️', text: 'Neve' };
-                if (code >= 80 && code <= 82) return { icon: '🌦️', text: 'Rovesci' };
-                if (code >= 85 && code <= 86) return { icon: '🌨️', text: 'Rovesci Neve' };
-                if (code >= 95) return { icon: '⛈️', text: 'Temporale' };
-                return { icon: '🌡️', text: 'Meteo' };
+                if (code === 0) return { icon: '☀️', text: 'Clear' };
+                if (code === 1) return { icon: '🌤️', text: 'Mainly Clear' };
+                if (code === 2) return { icon: '⛅', text: 'Partly Cloudy' };
+                if (code === 3) return { icon: '☁️', text: 'Overcast' };
+                if (code === 45 || code === 48) return { icon: '🌫️', text: 'Fog' };
+                if (code >= 51 && code <= 57) return { icon: '🌧️', text: 'Drizzle' };
+                if (code >= 61 && code <= 67) return { icon: '🌧️', text: 'Rain' };
+                if (code >= 71 && code <= 77) return { icon: '❄️', text: 'Snow' };
+                if (code >= 80 && code <= 82) return { icon: '🌦️', text: 'Rain Showers' };
+                if (code >= 85 && code <= 86) return { icon: '🌨️', text: 'Snow Showers' };
+                if (code >= 95) return { icon: '⛈️', text: 'Thunderstorm' };
+                return { icon: '🌡️', text: 'Weather' };
             };
 
             for (const loc of locations) {
@@ -836,14 +831,13 @@
                         const precipProb = data.daily?.precipitation_probability_max?.[0] || 0;
                         const wind = Math.round(data.current.wind_speed_10m || 0);
 
-                        
                         let alertBadgeHtml = '';
                         if (code >= 80 || wind > 50) {
-                            alertBadgeHtml = `<div class="weather-alert-box danger">🚨 Allerta: Temporale / Vento Forte (${wind} km/h)</div>`;
+                            alertBadgeHtml = `<div class="weather-alert-box danger">🚨 Alert: Thunderstorm / High Winds (${wind} km/h)</div>`;
                         } else if (code >= 61 || precipProb > 50 || wind > 30) {
-                            alertBadgeHtml = `<div class="weather-alert-box warning">⚠️ Attenzione: Pioggia (${precipProb}%) / Vento (${wind} km/h)</div>`;
+                            alertBadgeHtml = `<div class="weather-alert-box warning">⚠️ Warning: Rain (${precipProb}%) / Wind (${wind} km/h)</div>`;
                         } else {
-                            alertBadgeHtml = `<div class="weather-alert-box ok">🌤️ Condizioni meteo regolari</div>`;
+                            alertBadgeHtml = `<div class="weather-alert-box ok">🌤️ Regular weather conditions</div>`;
                         }
 
                         cardEl.innerHTML = `
@@ -857,8 +851,8 @@
                                     <span class="weather-temp">${temp}°C</span>
                                 </div>
                                 <div class="weather-details">
-                                    <div>☔ Pioggia: ${precipProb}%</div>
-                                    <div>💨 Vento: ${wind} km/h</div>
+                                    <div>☔ Rain: ${precipProb}%</div>
+                                    <div>💨 Wind: ${wind} km/h</div>
                                 </div>
                             </div>
                             ${alertBadgeHtml}
@@ -868,22 +862,19 @@
                     cardEl.innerHTML = `
                         <div class="weather-header">
                             <span class="weather-city">${loc.name}</span>
-                            <span class="weather-condition">Non disponibile</span>
+                            <span class="weather-condition">Not available</span>
                         </div>
-                        <div class="weather-alert-box warning">⚠️ Impossibile caricare i dati meteo</div>
+                        <div class="weather-alert-box warning">⚠️ Unable to load weather data</div>
                     `;
                 }
             }
         }
 
-   
         async function loadAllFeedData() {
- 
             const [liveRssItems] = await Promise.all([
                 fetchLiveRSS(),
                 fetchWeatherAndAlerts()
             ]);
-
 
             const combined = [...liveRssItems, ...transportAlertsBase];
             const unique = Array.from(new Map(combined.map(item => [item.id, item])).values());
@@ -914,8 +905,8 @@
                 btnFeed.classList.remove('active');
                 btnFeed.setAttribute('aria-selected', 'false');
 
-                title.textContent = "Percorsi";
-                subtitle.textContent = "Seleziona una tratta per visualizzare gli orari";
+                title.textContent = "Routes";
+                subtitle.textContent = "Select a route to view schedules";
             } else {
                 percorsiSec.classList.remove('active');
                 percorsiSec.setAttribute('aria-hidden', 'true');
@@ -930,8 +921,8 @@
                 btnPercorsi.classList.remove('active');
                 btnPercorsi.setAttribute('aria-selected', 'false');
 
-                title.textContent = "Feed Mobilità";
-                subtitle.textContent = "Scioperi, avvisi live e stato delle linee";
+                title.textContent = "Mobility Feed";
+                subtitle.textContent = "Strikes, live alerts, and line status";
             }
         }
 
@@ -941,7 +932,7 @@
             if (allFeedItems.length === 0) {
                 container.innerHTML = `
                     <div class="empty-feed">
-                        Nessun avviso sulla mobilità presente al momento.
+                        No mobility alerts at the moment.
                     </div>
                 `;
                 return;
@@ -959,7 +950,7 @@
                     <p>${item.description}</p>
                     ${item.link ? `
                         <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="feed-action-link">
-                            Dettagli ufficiali ➔
+                            Official details ➔
                         </a>
                     ` : ''}
                 </article>
@@ -976,7 +967,6 @@
             }
         }
 
- 
         loadAllFeedData();
 
         if ('serviceWorker' in navigator) {
