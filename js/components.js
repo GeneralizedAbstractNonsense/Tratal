@@ -3,7 +3,7 @@ const TransportComponents = {
     initCotral() {
         document.querySelectorAll('[data-cotral-url]').forEach(el => {
             const url = el.dataset.cotralUrl;
-            const label = el.dataset.label || 'Orari Cotral';
+            const label = el.dataset.label || 'Cotral';
             
             el.innerHTML = `
                 <div style="margin-bottom: 12px; display:flex; justify-content:flex-end;">
@@ -13,7 +13,12 @@ const TransportComponents = {
                     </a>
                 </div>
                 <div class="iframe-container">
-                    <iframe src="${url}" title="${label}" loading="lazy"></iframe>
+                    <iframe src="${url}" 
+                            title="${label}" 
+                            loading="lazy" 
+                            style="background-color: #000000; opacity: 0; transition: opacity 0.4s ease;" 
+                            onload="this.style.opacity='1'">
+                    </iframe>
                 </div>
             `;
         });
