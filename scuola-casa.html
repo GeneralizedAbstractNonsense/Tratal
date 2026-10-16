@@ -6,280 +6,14 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0f172a">
     <title>Scuola ➔ Casa | Orari</title>
-    <style>
-        :root {
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --surface-hover: #f1f5f9;
-            --border: #e2e8f0;
-            --border-hover: #cbd5e1;
-            
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --text-subtle: #94a3b8;
-            
-            --primary: #2563eb;
-            --primary-light: #eff6ff;
-            --primary-border: #bfdbfe;
-            
-            --radius-lg: 20px;
-            --radius-md: 14px;
-            --radius-sm: 8px;
-            
-            --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
-            --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.06);
-            --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, sans-serif;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #090d16;
-                --surface: #131b2e;
-                --surface-hover: #1c2742;
-                --border: #1e293b;
-                --border-hover: #334155;
-                
-                --text-main: #f8fafc;
-                --text-muted: #94a3b8;
-                --text-subtle: #64748b;
-                
-                --primary: #3b82f6;
-                --primary-light: rgba(59, 130, 246, 0.12);
-                --primary-border: rgba(59, 130, 246, 0.3);
-                
-                --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.2);
-                --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
-            }
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: var(--font);
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding: 20px 16px 40px 16px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .container {
-            max-width: 760px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        /* Top Header Navigation */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 28px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .back-btn {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.875rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 12px;
-            border-radius: 9999px;
-            background-color: var(--surface);
-            border: 1px solid var(--border);
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .back-btn:hover, .back-btn:focus-visible {
-            color: var(--primary);
-            border-color: var(--primary-border);
-            background-color: var(--primary-light);
-            outline: none;
-        }
-
-        .back-btn svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            stroke-width: 2.5;
-            fill: none;
-        }
-
-        .page-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-main);
-        }
-
-        /* Timeline Step Card */
-        .step-card {
-            background-color: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 22px;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-subtle);
-            transition: border-color 0.2s ease;
-        }
-
-        .step-card:hover {
-            border-color: var(--border-hover);
-        }
-
-        .step-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .step-title-group {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            border: 1px solid var(--primary-border);
-        }
-
-        .badge {
-            background-color: var(--bg);
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 2px 8px;
-            border-radius: 9999px;
-            font-size: 0.725rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .step-subtitle {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-left: 36px;
-        }
-
-        /* Action Link Button */
-        .direct-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            border: 1px solid var(--primary-border);
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            font-size: 0.825rem;
-            font-weight: 600;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .direct-btn:hover, .direct-btn:focus-visible {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-            outline: none;
-        }
-
-        .direct-btn svg {
-            width: 14px;
-            height: 14px;
-            stroke: currentColor;
-            stroke-width: 2.5;
-            fill: none;
-        }
-
-        /* Iframe Container with Skeleton Loader */
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: 520px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background-color: var(--bg);
-            background-image: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
-            background-size: 200% 100%;
-            animation: skeleton-loading 1.5s infinite;
-        }
-
-        .iframe-container iframe {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        @keyframes skeleton-loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 16px 12px 32px 12px;
-            }
-
-            .iframe-container {
-                height: 450px;
-            }
-
-            .step-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .direct-btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <!-- Header di navigazione -->
         <header>
             <a href="index.html" class="back-btn" aria-label="Torna alle Tratte">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
@@ -289,39 +23,25 @@
         </header>
 
         <main>
-            <!-- TAPPA 1: COTRAL BAGNI DI TIVOLI ➔ GUIDONIA -->
+            <!-- TAPPA 1: COTRAL -->
             <section class="step-card">
                 <div class="step-header">
                     <div class="step-title-group">
                         <div class="step-title">
                             <span class="step-number">1</span>
-                            <span>Bus Cotral</span>
-                            <span class="badge">Bus Interurbano</span>
+                            <span>Cotral</span>
+                            <span class="badge">Bus</span>
                         </div>
                         <p class="step-subtitle">Via Morante / Via Tiburtina ➔ Guidonia (Viale Roma - Aeroporto)</p>
                     </div>
-                    <a href="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60719&departureStopName=GUIDONIA%20|%20Via%20Morante%20Via%20Tiburtina&departureLocalityId=8001858&departureLocalityName=Bagni%20di%20Tivoli&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" target="_blank" rel="noopener noreferrer" class="direct-btn">
-                        <span>Orari Cotral</span>
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
                 </div>
 
-                <div class="iframe-container">
-                    <iframe src="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60719&departureStopName=GUIDONIA%20|%20Via%20Morante%20Via%20Tiburtina&departureLocalityId=8001858&departureLocalityName=Bagni%20di%20Tivoli&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" title="Orari Cotral Bagni di Tivoli - Guidonia"></iframe>
-                </div>
+                <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60719&departureStopName=GUIDONIA%20|%20Via%20Morante%20Via%20Tiburtina&departureLocalityId=8001858&departureLocalityName=Bagni%20di%20Tivoli&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" data-label="Orari Cotral"></div>
             </section>
         </main>
     </div>
 
-    <script>
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').catch(() => {});
-        }
-    </script>
+    
+    <script src="js/components.js" defer></script>
 </body>
 </html>
