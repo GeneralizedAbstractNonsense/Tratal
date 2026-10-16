@@ -27,7 +27,7 @@ To identify the specific route codes (`pathCode`) used by ATAC's backend (such a
 5. Extracted the exact `pathCode` values and embedded them directly into HTML attributes (e.g., `data-atac-lines="492A, 163R, 545R, 71A, MEBA, METROB1R, ..."`).
 
 ### Weather Data Integration and Local Accuracy
-* **Forecast Accuracy and ilMeteo:** *ilMeteo.it* was chosen as the primary weather reference for external links because it consistently delivers the most precise hyper-local forecasts for the specific commuting corridors between Guidonia and Rome according to my experience.
+* **Forecast Accuracy and ilMeteo:** *ilMeteo.it* was chosen as the primary weather reference for external links because it consistently delivers the most precise local forecasts according to my experience.
 * **Real-time Processing and Severity Alerts:** Meteorological data (current temperature, WMO weather condition codes, wind speed and maximum precipitation probability) is fetched dynamically via the Open-Meteo API for both location coordinates. The client-side script parses these metrics to generate contextual alert badges directly within the weather cards flagging severe weather conditions (e.g., rain probability > 50% or winds > 30 km/h) that could disrupt extraurban Cotral buses and road traffic.
 
 ### Live Transit Alerts and News Aggregation
