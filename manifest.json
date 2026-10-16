@@ -21,5 +21,51 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Casa → Università",
+      "short_name": "Uni",
+      "url": "./casa-universita.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Casa → Scuola",
+      "short_name": "Scuola",
+      "url": "./casa-scuola.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Università → Casa",
+      "short_name": "Rientro Uni",
+      "url": "./universita-casa.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Scuola → Casa",
+      "short_name": "Rientro Scuola",
+      "url": "./scuola-casa.html",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }
