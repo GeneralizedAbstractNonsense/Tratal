@@ -81,6 +81,11 @@
         --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.8);
         --shadow-elevated: 0 12px 24px -6px rgba(0, 0, 0, 0.9);
     }
+    
+    .iframe-container iframe {
+        filter: invert(0.92) hue-rotate(180deg) contrast(1.05);
+        background-color: #000000;
+    }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -321,7 +326,13 @@ header {
 
 /* Trains */
 .iframe-container { position: relative; width: 100%; height: 500px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); background-color: var(--bg); }
-.iframe-container iframe { width: 100%; height: 100%; border: none; }
+.iframe-container iframe { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+    background-color: #000000; 
+    color-scheme: dark;
+}
 
 .train-list { display: flex; flex-direction: column; gap: 10px; }
 .train-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); }
