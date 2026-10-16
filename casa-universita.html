@@ -20,7 +20,27 @@
         </header>
 
         <main>
-            <!-- TAPPA 1: COTRAL -->
+             <!-- Routes -->
+            <section class="selector-section">
+                <div class="selector-title">Selezionare il percorso</div>
+                <div class="route-tabs" role="tablist" aria-label="Combinazioni di percorso">
+                    <button class="route-tab active" role="tab" aria-selected="true" onclick="selectRoute(1, this)">
+                        <span class="opt-tag">Opzione 1</span>
+                        <span class="opt-title">Cotral ➔ Treno ➔ Atac</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(2, this)">
+                        <span class="opt-tag">Opzione 2</span>
+                        <span class="opt-title">Cotral ➔ 163 ➔ Atac</span>
+                    </button>
+                    <button class="route-tab" role="tab" aria-selected="false" onclick="selectRoute(3, this)">
+                        <span class="opt-tag">Opzione 3</span>
+                        <span class="opt-title">Cotral ➔ Metro B ➔ Atac</span>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Route 1 -->
+             <div id="route-1" class="route-content active">
             <section class="step-card">
                 <div class="step-header">
                     <div class="step-title-group">
@@ -37,7 +57,7 @@
                 <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true" data-label="Orari Cotral"></div>
             </section>
 
-            <!-- TAPPA 2: TRENITALIA -->
+
             <section class="step-card">
                 <div class="step-header">
                     <div class="step-title-group">
@@ -50,11 +70,11 @@
                     </div>
                 </div>
 
-                <!-- ID STATION, TRAIN FILTER, MONITOR -->
+    
                 <div data-treni-station="S08023" data-treni-filter="ROMA,TIBURTINA,TERMINI" data-rfi-url="https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?Arrivals=False&Search=guidonia&PlaceId=3616"></div>
             </section>
 
-            <!-- TAPPA 3: ATAC -->
+        
             <section class="step-card">
                 <div class="step-header">
                     <div class="step-title-group">
@@ -67,13 +87,143 @@
                     </div>
                 </div>
 
-                <!-- ATAC CODES -->
+                
                 <div data-atac-lines="492A, 163R, 545R, 71A"></div>
             </section>
+             </div>
+
+            
+        </main>
+    </div>
+
+      <!-- Route 2 -->
+             <div id="route-2" class="route-content active">
+            <section class="step-card">
+                <div class="step-header">
+                    <div class="step-title-group">
+                        <div class="step-title">
+                            <span class="step-number">1</span>
+                            <span>Cotral</span>
+                            <span class="badge">Bus</span>
+                        </div>
+                        <p class="step-subtitle">Guidonia (Aeroporto) ➔ Ponte Mammolo (Metro B)</p>
+                    </div>
+                </div>
+
+              
+                <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=61303&arriveStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&arriveLocalityId=998008305&arriveLocalityName=Roma%20Ponte%20Mammolo&completed=true" data-label="Orari Cotral"></div>
+            </section>
+
+
+             <section class="step-card">
+                <div class="step-header">
+                    <div class="step-title-group">
+                        <div class="step-title">
+                            <span class="step-number">3</span>
+                            <span>ATAC</span>
+                            <span class="badge">Bus</span>
+                        </div>
+                         <p class="step-subtitle">Rebibbia ➔ Tiburtina / Verano</p>
+                        <p class="step-subtitle">Time table</p>
+                    </div>
+                </div>
+
+                
+                <div data-atac-lines="163R"></div>
+            </section>
+
+ 
+            <section class="step-card">
+                <div class="step-header">
+                    <div class="step-title-group">
+                        <div class="step-title">
+                            <span class="step-number">3</span>
+                            <span>ATAC</span>
+                            <span class="badge">Bus</span>
+                        </div>
+                        <p class="step-subtitle">Time table</p>
+                    </div>
+                </div>
+
+                
+                <div data-atac-lines="492A, 163R, 545R, 71A"></div>
+            </section>
+             </div>
+
+    <!-- Route 3 -->
+             <div id="route-3" class="route-content active">
+            <section class="step-card">
+                <div class="step-header">
+                    <div class="step-title-group">
+                        <div class="step-title">
+                            <span class="step-number">1</span>
+                            <span>Cotral</span>
+                            <span class="badge">Bus</span>
+                        </div>
+                        <p class="step-subtitle">Guidonia (Aeroporto) ➔ Ponte Mammolo (Metro B)</p>
+                    </div>
+                </div>
+
+              
+                <div data-cotral-url="https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=61303&arriveStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&arriveLocalityId=998008305&arriveLocalityName=Roma%20Ponte%20Mammolo&completed=true" data-label="Orari Cotral"></div>
+            </section>
+
+
+             <section class="step-card">
+                <div class="step-header">
+                    <div class="step-title-group">
+                        <div class="step-title">
+                            <span class="step-number">3</span>
+                            <span>ATAC</span>
+                            <span class="badge">Metro</span>
+                        </div>
+                         <p class="step-subtitle">Rebibbia / Ponte Mammolo ➔ Tiburtina</p>
+                        <p class="step-subtitle">Time table</p>
+                    </div>
+                </div>
+
+                
+                <div data-atac-lines="METROBR"></div>
+            </section>
+
+ 
+            <section class="step-card">
+                <div class="step-header">
+                    <div class="step-title-group">
+                        <div class="step-title">
+                            <span class="step-number">3</span>
+                            <span>ATAC</span>
+                            <span class="badge">Bus</span>
+                        </div>
+                        <p class="step-subtitle">Time table</p>
+                    </div>
+                </div>
+
+                
+                <div data-atac-lines="492A, 163R, 545R, 71A"></div>
+            </section>
+             </div>
+
+            
         </main>
     </div>
 
     <!-- SCRIPTS -->
+       <script>
+        function selectRoute(routeNumber, tabElement) {
+            document.querySelectorAll('.route-content').forEach(c => c.classList.remove('active'));
+            const selectedContent = document.getElementById(`route-${routeNumber}`);
+            if (selectedContent) selectedContent.classList.add('active');
+
+            document.querySelectorAll('.route-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tabElement.classList.add('active');
+            tabElement.setAttribute('aria-selected', 'true');
+        }
+    </script>
+    
     <script src="js/atac.js" defer></script>
     <script src="js/components.js" defer></script>
 </body>
