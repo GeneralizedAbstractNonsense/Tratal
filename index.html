@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0f172a">
-    <title>Home</title>
+    <title>Tratal | Home</title>
     <style>
         :root {
             --bg: #f8fafc;
@@ -22,12 +22,11 @@
             --primary-light: #eff6ff;
             --primary-border: #bfdbfe;
 
-            /* Visual Priority Colors */
             --danger-bg: #fef2f2;
             --danger-text: #dc2626;
             --danger-border: #fecaca;
 
-            --warning-bg: #fffbeeb;
+            --warning-bg: #fffbeb;
             --warning-text: #d97706;
             --warning-border: #fef3c7;
 
@@ -110,22 +109,22 @@
             width: 100%;
         }
 
-        /* Weather Header Widget */
+        /* Widget Meteo Ingrandito */
         .weather-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
             margin-bottom: 24px;
         }
 
         .weather-card {
             background-color: var(--surface);
             border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 12px 16px;
+            border-radius: var(--radius-lg);
+            padding: 16px 18px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
             text-decoration: none;
             color: inherit;
             box-shadow: var(--shadow-subtle);
@@ -141,30 +140,93 @@
             outline: none;
         }
 
+        .weather-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         .weather-city {
-            font-size: 0.725rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
 
-        .weather-value {
+        .weather-condition {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-subtle);
+        }
+
+        .weather-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .weather-temp-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .weather-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .weather-temp {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .weather-details {
+            text-align: right;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .weather-alert-box {
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.78rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-top: 2px;
+            line-height: 1.35;
+        }
+
+        .weather-alert-box.danger {
+            background-color: var(--danger-bg);
+            color: var(--danger-text);
+            border: 1px solid var(--danger-border);
+        }
+
+        .weather-alert-box.warning {
+            background-color: var(--warning-bg);
+            color: var(--warning-text);
+            border: 1px solid var(--warning-border);
+        }
+
+        .weather-alert-box.ok {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            border: 1px solid var(--success-border);
         }
 
         .skeleton {
-            width: 50px;
-            height: 20px;
+            width: 100%;
+            height: 48px;
             background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
             background-size: 200% 100%;
             animation: loading 1.5s infinite;
-            border-radius: 4px;
+            border-radius: 8px;
         }
 
         @keyframes loading {
@@ -304,46 +366,6 @@
             border: 1px solid var(--border);
         }
 
-        /* Feed Filters Bar (Chips) */
-        .feed-filters {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .feed-filters::-webkit-scrollbar {
-            display: none;
-        }
-
-        .filter-chip {
-            background-color: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 6px 14px;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
-
-        .filter-chip:hover {
-            border-color: var(--border-hover);
-            color: var(--text-main);
-        }
-
-        .filter-chip.active {
-            background-color: var(--text-main);
-            color: var(--bg);
-            border-color: var(--text-main);
-        }
-
         /* Feed Section */
         .feed-list {
             display: flex;
@@ -465,7 +487,7 @@
             border-radius: var(--radius-lg);
         }
 
-        /* Bottom Floating Navbar */
+ 
         .bottom-nav-wrapper {
             position: fixed;
             bottom: 0;
@@ -528,27 +550,29 @@
 <body>
 
     <div class="container">
-        <!-- Weather Bar -->
+        
         <div class="weather-grid" aria-label="Informazioni Meteo">
-            <a href="https://www.ilmeteo.it/meteo/Guidonia" target="_blank" rel="noopener noreferrer" class="weather-card">
-                <div>
+            <a href="https://www.ilmeteo.it/meteo/Guidonia" target="_blank" rel="noopener noreferrer" class="weather-card" id="weather-card-guidonia">
+                <div class="weather-header">
                     <span class="weather-city">Guidonia</span>
-                    <div class="weather-value" id="weather-guidonia">
-                        <div class="skeleton"></div>
-                    </div>
+                    <span class="weather-condition">Caricamento...</span>
+                </div>
+                <div class="weather-body">
+                    <div class="skeleton"></div>
                 </div>
             </a>
-            <a href="https://www.ilmeteo.it/meteo/Roma" target="_blank" rel="noopener noreferrer" class="weather-card">
-                <div>
+            <a href="https://www.ilmeteo.it/meteo/Roma" target="_blank" rel="noopener noreferrer" class="weather-card" id="weather-card-roma">
+                <div class="weather-header">
                     <span class="weather-city">Roma</span>
-                    <div class="weather-value" id="weather-roma">
-                        <div class="skeleton"></div>
-                    </div>
+                    <span class="weather-condition">Caricamento...</span>
+                </div>
+                <div class="weather-body">
+                    <div class="skeleton"></div>
                 </div>
             </a>
         </div>
 
-        <!-- Header -->
+   
         <header>
             <div>
                 <h1 id="page-title">Percorsi</h1>
@@ -565,7 +589,7 @@
 
         <main>
             <!-- Sezione Percorsi -->
-            <section id="section-percorsi" class="tab-content active" role="tabpanel" aria-labelledby="btn-percorsi">
+            <section id="section-percorsi" class="tab-content active" role="tabpanel" aria-labelledby="btn-percorsi" aria-hidden="false">
                 <div class="routes-list">
                     <a href="casa-universita.html" class="route-card">
                         <div class="route-header">
@@ -625,19 +649,8 @@
                 </div>
             </section>
 
-            <!-- Sezione Feed -->
-            <section id="section-feed" class="tab-content" role="tabpanel" aria-labelledby="btn-feed">
-                <!-- Filtri Feed -->
-                <div class="feed-filters" role="tablist" aria-label="Filtri Feed">
-                    <button class="filter-chip active" onclick="filterFeed('all', this)">Tutti</button>
-                    <button class="filter-chip" onclick="filterFeed('scioperi', this)">Scioperi</button>
-                    <button class="filter-chip" onclick="filterFeed('meteo', this)">Allerte Meteo</button>
-                    <button class="filter-chip" onclick="filterFeed('fl2', this)">Linea FL2</button>
-                    <button class="filter-chip" onclick="filterFeed('atac', this)">ATAC & Metro</button>
-                    <button class="filter-chip" onclick="filterFeed('cotral', this)">Cotral</button>
-                </div>
-
-                <!-- Lista Feed -->
+           
+            <section id="section-feed" class="tab-content" role="tabpanel" aria-labelledby="btn-feed" aria-hidden="true">
                 <div class="feed-list" id="feed-container">
                     <div class="empty-feed">Scansione avvisi in tempo reale...</div>
                 </div>
@@ -666,9 +679,16 @@
 
     <script>
         let allFeedItems = [];
-        let currentFilter = 'all';
 
-        // Avvisi Strutturati di Base (utilizzati come garanzia/fallback)
+    
+        function parseCleanText(htmlString) {
+            if (!htmlString) return '';
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlString, 'text/html');
+            return (doc.body.textContent || '').trim();
+        }
+
+   
         const transportAlertsBase = [
             {
                 id: 'sciopero-garanzia',
@@ -720,25 +740,19 @@
             }
         ];
 
-        // FUNZIONE DI ORDINAMENTO GERARCHICO RIGIDO
-        // 1. Scioperi
-        // 2. Allerte Meteo
-        // 3. Avvisi/Anomalie Trasporti
-        // 4. Info Generali
+
         function sortFeedByHierarchy(items) {
             return items.sort((a, b) => {
                 const getScore = (item) => {
                     if (item.isStrike || item.category === 'scioperi') return 1;
-                    if (item.category === 'meteo' && (item.type === 'danger' || item.type === 'warning')) return 2;
-                    if (item.category === 'meteo' && item.type === 'success') return 3;
-                    if (item.type === 'danger' || item.type === 'warning') return 4;
-                    return 5;
+                    if (item.type === 'danger' || item.type === 'warning') return 2;
+                    return 3;
                 };
                 return getScore(a) - getScore(b);
             });
         }
 
-        // Fetch Avvisi Live RSS via Proxy CORS Public
+
         async function fetchLiveRSS() {
             const rssUrl = 'https://astralmobilita.it/feed/';
             const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
@@ -762,8 +776,8 @@
                         else if (isCotral) { cat = 'cotral'; tag = 'Cotral'; }
                         else if (isAtac) { cat = 'atac'; tag = 'ATAC Roma'; }
 
-                        // Pulizia tag HTML dal testo
-                        const cleanDesc = item.description.replace(/<[^>]*>?/gm, '').trim().substring(0, 160) + '...';
+                        const rawClean = parseCleanText(item.description);
+                        const cleanDesc = rawClean.length > 160 ? rawClean.substring(0, 160) + '...' : rawClean;
 
                         return {
                             id: `rss-${idx}`,
@@ -772,8 +786,8 @@
                             type: isStrike ? 'danger' : 'warning',
                             tag: tag,
                             tagClass: isStrike ? 'tag-danger' : 'tag-warning',
-                            time: new Date(item.pubDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
-                            title: item.title,
+                            time: item.pubDate ? new Date(item.pubDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : 'Oggi',
+                            title: parseCleanText(item.title),
                             description: cleanDesc,
                             link: item.link
                         };
@@ -785,29 +799,32 @@
             return [];
         }
 
-        // Fetch Meteo & Generazione Allerte Meteo
+
         async function fetchWeatherAndAlerts() {
             const locations = [
-                { id: 'weather-guidonia', name: 'Guidonia', lat: 41.9961, lon: 12.7214 },
-                { id: 'weather-roma', name: 'Roma', lat: 41.8919, lon: 12.5113 }
+                { cardId: 'weather-card-guidonia', name: 'Guidonia', lat: 41.9961, lon: 12.7214 },
+                { cardId: 'weather-card-roma', name: 'Roma', lat: 41.8919, lon: 12.5113 }
             ];
 
-            const codeMap = {
-                0: { icon: '☀️', text: 'Sereno' },
-                1: { icon: '🌤️', text: 'Poco Nuvoloso' },
-                2: { icon: '⛅', text: 'Parzialmente Nuvoloso' },
-                3: { icon: '☁️', text: 'Coperto' },
-                45: { icon: '🌫️', text: 'Nebbia' },
-                51: { icon: '🌧️', text: 'Pioviggine' },
-                61: { icon: '🌧️', text: 'Pioggia' },
-                65: { icon: '🌧️', text: 'Pioggia Forte' },
-                80: { icon: '🌦️', text: 'Rovesci' },
-                95: { icon: '⛈️', text: 'Temporale' }
+            const getWeatherInfo = (code) => {
+                if (code === 0) return { icon: '☀️', text: 'Sereno' };
+                if (code === 1) return { icon: '🌤️', text: 'Poco Nuvoloso' };
+                if (code === 2) return { icon: '⛅', text: 'Parzialmente Nuvoloso' };
+                if (code === 3) return { icon: '☁️', text: 'Coperto' };
+                if (code === 45 || code === 48) return { icon: '🌫️', text: 'Nebbia' };
+                if (code >= 51 && code <= 57) return { icon: '🌧️', text: 'Pioviggine' };
+                if (code >= 61 && code <= 67) return { icon: '🌧️', text: 'Pioggia' };
+                if (code >= 71 && code <= 77) return { icon: '❄️', text: 'Neve' };
+                if (code >= 80 && code <= 82) return { icon: '🌦️', text: 'Rovesci' };
+                if (code >= 85 && code <= 86) return { icon: '🌨️', text: 'Rovesci Neve' };
+                if (code >= 95) return { icon: '⛈️', text: 'Temporale' };
+                return { icon: '🌡️', text: 'Meteo' };
             };
 
-            const weatherAlerts = [];
-
             for (const loc of locations) {
+                const cardEl = document.getElementById(loc.cardId);
+                if (!cardEl) continue;
+
                 try {
                     const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current=temperature_2m,weather_code,wind_speed_10m&daily=precipitation_probability_max&timezone=Europe%2FRome`);
                     const data = await res.json();
@@ -815,67 +832,63 @@
                     if (data && data.current) {
                         const temp = Math.round(data.current.temperature_2m);
                         const code = data.current.weather_code;
-                        const weatherInfo = codeMap[code] || { icon: '🌡️', text: 'Meteo' };
-                        
-                        document.getElementById(loc.id).innerHTML = `<span>${weatherInfo.icon}</span> <span>${temp}°C</span>`;
-
+                        const weatherInfo = getWeatherInfo(code);
                         const precipProb = data.daily?.precipitation_probability_max?.[0] || 0;
                         const wind = Math.round(data.current.wind_speed_10m || 0);
 
-                        if (code >= 61 || precipProb > 50 || wind > 30) {
-                            weatherAlerts.push({
-                                id: `weather-alert-${loc.name.toLowerCase()}`,
-                                category: 'meteo',
-                                isStrike: false,
-                                type: code >= 80 ? 'danger' : 'warning',
-                                tag: '⚠️ Allerta Meteo',
-                                tagClass: code >= 80 ? 'tag-danger' : 'tag-warning',
-                                time: 'Oggi',
-                                title: `Allerta Meteo ${loc.name}: ${weatherInfo.text} (${temp}°C)`,
-                                description: `Rilevate precipitazioni (${precipProb}% di probabilità) o vento forte (${wind} km/h). Possibili rallentamenti sulla viabilità e sui bus extraurbani Cotral.`,
-                                link: `https://www.ilmeteo.it/meteo/${loc.name}`
-                            });
+                        
+                        let alertBadgeHtml = '';
+                        if (code >= 80 || wind > 50) {
+                            alertBadgeHtml = `<div class="weather-alert-box danger">🚨 Allerta: Temporale / Vento Forte (${wind} km/h)</div>`;
+                        } else if (code >= 61 || precipProb > 50 || wind > 30) {
+                            alertBadgeHtml = `<div class="weather-alert-box warning">⚠️ Attenzione: Pioggia (${precipProb}%) / Vento (${wind} km/h)</div>`;
+                        } else {
+                            alertBadgeHtml = `<div class="weather-alert-box ok">🌤️ Condizioni meteo regolari</div>`;
                         }
+
+                        cardEl.innerHTML = `
+                            <div class="weather-header">
+                                <span class="weather-city">${loc.name}</span>
+                                <span class="weather-condition">${weatherInfo.text}</span>
+                            </div>
+                            <div class="weather-body">
+                                <div class="weather-temp-group">
+                                    <span class="weather-icon">${weatherInfo.icon}</span>
+                                    <span class="weather-temp">${temp}°C</span>
+                                </div>
+                                <div class="weather-details">
+                                    <div>☔ Pioggia: ${precipProb}%</div>
+                                    <div>💨 Vento: ${wind} km/h</div>
+                                </div>
+                            </div>
+                            ${alertBadgeHtml}
+                        `;
                     }
                 } catch (e) {
-                    document.getElementById(loc.id).textContent = 'N/D';
+                    cardEl.innerHTML = `
+                        <div class="weather-header">
+                            <span class="weather-city">${loc.name}</span>
+                            <span class="weather-condition">Non disponibile</span>
+                        </div>
+                        <div class="weather-alert-box warning">⚠️ Impossibile caricare i dati meteo</div>
+                    `;
                 }
             }
-
-            if (weatherAlerts.length === 0) {
-                weatherAlerts.push({
-                    id: 'weather-ok',
-                    category: 'meteo',
-                    isStrike: false,
-                    type: 'success',
-                    tag: '🌤️ Meteo Regolare',
-                    tagClass: 'tag-success',
-                    time: 'Oggi',
-                    title: 'Condizioni Meteo Stabili',
-                    description: 'Nessuna allerta atmosferica critica registrata a Guidonia e Roma.',
-                    link: null
-                });
-            }
-
-            return weatherAlerts;
         }
 
-        // Caricamento Dati Unificato
+   
         async function loadAllFeedData() {
-            const [liveRssItems, weatherAlerts] = await Promise.all([
+ 
+            const [liveRssItems] = await Promise.all([
                 fetchLiveRSS(),
                 fetchWeatherAndAlerts()
             ]);
 
-            // Uniamo i dati Live con la base di fallback
-            const combined = [...weatherAlerts, ...liveRssItems, ...transportAlertsBase];
-            
-            // Eliminiamo eventuali duplicati per ID
+
+            const combined = [...liveRssItems, ...transportAlertsBase];
             const unique = Array.from(new Map(combined.map(item => [item.id, item])).values());
 
-            // APPLICHIAMO LA GERARCHIA RIGIDA
             allFeedItems = sortFeedByHierarchy(unique);
-            
             renderFeed();
         }
 
@@ -889,7 +902,12 @@
 
             if (tab === 'percorsi') {
                 feedSec.classList.remove('active');
-                setTimeout(() => { percorsiSec.classList.add('active'); }, 50);
+                feedSec.setAttribute('aria-hidden', 'true');
+
+                setTimeout(() => { 
+                    percorsiSec.classList.add('active'); 
+                    percorsiSec.setAttribute('aria-hidden', 'false');
+                }, 50);
 
                 btnPercorsi.classList.add('active');
                 btnPercorsi.setAttribute('aria-selected', 'true');
@@ -900,45 +918,36 @@
                 subtitle.textContent = "Seleziona una tratta per visualizzare gli orari";
             } else {
                 percorsiSec.classList.remove('active');
-                setTimeout(() => { feedSec.classList.add('active'); }, 50);
+                percorsiSec.setAttribute('aria-hidden', 'true');
+
+                setTimeout(() => { 
+                    feedSec.classList.add('active'); 
+                    feedSec.setAttribute('aria-hidden', 'false');
+                }, 50);
 
                 btnFeed.classList.add('active');
                 btnFeed.setAttribute('aria-selected', 'true');
                 btnPercorsi.classList.remove('active');
                 btnPercorsi.setAttribute('aria-selected', 'false');
 
-                title.textContent = "Feed & Avvisi";
-                subtitle.textContent = "Scioperi, allerte meteo e stato delle linee";
+                title.textContent = "Feed Mobilità";
+                subtitle.textContent = "Scioperi, avvisi live e stato delle linee";
             }
-        }
-
-        function filterFeed(category, chipElement) {
-            currentFilter = category;
-            document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
-            if (chipElement) chipElement.classList.add('active');
-            renderFeed();
         }
 
         function renderFeed() {
             const container = document.getElementById('feed-container');
-            let filtered = allFeedItems;
 
-            if (currentFilter === 'scioperi') {
-                filtered = allFeedItems.filter(item => item.isStrike || item.category === 'scioperi');
-            } else if (currentFilter !== 'all') {
-                filtered = allFeedItems.filter(item => item.category === currentFilter);
-            }
-
-            if (filtered.length === 0) {
+            if (allFeedItems.length === 0) {
                 container.innerHTML = `
                     <div class="empty-feed">
-                        Nessun avviso presente per la categoria selezionata.
+                        Nessun avviso sulla mobilità presente al momento.
                     </div>
                 `;
                 return;
             }
 
-            container.innerHTML = filtered.map(item => `
+            container.innerHTML = allFeedItems.map(item => `
                 <article class="feed-card type-${item.type}">
                     <div class="feed-meta">
                         <div class="feed-tags">
@@ -960,11 +969,14 @@
         async function refreshData() {
             const btn = document.getElementById('refresh-btn');
             btn.classList.add('spinning');
-            await loadAllFeedData();
-            setTimeout(() => { btn.classList.remove('spinning'); }, 600);
+            try {
+                await loadAllFeedData();
+            } finally {
+                setTimeout(() => { btn.classList.remove('spinning'); }, 500);
+            }
         }
 
-        // Avvio Iniziale
+ 
         loadAllFeedData();
 
         if ('serviceWorker' in navigator) {
