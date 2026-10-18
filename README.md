@@ -1,4 +1,23 @@
-# Tratal
+<p align="center">
+  <img src="icon-512.png" width="120" height="120" alt="Logo">
+</p>
+
+<h1 align="center">Tratal</h1>
+
+<p align="center">
+  <strong>.</strong>
+</p>
+
+<p align="center">
+  .
+</p>
+
+<p align="center">
+  <a href="#">Website</a> ·
+  <a href="#">Latest release</a> ·
+  <a href="#">Issues</a>
+</p>
+
 ## Purpose
 Commuting across Rome and its province requires constantly checking multiple fragmented transit services, each with its own separate website or application. **Tratal** (whose name is a blend of **Tr**enitalia, **AT**AC and Cotr**al**) was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
 
