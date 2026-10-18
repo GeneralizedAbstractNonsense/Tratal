@@ -5,11 +5,11 @@
 <h1 align="center">Tratal</h1>
 
 <p align="center">
-  <strong>.</strong>
+  <strong>All you need, where it should be.</strong>
 </p>
 
 <p align="center">
-  .
+  A PWA designed to monitor transit timetables, weather and travel alerts in a single interface.
 </p>
 
 <p align="center">
