@@ -17,9 +17,11 @@
   <a href="#">Latest release</a> ·
   <a href="#">Issues</a>
 </p>
-<center>
-  <p>Apache-2.0 - [LICENSE](LICENSE)</p>
-</center>
+<div align="center">
+    <img alt="GitHub Release" src="https://img.shields.io/github/v/release/GeneralizedAbstractNonsense/Tratal?display_name=release">
+    <img alt="License" src="https://img.shields.io/github/license/GeneralizedAbstractNonsense/Tratal">
+    <img alt="Platforms" src="https://img.shields.io/badge/platform-Android%20%7C%20iOS%20%7C%20macOS%20%7C%20Windows%20%7C%20Linux-2ea44f">
+</div>
 
 
 ## Purpose
