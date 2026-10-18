@@ -18,6 +18,9 @@
   <a href="#">Issues</a>
 </p>
 
+## License
+Apache-2.0 - vedi [LICENSE](LICENSE) per dettagli.
+
 ## Purpose
 Commuting across Rome and its province requires constantly checking multiple fragmented transit services, each with its own separate website or application. **Tratal** (whose name is a blend of **Tr**enitalia, **AT**AC and Cotr**al**) was created to fix this **personal** problem, indeed the application is designed only to be used by me. 
 
