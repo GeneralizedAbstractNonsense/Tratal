@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="#">Website</a> ·
+  <a href="https://generalizedabstractnonsense.github.io/Tratal/">Website</a> ·
   <a href="#">Latest release</a> ·
   <a href="#">Issues</a>
 </p>
