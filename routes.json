@@ -1,0 +1,197 @@
+[
+  {
+    "id": "casa-universita",
+    "title": "Casa ➔ Università",
+    "link": "https://moovitapp.com/tripplan/roma_e_lazio-61/poi/Biblioteca%20Del%20Dipartimento%20Di%20Matematica%20%22%22Guido%20Castelnuovo%22%22,%20Roma/Guidonia%20%7C%20Piazza%20Baracca,%20Guidonia%20Montecelio/en?customerId=4908&ref=16&af_sub8=%2F&af_sub9=home_page_direction_search_bar_button&fll=41.993746_12.724885&tll=41.901462_12.515295&metroSeoName=Roma_e_Lazio",
+    "options": [
+      {
+        "optTag": "Opzione 1",
+        "optTitle": "Cotral ➔ Treno ➔ Atac",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Guidonia (Aeroporto) ➔ Guidonia Stazione FS",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60722&arriveStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true",
+            "label": "Orari Cotral"
+          },
+          {
+            "stepNumber": 2,
+            "operator": "Trenitalia",
+            "badge": "Train FL2",
+            "subtitle": "Guidonia Montecelio ➔ Roma Tiburtina",
+            "type": "trenitalia",
+            "station": "S08023",
+            "filter": "ROMA,TIBURTINA,TERMINI",
+            "rfiUrl": "https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?Arrivals=False&Search=guidonia&PlaceId=3616"
+          },
+          {
+            "stepNumber": 3,
+            "operator": "ATAC",
+            "badge": "Bus",
+            "subtitle": "Time table (+15/20 min per il 163)",
+            "type": "atac",
+            "atacLines": "492A, 163R, 545R, 71A"
+          }
+        ]
+      },
+      {
+        "optTag": "Opzione 2",
+        "optTitle": "Cotral ➔ 163 ➔ Atac",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Guidonia (Aeroporto) ➔ Ponte Mammolo (Metro B)",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=61303&arriveStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&arriveLocalityId=998008305&arriveLocalityName=Roma%20Ponte%20Mammolo&completed=true",
+            "label": "Orari Cotral"
+          },
+          {
+            "stepNumber": 2,
+            "operator": "ATAC",
+            "badge": "Bus",
+            "subtitle": "Rebibbia ➔ Tiburtina / Verano",
+            "type": "atac",
+            "atacLines": "163R"
+          },
+          {
+            "stepNumber": 3,
+            "operator": "ATAC",
+            "badge": "Bus",
+            "subtitle": "Time table (+15/20 min per il 163)",
+            "type": "atac",
+            "atacLines": "492A, 163R, 545R, 71A"
+          }
+        ]
+      },
+      {
+        "optTag": "Opzione 3",
+        "optTitle": "Cotral ➔ Metro B ➔ Atac",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Guidonia (Aeroporto) ➔ Ponte Mammolo (Metro B)",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=61303&arriveStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&arriveLocalityId=998008305&arriveLocalityName=Roma%20Ponte%20Mammolo&completed=true",
+            "label": "Orari Cotral"
+          },
+          {
+            "stepNumber": 2,
+            "operator": "ATAC Metro B",
+            "badge": "Metro",
+            "subtitle": "Rebibbia / Ponte Mammolo ➔ Tiburtina",
+            "type": "atac",
+            "atacLines": "METROBR"
+          },
+          {
+            "stepNumber": 3,
+            "operator": "ATAC",
+            "badge": "Bus",
+            "subtitle": "Time table (+15/20 min per il 163)",
+            "type": "atac",
+            "atacLines": "492A, 163R, 545R, 71A"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "universita-casa",
+    "title": "Università ➔ Casa",
+    "link": "https://moovitapp.com/tripplan/roma_e_lazio-61/poi/Guidonia%20%7C%20Piazza%20Baracca,%20Guidonia%20Montecelio/Biblioteca%20Del%20Dipartimento%20Di%20Matematica%20%22%22Guido%20Castelnuovo%22%22,%20Roma/en?customerId=4908&ref=16&af_sub8=%2F&af_sub9=home_page_direction_search_bar_button&fll=41.901462_12.515295&tll=41.993746_12.724885&metroSeoName=Roma_e_Lazio",
+    "options": [
+      {
+        "optTag": "Opzione 1",
+        "optTitle": "Bus 163 ➔ Cotral (Ponte Mammolo)",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "operator": "ATAC 163",
+            "badge": "Bus",
+            "subtitle": "Verano ➔ Ponte Mammolo",
+            "type": "atac",
+            "atacLines": "163A, 545A"
+          },
+          {
+            "stepNumber": 2,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Ponte Mammolo (Metro B) ➔ Guidonia Viale Roma (Aeroporto)",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=61303&departureStopName=ROMA%20|%20Ponte%20Mammolo%20(Metro%20B)&departureLocalityId=998008305&departureLocalityName=Roma%20Ponte%20Mammolo&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true",
+            "label": "Orari Cotral"
+          }
+        ]
+      },
+      {
+        "optTag": "Opzione 2",
+        "optTitle": "Bus 163/545 ➔ Treno ➔ Cotral",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "operator": "ATAC",
+            "badge": "Bus",
+            "subtitle": "Verano ➔ Stazione Tiburtina",
+            "type": "atac",
+            "atacLines": "163A, 545A"
+          },
+          {
+            "stepNumber": 2,
+            "operator": "Trenitalia",
+            "badge": "Train FL2",
+            "subtitle": "Partenze da Roma Tiburtina verso Guidonia Montecelio",
+            "type": "trenitalia",
+            "station": "S08409",
+            "filter": "GUIDONIA,TIVOLI,AVEZZANO,MANDELA,SUBIACO,PESCARA,SULMONA",
+            "rfiUrl": "https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2385&arrivals=False#infoSuccessiveAnchor"
+          },
+          {
+            "stepNumber": 3,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Guidonia Colle Fiorito (Stazione FS) ➔ Viale Roma (Aeroporto)",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60722&departureStopName=GUIDONIA%20COLLE%20FIORITO%20|%20Stazione%20FS&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true",
+            "label": "Orari Cotral"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "casa-scuola",
+    "title": "Casa ⇄ Scuola",
+    "options": [
+      {
+        "optTag": "",
+        "optTitle": "",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Guidonia (Viale Roma - Aeroporto) ➔ Via Morante / Via Tiburtina",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60717&departureStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&departureLocalityId=8007880&departureLocalityName=Guidonia%20Montecelio&completed=true&lang=it&arriveStopId=60719&arriveStopName=GUIDONIA%20|%20Via%20Morante%20Via%20Tiburtina&arriveLocalityId=8001858&arriveLocalityName=Bagni%20di%20Tivoli&completed=true",
+            "label": "Orari Cotral"
+          },
+          {
+            "stepNumber": 2,
+            "operator": "Cotral",
+            "badge": "Bus",
+            "subtitle": "Via Morante / Via Tiburtina ➔ Guidonia (Viale Roma - Aeroporto)",
+            "type": "cotral",
+            "cotralUrl": "https://cotralspa.it/ricerca-orari/?search=bus&lang=it&departureStopId=60719&departureStopName=GUIDONIA%20|%20Via%20Morante%20Via%20Tiburtina&departureLocalityId=8001858&departureLocalityName=Bagni%20di%20Tivoli&completed=true&lang=it&arriveStopId=60717&arriveStopName=GUIDONIA%20|%20Viale%20Roma%20(Aeroporto)&arriveLocalityId=8007880&arriveLocalityName=Guidonia%20Montecelio&completed=true",
+            "label": "Orari Cotral"
+          }
+        ]
+      }
+    ]
+  }
+]
