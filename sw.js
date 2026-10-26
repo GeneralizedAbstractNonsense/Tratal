@@ -2,6 +2,7 @@ const CACHE_NAME = 'trasporti-v2';
 const ASSETS = [
   './',
   './index.html',
+  './index2.html',
   './casa-universita.html',
   './universita-casa.html',
   './casa-scuola.html',
@@ -9,6 +10,7 @@ const ASSETS = [
   './route.html',
   './style.css',
   './manifest.json',
+  './routes.json',
   './js/components.js',
   './js/atac.js'
 ];
