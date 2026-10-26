@@ -26,7 +26,7 @@
     {
       "name": "Casa → Università",
       "short_name": "Uni",
-      "url": "./casa-universita.html",
+      "url": "./route.html?id=casa-universita",
       "icons": [
         {
           "src": "icon-192.png",
@@ -37,7 +37,7 @@
     {
       "name": "Casa → Scuola",
       "short_name": "Scuola",
-      "url": "./casa-scuola.html",
+      "url": "./route.html?id=casa-scuola",
       "icons": [
         {
           "src": "icon-192.png",
@@ -48,18 +48,7 @@
     {
       "name": "Università → Casa",
       "short_name": "Rientro Uni",
-      "url": "./universita-casa.html",
-      "icons": [
-        {
-          "src": "icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Scuola → Casa",
-      "short_name": "Rientro Scuola",
-      "url": "./scuola-casa.html",
+      "url": "./route.html?id=universita-casa",
       "icons": [
         {
           "src": "icon-192.png",
