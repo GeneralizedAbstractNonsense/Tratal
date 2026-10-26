@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <title>Route | Time Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-btn" aria-label="Back to routes">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Routes</span>
+            </a>
+            <h1 class="page-title" id="route-page-title">Loading...</h1>
+        </header>
+
+        <main id="route-main-content">
+          
+        </main>
+    </div>
+
+    <script src="js/atac.js" defer></script>
+    <script src="js/components.js" defer></script>
+    
+    <script>
+        function selectRoute(routeNumber, tabElement) {
+            document.querySelectorAll('.route-content').forEach(c => c.classList.remove('active'));
+            const selectedContent = document.getElementById(`route-${routeNumber}`);
+            if (selectedContent) selectedContent.classList.add('active');
+
+            document.querySelectorAll('.route-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tabElement.classList.add('active');
+            tabElement.setAttribute('aria-selected', 'true');
+        }
+
+        async function loadRouteData() {
+            const params = new URLSearchParams(window.location.search);
+            const routeId = params.get('id');
+            const mainContainer = document.getElementById('route-main-content');
+            const titleEl = document.getElementById('route-page-title');
+
+            if (!routeId) {
+                mainContainer.innerHTML = '<div class="timetable-placeholder">No route specified.</div>';
+                return;
+            }
+
+            try {
+                const res = await fetch('routes.json');
+                const routes = await res.json();
+                const route = routes.find(r => r.id === routeId);
+
+                if (!route) {
+                    mainContainer.innerHTML = '<div class="timetable-placeholder">Route not found.</div>';
+                    return;
+                }
+
+           
+                if (route.link) {
+                    titleEl.innerHTML = `<a href="${route.link}" target="_blank" rel="noopener noreferrer">${route.title}</a>`;
+                } else {
+                    titleEl.textContent = route.title;
+                }
+                document.title = `${route.title} | Time Table`;
+
+                let html = '';
+                const hasMultipleOptions = route.options.length > 1 && route.options[0].optTitle;
+
+            
+                if (hasMultipleOptions) {
+                    html += `
+                        <section class="selector-section">
+                            <div class="selector-title">Select the route</div>
+                            <div class="route-tabs" role="tablist" aria-label="Route combinations">
+                    `;
+                    route.options.forEach((opt, idx) => {
+                        const isActive = idx === 0;
+                        html += `
+                            <button class="route-tab ${isActive ? 'active' : ''}" role="tab" aria-selected="${isActive}" onclick="selectRoute(${idx + 1}, this)">
+                                <span class="opt-tag">${opt.optTag}</span>
+                                <span class="opt-title">${opt.optTitle}</span>
+                            </button>
+                        `;
+                    });
+                    html += `</div></section>`;
+                }
+
+             
+                route.options.forEach((opt, idx) => {
+                    const isActive = idx === 0;
+                    html += `<div id="route-${idx + 1}" class="route-content ${isActive ? 'active' : ''}">`;
+
+                    opt.steps.forEach(step => {
+                        html += `
+                            <section class="step-card">
+                                <div class="step-header">
+                                    <div class="step-title-group">
+                                        <div class="step-title">
+                                            <span class="step-number">${step.stepNumber}</span>
+                                            <span>${step.operator}</span>
+                                            <span class="badge">${step.badge}</span>
+                                        </div>
+                                        <p class="step-subtitle">${step.subtitle}</p>
+                                    </div>
+                                </div>
+                        `;
+
+                        if (step.type === 'cotral') {
+                            html += `<div data-cotral-url="${step.cotralUrl}" data-label="${step.label || 'Cotral Time Table'}"></div>`;
+                        } else if (step.type === 'trenitalia') {
+                            html += `<div data-treni-station="${step.station}" data-treni-filter="${step.filter || ''}" data-rfi-url="${step.rfiUrl || ''}"></div>`;
+                        } else if (step.type === 'atac') {
+                            html += `<div data-atac-lines="${step.atacLines}"></div>`;
+                        }
+
+                        html += `</section>`;
+                    });
+
+                    html += `</div>`;
+                });
+
+                mainContainer.innerHTML = html;
+
+                
+                if (typeof TransportComponents !== 'undefined') {
+                    TransportComponents.initCotral();
+                    TransportComponents.initTrenitalia();
+                }
+                if (typeof ATAC !== 'undefined') {
+                    ATAC.initWidgets();
+                }
+
+            } catch (err) {
+                console.error(err);
+                mainContainer.innerHTML = '<div class="timetable-placeholder">Error in loading the route.</div>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadRouteData);
+    </script>
+</body>
+</html>
