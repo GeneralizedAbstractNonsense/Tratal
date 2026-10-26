@@ -6,6 +6,7 @@ const ASSETS = [
   './universita-casa.html',
   './casa-scuola.html',
   './scuola-casa.html',
+  './route.html',
   './style.css',
   './manifest.json',
   './js/components.js',
