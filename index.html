@@ -962,6 +962,33 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(() => {});
         }
+
+        async function loadRoutesList() {
+    const container = document.getElementById('routes-container');
+    if (!container) return;
+
+    try {
+        const res = await fetch('routes.json');
+        const routes = await res.json();
+
+        container.innerHTML = routes.map(route => `
+            <a href="route.html?id=${route.id}" class="route-card">
+                <div class="route-header">
+                    <span class="route-title">${route.title}</span>
+                    <svg class="route-icon-arrow" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </a>
+        `).join('');
+    } catch (e) {
+        container.innerHTML = `<div class="empty-feed">Error in loading routes.json</div>`;
+    }
+}
+
+
+loadRoutesList();
     </script>
 </body>
 </html>
