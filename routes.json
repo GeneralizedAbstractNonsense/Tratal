@@ -137,9 +137,9 @@
           "stepNumber": 1,
           "operator": "ATAC",
           "badge": "Bus",
-          "subtitle": "Verano (+0min, +0min, +42min, +XXmin) ➔ Stazione Tiburtina",
+          "subtitle": "Verano (+0min, +0min, +42min, +43min) ➔ Stazione Tiburtina",
           "type": "atac",
-          "atacLines": "163A, 545A, 71, 492R"
+          "atacLines": "163A, 545A, 71A, 492R"
         },
         {
           "stepNumber": 2,
